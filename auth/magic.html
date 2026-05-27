@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anmeldung – Jume</title>
+    <meta name="robots" content="noindex,nofollow" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <script>
+      (function () {
+        var params = new URLSearchParams(window.location.search);
+        var token = params.get('token');
+
+        if (!token) {
+          // No token — show error state
+          document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('state-opening').style.display = 'none';
+            document.getElementById('state-error').style.display = 'block';
+          });
+          return;
+        }
+
+        // Build deep link and redirect
+        var deepLink = 'dreamjournal://magic?token=' + encodeURIComponent(token);
+        window.location.href = deepLink;
+
+        // After a short delay, show fallback if app didn't open
+        setTimeout(function () {
+          document.getElementById('state-opening').style.display = 'none';
+          document.getElementById('state-fallback').style.display = 'block';
+          // Update the manual link
+          var link = document.getElementById('deep-link');
+          if (link) link.href = deepLink;
+        }, 2000);
+      })();
+    </script>
+  </head>
+  <body data-depth="../" data-active="">
+    <div id="site-header"></div>
+    <main class="legal-page">
+
+      <!-- State: opening app -->
+      <article id="state-opening" class="glass-card legal-card">
+        <span class="eyebrow highlight">Magic Link</span>
+        <h1>App wird geöffnet…</h1>
+        <p>Einen Moment — wir melden dich gerade an.</p>
+      </article>
+
+      <!-- State: fallback if app didn't open -->
+      <article id="state-fallback" class="glass-card legal-card" style="display:none;">
+        <span class="eyebrow highlight">Fast geschafft</span>
+        <h1>Jume öffnen</h1>
+        <p>Hat sich die App nicht automatisch geöffnet? Tippe auf den Button:</p>
+        <div class="inline-actions">
+          <a id="deep-link" class="button button-primary" href="#">In der App anmelden</a>
+        </div>
+        <p style="margin-top: 1.5rem; font-size: 0.875rem; opacity: 0.7;">
+          Noch keine App? <a href="https://apps.apple.com/app/jume" target="_blank" rel="noopener">Jetzt herunterladen</a>
+        </p>
+      </article>
+
+      <!-- State: no token in URL -->
+      <article id="state-error" class="glass-card legal-card" style="display:none;">
+        <span class="eyebrow">Ungültiger Link</span>
+        <h1>Dieser Link ist nicht mehr gültig.</h1>
+        <p>Magic Links können nur einmal verwendet werden und sind 15 Minuten gültig. Bitte fordere einen neuen Link in der App an.</p>
+        <div class="inline-actions">
+          <a class="button button-primary" href="/">Zur Startseite</a>
+        </div>
+      </article>
+
+    </main>
+    <div id="site-footer"></div>
+    <script defer src="../assets/js/site.js"></script>
+  </body>
+</html>

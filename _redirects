@@ -1,0 +1,2 @@
+# Magic link redirect — keep query params
+/auth/magic  /auth/magic.html  200
