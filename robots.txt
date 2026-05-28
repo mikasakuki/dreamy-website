@@ -1,4 +1,9 @@
 User-agent: *
 Allow: /
 
+# Auth-Seiten nicht indexieren
+Disallow: /auth/
+Disallow: /check-email.html
+Disallow: /success.html
+
 Sitemap: https://jume.app/sitemap.xml

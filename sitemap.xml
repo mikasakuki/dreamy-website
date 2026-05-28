@@ -1,18 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Startseite -->
   <url>
     <loc>https://jume.app/</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
   </url>
+
+  <!-- Mondimpulse Hub -->
   <url>
     <loc>https://jume.app/mond/</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
+
+  <!-- Vollmond im Schützen (aktuell) -->
+  <url>
+    <loc>https://jume.app/mond/vollmond-im-schuetzen-31-mai-2026/</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Vollmond im Skorpion -->
   <url>
     <loc>https://jume.app/mond/vollmond-im-skorpion-1-mai-2026/</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
   </url>
+
+  <!-- Vollmondnächte & Traumtagebuch (Evergreen) -->
   <url>
     <loc>https://jume.app/mond/vollmondnaechte-traumtagebuch/</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
   </url>
+
+  <!-- Traum-Glossar -->
   <url>
     <loc>https://jume.app/wissen/glossar/</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
   </url>
+
 </urlset>

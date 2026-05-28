@@ -1,7 +1,12 @@
-# Magic link redirect — keep query params
+# Auth
 /auth/magic  /auth/magic.html  200
 
-# Clean URL support for Netlify (ensures .html extension is optional)
+# Legacy redirects (old links, app deep-links) → 301
+/glossar.html        /wissen/glossar/   301
+/glossar             /wissen/glossar/   301
+/mond-vollmond-skorpion-2026.html  /mond/vollmond-im-skorpion-1-mai-2026/  301
+
+# Clean URL rewrites (200 = serve content without changing browser URL)
 /mond                                          /mond/index.html                                          200
 /mond/vollmond-im-skorpion-1-mai-2026          /mond/vollmond-im-skorpion-1-mai-2026/index.html          200
 /mond/vollmond-im-schuetzen-31-mai-2026        /mond/vollmond-im-schuetzen-31-mai-2026/index.html        200
