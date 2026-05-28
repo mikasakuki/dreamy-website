@@ -1,186 +1,148 @@
 <!DOCTYPE html>
 <html lang="de">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Datenschutzerklärung – Jume</title>
-    <style>
-      :root {
-        --bg1: #0b1020;
-        --bg2: #171f3a;
-        --bg3: #241a35;
-        --bg4: #13192d;
-        --card: rgba(255, 255, 255, 0.08);
-        --text: #f7f8ff;
-        --muted: #d4d8ef;
-        --accent-2: #a8edf7;
-        --border: rgba(255, 255, 255, 0.14);
-        --shadow: rgba(0, 0, 0, 0.24);
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Datenschutzerklärung – jume</title>
+  <meta name="description" content="Datenschutzerklärung der jume App und Website — Informationen zur Datenverarbeitung, Cookie-Einstellungen und deinen Rechten." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://jume.app/datenschutz.html" />
 
-      * { box-sizing: border-box; }
+  <script src="/assets/js/cookie-consent.js"></script>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <script defer src="assets/js/site.js"></script>
+</head>
+<body data-depth="" data-active="">
+  <div id="site-header"></div>
 
-      body {
-        margin: 0;
-        min-height: 100vh;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-        color: var(--text);
-        padding: 24px;
-        background:
-          radial-gradient(circle at 12% 14%, rgba(201, 179, 255, 0.22), transparent 24%),
-          radial-gradient(circle at 85% 10%, rgba(168, 237, 247, 0.17), transparent 22%),
-          radial-gradient(circle at 50% 120%, rgba(245, 210, 255, 0.12), transparent 28%),
-          linear-gradient(160deg, var(--bg1), var(--bg2), var(--bg3), var(--bg4));
-      }
+  <main>
+    <section class="page-hero" style="padding-bottom: 48px;">
+      <div class="container">
+        <span class="section-kicker">Rechtliches</span>
+        <h1 style="margin-bottom: 0;">Datenschutzerklärung</h1>
+      </div>
+    </section>
 
-      .card {
-        width: 100%;
-        max-width: 920px;
-        margin: 0 auto;
-        background: var(--card);
-        backdrop-filter: blur(22px);
-        -webkit-backdrop-filter: blur(22px);
-        border: 1px solid var(--border);
-        border-radius: 30px;
-        padding: 42px 28px;
-        box-shadow: 0 28px 80px var(--shadow);
-      }
+    <section class="section section-white">
+      <div class="container">
+        <div class="legal-content">
 
-      h1, h2 {
-        color: var(--text);
-      }
+          <p>Stand: Mai 2026</p>
 
-      h1 {
-        margin-top: 0;
-        margin-bottom: 22px;
-      }
+          <h2>1. Verantwortliche Person</h2>
+          <p>
+            Verantwortlich im Sinne der DSGVO für die Website <strong>jume.app</strong> und die zugehörige mobile App ist:
+          </p>
+          <p>
+            <strong>Julia Cialkowski</strong><br />
+            [Straße und Hausnummer]<br />
+            [PLZ Ort]<br />
+            Deutschland<br />
+            E-Mail: <a href="mailto:hello@jume.app">hello@jume.app</a>
+          </p>
 
-      h2 {
-        margin-top: 28px;
-        margin-bottom: 10px;
-        font-size: 22px;
-      }
+          <h2>2. Übersicht der verarbeiteten Daten</h2>
+          <p>Im Rahmen der Nutzung dieser Website können folgende Daten verarbeitet werden:</p>
+          <ul>
+            <li>Server-Logdaten (IP-Adresse, Zeitstempel, Seitenanfragen) durch den Hosting-Anbieter</li>
+            <li>E-Mail-Adresse bei Newsletteranmeldung</li>
+            <li>Einwilligungsstatus für Cookies (gespeichert lokal im Browser)</li>
+            <li>Schriftdaten (IP-Adresse) bei Einwilligung in Google Fonts</li>
+          </ul>
 
-      p, li {
-        font-size: 17px;
-        line-height: 1.75;
-        color: var(--muted);
-      }
+          <h2>3. Hosting (Netlify)</h2>
+          <p>
+            Diese Website wird über <strong>Netlify</strong> (Netlify, Inc., 512 2nd St., Suite 200, San Francisco, CA 94107, USA) gehostet.
+            Beim Aufruf der Website werden automatisch Server-Logdaten erfasst — darunter deine IP-Adresse, Browsertyp, besuchte Seiten und Zeitstempel.
+            Netlify ist nach dem EU-US Data Privacy Framework zertifiziert.
+          </p>
+          <p>
+            Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einem sicheren und funktionsfähigen Betrieb der Website).
+          </p>
 
-      a {
-        color: var(--accent-2);
-      }
+          <h2>4. Google Fonts</h2>
+          <p>
+            Wenn du der Verwendung von Google Fonts zugestimmt hast, lädt diese Website Schriftarten vom Server von Google LLC (1600 Amphitheatre Parkway, Mountain View, CA 94043, USA). Dabei wird deine IP-Adresse an Google übermittelt.
+            Google ist nach dem EU-US Data Privacy Framework zertifiziert.
+            Weitere Informationen: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>.
+          </p>
+          <p>
+            Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (deine Einwilligung). Du kannst deine Einwilligung jederzeit widerrufen:
+          </p>
+          <p>
+            <button
+              onclick="if(window.jumeResetConsent)jumeResetConsent();else{try{localStorage.removeItem('jume_consent')}catch(e){}location.reload();}"
+              class="btn btn-primary btn-sm">
+              Cookie-Einstellungen ändern
+            </button>
+          </p>
 
-      ul {
-        padding-left: 22px;
-      }
-    </style>
-  </head>
-  <body>
-    <main class="card">
-      <h1>Datenschutzerklärung</h1>
+          <h2>5. Newsletter (Brevo)</h2>
+          <p>
+            Wenn du dich für unseren Newsletter anmeldest, wird deine <strong>E-Mail-Adresse</strong> an <strong>Brevo</strong> (Sendinblue GmbH, Köpenicker Str. 126, 10179 Berlin) übermittelt und dort gespeichert.
+            Das Formular nutzt das <strong>Double-Opt-In-Verfahren</strong>: Du erhältst eine Bestätigungs-E-Mail und wirst erst nach Bestätigung aufgenommen.
+          </p>
+          <p>
+            Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (deine Einwilligung).
+            Abmeldung jederzeit über den Abmeldelink in jedem Newsletter oder per E-Mail an <a href="mailto:hello@jume.app">hello@jume.app</a>.
+          </p>
+          <p>
+            Brevo-Datenschutz: <a href="https://www.brevo.com/de/legal/privacypolicy/" target="_blank" rel="noopener">brevo.com/de/legal/privacypolicy</a>
+          </p>
 
-      <h2>1. Verantwortliche Stelle</h2>
-      <p>
-        Verantwortlich für die Datenverarbeitung auf dieser Website ist:
-      </p>
-      <p>
-        Julia Cialkowski<br />
-        Calvinstraße 12<br />
-        44143 Dortmund<br />
-        Deutschland<br />
-        E-Mail:
-        <a href="mailto:info@jume.app">info@jume.app</a>
-      </p>
+          <h2>6. Lokaler Browserspeicher (localStorage)</h2>
+          <p>
+            Diese Website verwendet den lokalen Speicher deines Browsers für technisch notwendige Zwecke:
+          </p>
+          <ul>
+            <li><strong>Einwilligungsstatus</strong> (<code>jume_consent</code>): Speichert deine Cookie-Entscheidung. Kein Tracking, verbleibt lokal auf deinem Gerät.</li>
+            <li><strong>Newsletter-E-Mail-Vorschau</strong> (<code>jume_newsletter_email</code>): Nur wenn du im Formular eine E-Mail eingibst. Wird nicht an Server übertragen.</li>
+          </ul>
+          <p>
+            Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Speicherung deiner Einwilligungsentscheidung).
+          </p>
 
-      <h2>2. Hosting</h2>
-      <p>
-        Diese Website wird über Netlify bereitgestellt. Beim Aufruf der Website
-        können durch den Hosting-Anbieter technisch erforderliche Informationen
-        verarbeitet werden, insbesondere IP-Adresse, Datum und Uhrzeit des
-        Zugriffs, angeforderte Inhalte sowie technische Informationen zum
-        verwendeten Browser und Betriebssystem.
-      </p>
-      <p>
-        Die Verarbeitung erfolgt zum Zweck der sicheren und stabilen
-        Bereitstellung der Website.
-      </p>
+          <h2>7. Kein Tracking oder Analytics</h2>
+          <p>
+            Diese Website verwendet <strong>kein Google Analytics</strong>, kein Facebook-Pixel, keine Heatmaps und keine sonstigen Werbe- oder Tracking-Dienste. Es werden keine Nutzerprofile erstellt.
+          </p>
 
-      <h2>3. Newsletter</h2>
-      <p>
-        Auf dieser Website besteht die Möglichkeit, sich für den Newsletter von
-        Jume anzumelden. Dabei wird die von dir eingegebene E-Mail-Adresse zum
-        Zweck des Versands von Informationen rund um die App Jume verarbeitet.
-      </p>
-      <p>
-        Für den Versand und die Verwaltung des Newsletters wird der Dienst
-        Brevo verwendet. Die von dir im Formular eingegebenen Daten werden an
-        Brevo übermittelt und dort verarbeitet.
-      </p>
-      <p>
-        Die Anmeldung zum Newsletter erfolgt im
-        <strong>Double-Opt-in-Verfahren</strong>. Das bedeutet, dass du nach der
-        Anmeldung zunächst eine E-Mail erhältst, in der du deine Anmeldung über
-        einen Bestätigungslink bestätigen musst. Erst danach wird deine
-        Anmeldung wirksam.
-      </p>
-      <p>
-        Rechtsgrundlage für die Verarbeitung der Daten im Rahmen des
-        Newsletterversands ist deine Einwilligung gemäß Art. 6 Abs. 1 lit. a
-        DSGVO.
-      </p>
-      <p>
-        Du kannst deine Einwilligung jederzeit mit Wirkung für die Zukunft
-        widerrufen, zum Beispiel über den Abmeldelink im Newsletter oder per
-        E-Mail an
-        <a href="mailto:info@jume.app">info@jume.app</a>.
-      </p>
+          <h2>8. Deine Rechte</h2>
+          <p>Du hast nach der DSGVO folgende Rechte:</p>
+          <ul>
+            <li><strong>Auskunft</strong> (Art. 15) — Welche Daten werden über mich verarbeitet?</li>
+            <li><strong>Berichtigung</strong> (Art. 16) — Falsche Daten korrigieren lassen</li>
+            <li><strong>Löschung</strong> (Art. 17) — „Recht auf Vergessenwerden"</li>
+            <li><strong>Einschränkung</strong> (Art. 18) — Verarbeitung einschränken lassen</li>
+            <li><strong>Datenübertragbarkeit</strong> (Art. 20) — Daten in maschinenlesbarem Format erhalten</li>
+            <li><strong>Widerspruch</strong> (Art. 21) — Verarbeitung auf Basis berechtigter Interessen widersprechen</li>
+            <li><strong>Widerruf</strong> (Art. 7 Abs. 3) — Einwilligungen jederzeit für die Zukunft widerrufen</li>
+          </ul>
+          <p>
+            Kontakt zur Ausübung deiner Rechte: <a href="mailto:hello@jume.app">hello@jume.app</a>
+          </p>
 
-      <h2>4. Empfänger der Daten</h2>
-      <p>
-        Eine Weitergabe deiner personenbezogenen Daten erfolgt nur, soweit dies
-        für den Betrieb dieser Website und den Versand des Newsletters
-        erforderlich ist. Empfänger können insbesondere sein:
-      </p>
-      <ul>
-        <li>Netlify als Hosting-Anbieter</li>
-        <li>Brevo als Dienstleister für den Newsletterversand</li>
-      </ul>
+          <h2>9. Beschwerderecht</h2>
+          <p>
+            Du hast das Recht, bei einer Datenschutz-Aufsichtsbehörde Beschwerde einzulegen — insbesondere in dem Mitgliedstaat deines gewöhnlichen Aufenthalts, Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes.
+          </p>
 
-      <h2>5. Speicherdauer</h2>
-      <p>
-        Deine Daten werden nur so lange gespeichert, wie dies für die jeweiligen
-        Zwecke erforderlich ist oder gesetzliche Aufbewahrungspflichten
-        bestehen. Daten, die du für den Newsletter angegeben hast, werden
-        grundsätzlich bis zu deinem Widerruf beziehungsweise deiner Abmeldung
-        gespeichert.
-      </p>
+          <h2>10. Datenschutz in der jume App</h2>
+          <p>
+            Für die Verarbeitung personenbezogener Daten innerhalb der mobilen App (iOS / Android) gelten die Datenschutzhinweise, die du in den App-Store-Einträgen sowie innerhalb der App einsehen kannst.
+          </p>
 
-      <h2>6. Deine Rechte</h2>
-      <p>Du hast im Rahmen der gesetzlichen Vorschriften insbesondere das Recht:</p>
-      <ul>
-        <li>auf Auskunft über deine gespeicherten personenbezogenen Daten,</li>
-        <li>auf Berichtigung unrichtiger Daten,</li>
-        <li>auf Löschung deiner Daten,</li>
-        <li>auf Einschränkung der Verarbeitung,</li>
-        <li>auf Datenübertragbarkeit,</li>
-        <li>auf Widerruf erteilter Einwilligungen mit Wirkung für die Zukunft,</li>
-        <li>auf Beschwerde bei einer Datenschutz-Aufsichtsbehörde.</li>
-      </ul>
+          <h2>11. Änderungen dieser Erklärung</h2>
+          <p>
+            Diese Erklärung hat den Stand Mai 2026 und kann bei Weiterentwicklung der Website angepasst werden.
+            Die aktuelle Fassung ist stets unter <a href="https://jume.app/datenschutz.html">jume.app/datenschutz.html</a> abrufbar.
+          </p>
 
-      <h2>7. Keine Nutzung von Google Analytics / kein Tracking</h2>
-      <p>
-        Auf dieser Website werden derzeit keine Analyse- oder Tracking-Tools wie
-        Google Analytics eingesetzt.
-      </p>
+        </div>
+      </div>
+    </section>
+  </main>
 
-      <h2>8. Kontakt</h2>
-      <p>
-        Bei Fragen zum Datenschutz kannst du dich jederzeit per E-Mail an
-        <a href="mailto:info@jume.app">info@jume.app</a> wenden.
-      </p>
-
-      <p><a href="index.html">Zurück zur Startseite</a></p>
-    </main>
-  </body>
+  <div id="site-footer"></div>
+</body>
 </html>

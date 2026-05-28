@@ -61,6 +61,7 @@
                 .join("")}
               <a href="/impressum.html">Impressum</a>
               <a href="/datenschutz.html">Datenschutz</a>
+              <button onclick="if(window.jumeResetConsent)jumeResetConsent();else{try{localStorage.removeItem('jume_consent')}catch(e){}location.reload();}" style="background:none;border:none;cursor:pointer;font:inherit;font-size:inherit;color:inherit;padding:0;text-decoration:underline;text-underline-offset:2px;">Cookie-Einstellungen</button>
             </nav>
             <p class="footer-copy">© ${new Date().getFullYear()} jume · Träume festhalten, Muster verstehen.</p>
           </div>
