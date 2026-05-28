@@ -1,15 +1,15 @@
 (function () {
   const body = document.body;
-  const depth = body.dataset.depth || "";
   const active = body.dataset.active || "";
 
   const links = [
-    { key: "start",   href: `${depth}index.html`,              label: "Start" },
-    { key: "mond",    href: `${depth}mond/index.html`,          label: "Mondimpulse" },
-    { key: "glossar", href: `${depth}wissen/glossar/index.html`, label: "Glossar" },
+    { key: "start",   href: "/",                label: "Start" },
+    { key: "mond",    href: "/mond/",            label: "Mondimpulse" },
+    { key: "glossar", href: "/wissen/glossar/",  label: "Glossar" },
   ];
 
   // Logo: tries image first, falls back to styled text
+  const depth = body.dataset.depth || "";
   const logoHtml = `
     <img
       src="${depth}assets/images/jume-logo.png"
@@ -26,7 +26,7 @@
     headerTarget.innerHTML = `
       <header class="site-header">
         <div class="container header-inner">
-          <a class="brand" href="${depth}index.html" aria-label="jume Startseite">
+          <a class="brand" href="/" aria-label="jume Startseite">
             ${logoHtml}
           </a>
           <nav class="main-nav" aria-label="Hauptnavigation">
@@ -35,7 +35,7 @@
               .join("")}
           </nav>
           <div class="header-cta">
-            <a class="btn btn-primary btn-sm" href="${depth}index.html#newsletter">Newsletter</a>
+            <a class="btn btn-primary btn-sm" href="/#newsletter">Newsletter</a>
           </div>
         </div>
       </header>
@@ -59,8 +59,8 @@
               ${links
                 .map(link => `<a href="${link.href}">${link.label}</a>`)
                 .join("")}
-              <a href="${depth}impressum.html">Impressum</a>
-              <a href="${depth}datenschutz.html">Datenschutz</a>
+              <a href="/impressum.html">Impressum</a>
+              <a href="/datenschutz.html">Datenschutz</a>
             </nav>
             <p class="footer-copy">© ${new Date().getFullYear()} jume · Träume festhalten, Muster verstehen.</p>
           </div>

@@ -24,117 +24,142 @@
   <style>
     /* ── Quick-nav ── */
     .glossar-nav {
-      display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 0;
+      display: flex; flex-wrap: wrap; gap: 8px;
     }
     .glossar-nav a {
-      display: inline-block; padding: 8px 18px; border-radius: 50px;
-      font-size: 0.85rem; font-weight: 700;
-      background: rgba(255,255,255,0.6); border: 1.5px solid var(--border-warm);
+      display: inline-block; padding: 7px 16px; border-radius: 50px;
+      font-size: 0.82rem; font-weight: 700;
+      background: rgba(255,255,255,0.7); border: 1.5px solid var(--border-warm);
       color: var(--plum-muted); transition: all 0.15s; text-decoration: none !important;
+      white-space: nowrap;
     }
     .glossar-nav a:hover {
       background: var(--white); color: var(--plum); border-color: var(--peach-mid);
+      transform: translateY(-1px); box-shadow: var(--shadow-sm);
     }
 
-    /* ── Part divider ── */
-    .part-divider {
-      background: var(--gradient-hero);
-      border-top: 1px solid var(--border-warm);
-      border-bottom: 1px solid var(--border-warm);
-      padding: 40px 0;
+    /* ── Chapter header ── */
+    .glossar-chapter {
+      padding: 64px 0 0;
     }
-    .part-divider-inner {
-      display: flex; align-items: center; gap: 20px;
+    .glossar-chapter-header {
+      display: flex; flex-direction: column; gap: 10px; margin-bottom: 40px;
     }
-    .part-number {
-      width: 48px; height: 48px; border-radius: 50%;
-      background: var(--white); border: 1.5px solid var(--border-warm);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.1rem; font-weight: 800; color: var(--plum); flex-shrink: 0;
-      box-shadow: var(--shadow-sm);
+    .glossar-chapter-header h2 {
+      font-size: 2rem; margin: 0; color: var(--plum);
     }
-    .part-divider h2 { margin: 0 0 4px; font-size: 1.4rem; }
-    .part-divider p  { margin: 0; font-size: 0.9rem; color: var(--plum-muted); }
+    .glossar-chapter-header p {
+      margin: 0; font-size: 0.95rem; color: var(--plum-muted); max-width: 560px;
+    }
+    .chapter-accent {
+      display: flex; align-items: center; gap: 12px; margin-bottom: 4px;
+    }
+    .chapter-accent-line {
+      height: 3px; width: 36px; border-radius: 2px;
+      background: linear-gradient(90deg, var(--peach-mid), var(--rose-soft));
+    }
+    .chapter-accent span {
+      font-size: 0.75rem; font-weight: 800; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--plum-muted);
+    }
 
     /* ── Category cards ── */
     .category-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 16px;
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 16px; margin-bottom: 20px;
     }
     .category-card {
       background: var(--white); border: 1px solid var(--border-warm);
-      border-radius: var(--r-lg); padding: 22px 20px; box-shadow: var(--shadow-sm);
+      border-radius: var(--r-lg); padding: 24px 22px; box-shadow: var(--shadow-sm);
+      transition: box-shadow 0.15s, transform 0.15s;
+    }
+    .category-card:hover {
+      box-shadow: 0 6px 24px rgba(83,66,79,0.10); transform: translateY(-2px);
     }
     .category-card-top {
-      display: flex; align-items: center; gap: 12px; margin-bottom: 10px;
+      display: flex; align-items: center; gap: 14px; margin-bottom: 12px;
     }
     .category-emoji {
-      width: 40px; height: 40px; border-radius: 12px;
-      background: var(--blush); display: flex; align-items: center;
-      justify-content: center; font-size: 1.2rem; flex-shrink: 0;
+      width: 44px; height: 44px; border-radius: 14px;
+      background: linear-gradient(135deg, var(--blush), var(--peach));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; flex-shrink: 0;
     }
-    .category-card h3 { font-size: 0.95rem; margin: 0; color: var(--plum); }
-    .category-card .app-label {
-      font-size: 0.75rem; font-weight: 700; color: var(--plum-muted);
-      opacity: 0.6; letter-spacing: 0.04em; margin-top: 2px;
-    }
-    .category-card p { font-size: 0.87rem; color: var(--plum-muted); margin: 0; line-height: 1.6; }
+    .category-card h3 { font-size: 1rem; margin: 0; color: var(--plum); line-height: 1.3; }
+    .category-card p { font-size: 0.87rem; color: var(--plum-muted); margin: 0; line-height: 1.65; }
 
-    /* ── Motif group ── */
+    /* ── Motif group divider ── */
+    .motif-groups-section {
+      padding-top: 64px;
+    }
+    .motif-groups-intro {
+      margin-bottom: 48px;
+    }
+
     .motif-group {
-      padding: 48px 0 8px; scroll-margin-top: 80px;
+      padding: 0 0 56px; scroll-margin-top: 80px;
     }
     .motif-group-header {
-      display: flex; align-items: flex-start; gap: 16px; margin-bottom: 24px;
+      display: flex; align-items: flex-start; gap: 18px; margin-bottom: 24px;
     }
     .motif-group-icon {
-      width: 52px; height: 52px; border-radius: 16px; background: var(--blush);
+      width: 54px; height: 54px; border-radius: 18px;
+      background: linear-gradient(135deg, var(--blush), var(--peach));
       display: flex; align-items: center; justify-content: center;
-      font-size: 1.5rem; flex-shrink: 0;
+      font-size: 1.5rem; flex-shrink: 0; box-shadow: var(--shadow-sm);
     }
-    .motif-group-header h3 { font-size: 1.25rem; margin: 0 0 4px; }
-    .motif-group-header .app-badge {
-      display: inline-flex; align-items: center; gap: 5px;
-      background: var(--blush); color: var(--plum-mid);
-      font-size: 0.75rem; font-weight: 700; padding: 3px 10px;
-      border-radius: 50px; border: 1px solid var(--border-warm);
+    .motif-group-title h3 {
+      font-size: 1.25rem; margin: 0 0 6px; color: var(--plum);
     }
-    .motif-group-header p { margin: 8px 0 0; font-size: 0.88rem; color: var(--plum-muted); }
+    .motif-group-title p {
+      margin: 0; font-size: 0.88rem; color: var(--plum-muted); max-width: 520px;
+    }
 
     .motif-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
       gap: 12px;
     }
     .motif-card {
-      background: var(--white); border: 1px solid var(--border-warm);
-      border-radius: var(--r-md); padding: 16px 18px; box-shadow: var(--shadow-sm);
+      background: var(--blush-soft); border: 1px solid var(--border-warm);
+      border-radius: var(--r-md); padding: 16px 18px;
+      transition: background 0.15s, box-shadow 0.15s;
+    }
+    .motif-card:hover {
+      background: var(--white); box-shadow: var(--shadow-sm);
     }
     .motif-card-top {
       display: flex; align-items: center; gap: 8px; margin-bottom: 6px;
     }
     .motif-emoji { font-size: 1.1rem; line-height: 1; flex-shrink: 0; }
-    .motif-card strong { font-size: 0.92rem; color: var(--plum); }
+    .motif-card strong { font-size: 0.93rem; color: var(--plum); }
     .motif-in-app {
       display: inline-block; width: 6px; height: 6px; border-radius: 50%;
-      background: var(--peach-mid); margin-left: 4px; vertical-align: middle;
-      flex-shrink: 0;
+      background: var(--peach-mid); margin-left: 4px; vertical-align: middle; flex-shrink: 0;
     }
-    .motif-card p { font-size: 0.85rem; color: var(--plum-muted); margin: 0; line-height: 1.6; }
+    .motif-card p { font-size: 0.85rem; color: var(--plum-muted); margin: 0; line-height: 1.65; }
 
+    /* ── Legend ── */
     .motif-legend {
-      display: flex; align-items: center; gap: 6px;
-      font-size: 0.8rem; color: var(--plum-muted); margin-bottom: 32px;
+      display: inline-flex; align-items: center; gap: 7px;
+      font-size: 0.8rem; color: var(--plum-muted);
+      background: var(--white); border: 1px solid var(--border-warm);
+      border-radius: 50px; padding: 6px 14px; margin-bottom: 40px;
     }
-    .motif-legend .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--peach-mid); flex-shrink: 0; }
+    .motif-legend .dot {
+      width: 8px; height: 8px; border-radius: 50%; background: var(--peach-mid); flex-shrink: 0;
+    }
 
-    .section-divider {
-      border: none; border-top: 1px solid var(--border-warm); margin: 40px 0 0;
+    /* ── Group separator ── */
+    .motif-group + .motif-group {
+      border-top: 1px solid var(--border-warm);
+      padding-top: 56px;
     }
 
     @media (max-width: 600px) {
       .motif-grid { grid-template-columns: 1fr; }
       .category-grid { grid-template-columns: 1fr; }
-      .motif-group-header { flex-direction: column; gap: 10px; }
+      .motif-group-header { flex-direction: column; gap: 12px; }
+      .glossar-chapter-header h2 { font-size: 1.6rem; }
     }
   </style>
 </head>
@@ -152,7 +177,7 @@
           <p class="page-hero-sub">
             Was bedeutet es, wenn man fällt? Was sagen Zähne, Wasser oder Tiere über deine innere Welt?
             Dieses Glossar erklärt die <strong>5 Traumkategorien</strong> und
-            <strong>9 Motivgruppen</strong> aus der jume-App — mit ausführlichen Beschreibungen
+            <strong>9 Motivgruppen</strong> aus der jume-App — mit ausführlichen Erklärungen
             zu jedem Motiv. Als Orientierung, nicht als starre Deutungsschablone.
           </p>
         </div>
@@ -160,10 +185,10 @@
     </section>
 
     <!-- Quick-nav -->
-    <div style="background: var(--white); border-bottom: 1px solid var(--border-warm); padding: 20px 0;">
+    <div style="background: var(--white); border-bottom: 1px solid var(--border-warm); padding: 18px 0;">
       <div class="container">
         <nav class="glossar-nav" aria-label="Sprung zu Motivgruppe">
-          <a href="#kategorien">① Traumkategorien</a>
+          <a href="#kategorien">Traumkategorien</a>
           <a href="#angst">Angst &amp; Kontrolle</a>
           <a href="#koerper">Körper &amp; Identität</a>
           <a href="#beziehungen">Beziehungen</a>
@@ -177,43 +202,34 @@
       </div>
     </div>
 
-    <!-- ════════════════════════════════════════════
-         TEIL 1 — TRAUMKATEGORIEN
-    ════════════════════════════════════════════ -->
-    <div class="part-divider" id="kategorien">
+    <!-- ══════════════════════════════
+         TRAUMKATEGORIEN
+    ══════════════════════════════ -->
+    <section class="section section-white glossar-chapter" id="kategorien">
       <div class="container">
-        <div class="part-divider-inner">
-          <div class="part-number">①</div>
-          <div>
-            <h2>Traumkategorien</h2>
-            <p>Welcher Zustand beschreibt deinen Traum insgesamt am besten? In jume wählst du <strong>eine</strong> Kategorie pro Traum.</p>
+        <div class="glossar-chapter-header">
+          <div class="chapter-accent">
+            <div class="chapter-accent-line"></div>
+            <span>Traumkategorien</span>
           </div>
+          <h2>Welcher Typ war dein Traum?</h2>
+          <p>In der jume-App wählst du nach dem Aufwachen eine Kategorie pro Traum — sie beschreibt den Gesamtcharakter der Nacht.</p>
         </div>
-      </div>
-    </div>
 
-    <section class="section section-white" style="padding-top: 40px;">
-      <div class="container">
         <div class="category-grid">
 
           <div class="category-card">
             <div class="category-card-top">
               <div class="category-emoji">🌙</div>
-              <div>
-                <h3>Normaler Traum</h3>
-                <div class="app-label">in der App: „Normaler Traum"</div>
-              </div>
+              <h3>Normaler Traum</h3>
             </div>
-            <p>Ein gewöhnlicher Traum ohne starken Sondercharakter — kein Albtraum, keine bewusste Kontrolle, keine besondere Intensität. Er verläuft einfach. Die häufigste Kategorie. Trotzdem können auch normale Träume wertvolle Bilder oder Gefühle enthalten.</p>
+            <p>Ein gewöhnlicher Traum ohne starken Sondercharakter — kein Albtraum, keine bewusste Kontrolle, keine besondere Intensität. Er verläuft einfach. Die häufigste Kategorie. Auch normale Träume können wertvolle Bilder oder Stimmungen enthalten.</p>
           </div>
 
           <div class="category-card">
             <div class="category-card-top">
               <div class="category-emoji">🌘</div>
-              <div>
-                <h3>Albtraum</h3>
-                <div class="app-label">in der App: „Albtraum"</div>
-              </div>
+              <h3>Albtraum</h3>
             </div>
             <p>Ein Traum, der Angst, Bedrohung, Panik oder Ohnmacht auslöst — und dich oft aufwachen lässt. Albträume sind nicht „schlecht": Sie zeigen oft auf Themen, die im Wachleben noch keine Sprache gefunden haben. Häufiger in Stressphasen oder bei emotionaler Überlastung.</p>
           </div>
@@ -221,21 +237,15 @@
           <div class="category-card">
             <div class="category-card-top">
               <div class="category-emoji">✨</div>
-              <div>
-                <h3>Luzider Traum</h3>
-                <div class="app-label">in der App: „Luzider Traum"</div>
-              </div>
+              <h3>Luzider Traum</h3>
             </div>
-            <p>Du weißt während des Traums, dass du träumst — und hast dabei ein gewisses Maß an Bewusstsein oder sogar Kontrolle. Luzides Träumen kann trainiert werden und ermöglicht aktive Traumarbeit. Taucht häufiger nach Schlafunterbrechungen oder in bestimmten Tiefschlafphasen auf.</p>
+            <p>Du weißt während des Traums, dass du träumst — und hast dabei ein gewisses Maß an Bewusstsein oder sogar Kontrolle. Luzides Träumen kann trainiert werden und ermöglicht aktive Traumarbeit. Taucht häufiger nach Schlafunterbrechungen auf.</p>
           </div>
 
           <div class="category-card">
             <div class="category-card-top">
               <div class="category-emoji">🔁</div>
-              <div>
-                <h3>Wiederkehrender Traum</h3>
-                <div class="app-label">in der App: „Wiederkehrender Traum"</div>
-              </div>
+              <h3>Wiederkehrender Traum</h3>
             </div>
             <p>Dasselbe Muster, dieselbe Szene oder dasselbe Gefühl taucht regelmäßig auf — manchmal über Jahre. Wiederkehrende Träume weisen fast immer auf ein ungelöstes Thema hin, das nach Aufmerksamkeit fragt. Wenn das Thema bewusst angegangen wird, verschwinden solche Träume oft.</p>
           </div>
@@ -243,10 +253,7 @@
           <div class="category-card">
             <div class="category-card-top">
               <div class="category-emoji">💓</div>
-              <div>
-                <h3>Emotional intensiver Traum</h3>
-                <div class="app-label">in der App: „Emotional intensiver Traum"</div>
-              </div>
+              <h3>Emotional intensiver Traum</h3>
             </div>
             <p>Kein Albtraum im klassischen Sinn, aber emotional sehr stark geladen — voller Sehnsucht, Trauer, Freude, Verlust oder Liebe. Solche Träume wirken oft lange nach und hinterlassen ein Körpergefühl oder eine Stimmung, die den ganzen Tag anhält.</p>
           </div>
@@ -255,601 +262,612 @@
       </div>
     </section>
 
-    <!-- ════════════════════════════════════════════
-         TEIL 2 — TRAUMMOTIVE
-    ════════════════════════════════════════════ -->
-    <div class="part-divider" id="motive">
+    <!-- ══════════════════════════════
+         TRAUMMOTIVE
+    ══════════════════════════════ -->
+    <section class="section section-white motif-groups-section">
       <div class="container">
-        <div class="part-divider-inner">
-          <div class="part-number">②</div>
-          <div>
-            <h2>Traummotive</h2>
-            <p>Was kam in deinem Traum vor? In jume kannst du pro Traum <strong>mehrere Motive</strong> aus 9 Gruppen wählen — und im Verlauf Muster erkennen.</p>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <section class="section section-white" style="padding-top: 32px; padding-bottom: 0;">
-      <div class="container">
-        <div class="motif-legend">
-          <div class="dot"></div>
-          <span>Oranger Punkt = direkt in der jume-App auswählbar · Alle anderen sind zusätzliche Erklärungen</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── Angst & Kontrollverlust ── -->
-    <section class="section section-white motif-group" id="angst" style="padding-top: 0;">
-      <div class="container">
-        <div class="motif-group-header">
-          <div class="motif-group-icon">😨</div>
-          <div>
-            <h3>Angst &amp; Kontrollverlust</h3>
-            <span class="app-badge">📱 In der App</span>
-            <p>Diese Motive treten besonders häufig in Phasen auf, in denen du dich unter Druck, unsicher oder überfordert fühlst.</p>
-          </div>
-        </div>
-        <div class="motif-grid">
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">⬇️</span><strong>Fallen</strong><span class="motif-in-app" title="In der App"></span></div>
-            <p>Plötzlicher Kontrollverlust — das Gefühl, keinen Halt mehr zu haben. Eines der universell häufigsten Traummotive. Das Aufwachen beim Fallen (Hypnic Jerk) ist ein normaler Reflex beim Einschlafen.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🏃</span><strong>Verfolgt werden</strong><span class="motif-in-app"></span></div>
-            <p>Etwas jagt dich, und du kannst nicht entkommen. Fast immer steht die verfolgende Figur für etwas, dem du im Wachleben ausweichst: einem Gespräch, einer Emotion, einer Entscheidung.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">😨</span><strong>Panik</strong><span class="motif-in-app"></span></div>
-            <p>Überwältigende Angst ohne klar erkennbare Ursache — das Gefühl, handlungsunfähig zu sein, während etwas Bedrohliches geschieht. Oft verbunden mit Herzrasen und abruptem Aufwachen.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🗺️</span><strong>Sich verlaufen</strong><span class="motif-in-app"></span></div>
-            <p>Du suchst einen Ort, findest ihn nicht oder weißt plötzlich nicht mehr, wo du bist. Orientierungslosigkeit im Leben, eine unklare Entscheidung oder das Gefühl, den eigenen Weg verloren zu haben.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🔒</span><strong>Eingesperrt sein</strong><span class="motif-in-app"></span></div>
-            <p>Du kommst nicht heraus oder wirst festgehalten. Kann auf das Gefühl hinweisen, in einer Situation, Beziehung oder Lebensphase keine Handlungsfreiheit zu haben.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🫚</span><strong>Gelähmt sein</strong><span class="motif-in-app"></span></div>
-            <p>Du willst dich bewegen oder fliehen, aber dein Körper gehorcht nicht. Eine klassische Form der Schlafparalyse, die sich in Träume übertragen kann. Steht für Ohnmacht und Handlungsunfähigkeit.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">😶</span><strong>Nicht sprechen können</strong><span class="motif-in-app"></span></div>
-            <p>Du versuchst zu rufen, aber kein Ton kommt heraus. Oft für das Gefühl, nicht gehört zu werden oder sich in einer Situation nicht ausdrücken zu können.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">⏰</span><strong>Zu spät kommen</strong><span class="motif-in-app"></span></div>
-            <p>Du verpasst einen Zug, ein Flugzeug, eine Prüfung — obwohl du alles versucht hast. Klassisches Leistungsangst-Motiv in Phasen mit viel Verantwortung oder der Sorge, nicht zu genügen.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">📉</span><strong>Versagen</strong><span class="motif-in-app"></span></div>
-            <p>Du scheitert an etwas — einer Aufgabe, einer Prüfung, einer Erwartung. Häufig verbunden mit Bewertungsangst oder dem inneren Glaubenssatz, nicht gut genug zu sein.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">💨</span><strong>Fliehen</strong><span class="motif-in-app"></span></div>
-            <p>Du läufst weg — manchmal erfolgreich, manchmal nicht. Im Unterschied zu „Verfolgt werden" liegt der Fokus hier auf deiner eigenen Bewegung und dem Wunsch nach Entkommen.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🌀</span><strong>Kontrollverlust</strong><span class="motif-in-app"></span></div>
-            <p>Etwas gerät außer Kontrolle — ein Auto, eine Situation, Naturgewalten. Ein allgemeines Motiv für Lebensabschnitte, in denen du das Gefühl hast, dem Lauf der Dinge ausgeliefert zu sein.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🌊</span><strong>Von etwas Großem überwältigt werden</strong></div>
-            <p>Eine Welle, Dunkelheit, Menschenmenge — etwas Größeres als du rollt auf dich zu. Steht für das Gefühl, einer Situation oder Emotion nicht gewachsen zu sein.</p>
-          </div>
-        </div>
-        <hr class="section-divider">
-      </div>
-    </section>
-
-    <!-- ── Körper & Identität ── -->
-    <section class="section section-white motif-group" id="koerper" style="padding-top: 0;">
-      <div class="container">
-        <div class="motif-group-header">
-          <div class="motif-group-icon">🦷</div>
-          <div>
-            <h3>Körper &amp; Identität</h3>
-            <span class="app-badge">📱 In der App</span>
-            <p>Diese Motive kreisen um Selbstbild, Gesundheit, Verletzlichkeit und die Frage: Wer bin ich eigentlich?</p>
-          </div>
-        </div>
-        <div class="motif-grid">
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🦷</span><strong>Zähne fallen aus</strong><span class="motif-in-app"></span></div>
-            <p>Das wohl bekannteste Traummotiv weltweit. Verbunden mit Verlustangst, Unsicherheit über das eigene Erscheinungsbild und Kontrollverlust. Manchmal auch das Gefühl, sich nicht klar ausdrücken zu können. Auch körperliches Zähneknirschen kann Zahntäume auslösen.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">💇</span><strong>Haare verlieren</strong><span class="motif-in-app"></span></div>
-            <p>Ähnlich wie Zahnverlust: Haare stehen für Stärke, Vitalität und Selbstbild. Ihr Verlust im Traum kann mit Kontrollverlust, körperlicher Erschöpfung oder der Angst, an Ausstrahlung oder Einfluss zu verlieren, verbunden sein.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🩹</span><strong>Verletzung oder Krankheit</strong><span class="motif-in-app"></span></div>
-            <p>Du bist verletzt oder ernsthaft krank — oder jemand anderes. Kann auf körperliche Erschöpfung, emotionalen Schmerz oder eine innere Verletzlichkeit hinweisen, die du im Wachleben noch nicht vollständig anerkannt hast.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🪞</span><strong>Spiegel oder anderes Aussehen</strong><span class="motif-in-app"></span></div>
-            <p>Du siehst dich anders als im Wachleben — jünger, älter, entstellt oder schöner. Berührt Themen rund um Identität, Selbstbild und die Frage, wie andere dich wahrnehmen oder wie du dich selbst siehst.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">😳</span><strong>Nackt sein</strong><span class="motif-in-app"></span></div>
-            <p>Du bist nackt — und niemand sonst. Ein Motiv für Verletzlichkeit, entblößt oder bewertet werden. Manchmal auch befreiend: das Ablegen aller Masken.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🔇</span><strong>Stimme verlieren</strong><span class="motif-in-app"></span></div>
-            <p>Du versuchst zu reden oder zu singen, aber deine Stimme versagt. Eng verwandt mit „Nicht sprechen können" — aber hier liegt der Fokus auf dem Verlust einer Fähigkeit, die sonst selbstverständlich ist.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🦋</span><strong>Körper verwandelt sich</strong><span class="motif-in-app"></span></div>
-            <p>Du wirst zu etwas oder jemandem anderem — ein Tier, eine andere Person, etwas Unbekanntes. Ein starkes Bild für innere Transformation, die bereits im Gange ist.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🤰</span><strong>Schwangerschaft</strong><span class="motif-in-app"></span></div>
-            <p>Selten eine wörtliche Vorahnung — häufiger ein Bild für etwas, das in dir entsteht: ein Projekt, eine neue Phase, ein Teil von dir, der noch nicht fertig entwickelt ist.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">👶</span><strong>Baby oder Kind</strong><span class="motif-in-app"></span></div>
-            <p>Oft ein Symbol für ein jüngeres Ich, für Verletzlichkeit, Unschuld oder etwas, das noch Fürsorge braucht. Bei Eltern kann es auch direkte Verarbeitung von elterlichen Sorgen sein.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🎭</span><strong>Doppelgänger / zweites Ich</strong></div>
-            <p>Du begegnest dir selbst. Ein besonders intensives Motiv für innere Spaltung, unterdrückte Anteile oder die Frage nach der eigenen Identität. Was macht dein Doppelgänger, das du im Wachleben nicht tust?</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🧟</span><strong>Altern / sich körperlich verändern</strong></div>
-            <p>Du siehst dich plötzlich viel älter oder jünger — oft verbunden mit dem Gefühl von Zeitdruck, Vergänglichkeit oder dem Wunsch, eine bestimmte Lebensphase zurückzuholen oder loszulassen.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">👻</span><strong>Unsichtbar sein</strong></div>
-            <p>Niemand sieht oder hört dich. Ein Spiegel für das Gefühl im Wachleben, übersehen, ignoriert oder nicht ernst genommen zu werden.</p>
-          </div>
-        </div>
-        <hr class="section-divider">
-      </div>
-    </section>
-
-    <!-- ── Beziehungen & Menschen ── -->
-    <section class="section section-white motif-group" id="beziehungen" style="padding-top: 0;">
-      <div class="container">
-        <div class="motif-group-header">
-          <div class="motif-group-icon">💔</div>
-          <div>
-            <h3>Beziehungen &amp; Menschen</h3>
-            <span class="app-badge">📱 In der App</span>
-            <p>Menschen in Träumen repräsentieren oft Teile von uns selbst — oder stehen für Themen, die mit diesen Menschen verbunden sind.</p>
-          </div>
-        </div>
-        <div class="motif-grid">
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">💔</span><strong>Ex-Partner</strong><span class="motif-in-app"></span></div>
-            <p>Selten ein Zeichen, dass du sie vermisst. Ex-Partner stehen im Traum oft für ein Thema dieser Beziehung: Sicherheit, Freiheit, Vertrauen, Verlust. Der Traum dreht sich weniger um die Person als um das, wofür sie steht.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">😤</span><strong>Streit</strong><span class="motif-in-app"></span></div>
-            <p>Unausgesprochene Konflikte oder ungelöste Gefühle gegenüber dieser Person — oder einem Teil von dir, den sie repräsentiert — suchen im Traum Ausdruck.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🌫️</span><strong>Fremde Person</strong><span class="motif-in-app"></span></div>
-            <p>Du bist mit jemandem zusammen, den du nicht kennst — aber im Traum sehr vertraut mit. Solche Figuren repräsentieren oft Teile von dir selbst oder Qualitäten, die du in dir entwickelst.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">👧</span><strong>Kindheitsperson</strong><span class="motif-in-app"></span></div>
-            <p>Eine Person aus deiner Kindheit — oft eine, die prägend war. Solche Träume laden dazu ein, Kindheitsmuster, frühe Erfahrungen oder Beziehungsdynamiken zu betrachten, die noch wirksam sind.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">😢</span><strong>Jemanden verlieren</strong><span class="motif-in-app"></span></div>
-            <p>Jemand ist plötzlich weg — du findest ihn nicht mehr, verlierst ihn aus den Augen oder er verschwindet. Oft verbunden mit Verlustangst, Trauer oder dem Wunsch nach mehr Nähe in einer Beziehung.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🤝</span><strong>Wiedersehen</strong><span class="motif-in-app"></span></div>
-            <p>Du triffst jemanden wieder, den du lange nicht gesehen hast. Oft verbunden mit Sehnsucht, Verarbeitung oder dem Wunsch nach Verbindung mit dieser Person oder dem, was sie verkörpert.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">💛</span><strong>Nähe oder Liebe</strong><span class="motif-in-app"></span></div>
-            <p>Intensive Gefühle von Nähe, Verbundenheit oder Verliebtheit. Oft weniger über eine reale Person, sondern über ein Bedürfnis nach Gesehen-werden oder tiefer Verbindung — zu sich selbst oder zu anderen.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">👩</span><strong>Mutter</strong><span class="motif-in-app"></span></div>
-            <p>Die Mutter im Traum steht häufig für Geborgenheit, Fürsorge, Heimat — aber auch für Abhängigkeit, Kontrolle oder unverarbeitete Kindheitserfahrungen. Wie verhältst du dich zu ihr im Traum?</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">👨</span><strong>Vater</strong><span class="motif-in-app"></span></div>
-            <p>Der Vater steht oft für Autorität, Regeln, Schutz oder Strenge. Träume mit dem Vater kreisen häufig um Leistung, Erwartungen oder die Suche nach Anerkennung.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">👫</span><strong>Freunde</strong><span class="motif-in-app"></span></div>
-            <p>Enge Freunde im Traum können wirkliche Beziehungen spiegeln oder symbolisch für bestimmte Qualitäten stehen, die du mit ihnen verbindest: Leichtigkeit, Loyalität, Humor, Sicherheit.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">👨‍👩‍👧</span><strong>Familie</strong><span class="motif-in-app"></span></div>
-            <p>Familiäre Dynamiken im Traum spiegeln oft tiefe Prägungen und frühe Beziehungsmuster wider. Welche Rolle nimmst du in der Familie des Traums ein?</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">💍</span><strong>Hochzeit</strong><span class="motif-in-app"></span></div>
-            <p>Ein Bild für Vereinigung, Verpflichtung und Übergang. Nicht unbedingt wörtlich: Hochzeiten im Traum stehen häufig für innere Verbindung zweier Anteile in dir oder eine tiefgreifende Entscheidung.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🕊️</span><strong>Verstorbene Person</strong></div>
-            <p>Du begegnest jemandem, der verstorben ist — oft sehr lebendig und real. Häufig zur Trauerverarbeitung, aber auch als tiefe innere Begegnung erlebt. Viele berichten danach von Ruhe und Verbundenheit.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🎤</span><strong>Berühmte Person</strong></div>
-            <p>Träume von Berühmtheiten haben kaum etwas mit der Person selbst zu tun. Sie stehen meist für Qualitäten, die du bewunderst oder dir wünschst: Kreativität, Mut, Stärke, Sichtbarkeit.</p>
-          </div>
-        </div>
-        <hr class="section-divider">
-      </div>
-    </section>
-
-    <!-- ── Tod & Transformation ── -->
-    <section class="section section-white motif-group" id="tod" style="padding-top: 0;">
-      <div class="container">
-        <div class="motif-group-header">
-          <div class="motif-group-icon">💀</div>
-          <div>
-            <h3>Tod &amp; Transformation</h3>
-            <span class="app-badge">📱 In der App</span>
-            <p>Tod im Traum ist fast nie wörtlich — er steht fast immer für Übergang, Abschluss und Wandel.</p>
-          </div>
-        </div>
-        <div class="motif-grid">
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">💀</span><strong>Tod</strong><span class="motif-in-app"></span></div>
-            <p>Meist kein Omen, sondern ein Symbol für das Ende einer Phase oder das Absterben eines alten Selbst. Fast immer ein Zeichen für Veränderung — nicht für Verlust.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">⚰️</span><strong>Beerdigung</strong><span class="motif-in-app"></span></div>
-            <p>Ein Bild für bewusstes Loslassen, Abschluss oder Trauerarbeit — nicht unbedingt über eine Person, sondern über eine Phase, eine Hoffnung oder eine Version von dir selbst.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">👋</span><strong>Abschied</strong><span class="motif-in-app"></span></div>
-            <p>Du verabschiedest dich von jemandem — endgültig oder temporär. Oft verbunden mit Trauer, dem Loslassen von Dingen, die waren, oder dem Ende einer Lebensphase.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">👻</span><strong>Geister</strong><span class="motif-in-app"></span></div>
-            <p>Etwas Vergangenes ist noch präsent — eine Person, eine Erinnerung, ein ungelöstes Thema. Geister im Traum sind fast nie bedrohlich, wenn man sie betrachtet. Sie wollen etwas mitteilen.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🌑</span><strong>Schattenfigur</strong><span class="motif-in-app"></span></div>
-            <p>Eine dunkle, konturenlose Gestalt, die sich bewegt oder beobachtet. In der Jung'schen Psychologie der „Schatten" — unterdrückte Anteile der Persönlichkeit, die nach Integration suchen.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🌍</span><strong>Weltuntergang</strong><span class="motif-in-app"></span></div>
-            <p>Die Welt geht unter — Apokalypse, Katastrophe, das Ende von allem. Weniger wörtlich als Ausdruck eines Gefühls, dass sich gerade fundamental etwas verändert. Oft in Phasen großer Lebensumbrüche.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🌱</span><strong>Wiedergeburt</strong><span class="motif-in-app"></span></div>
-            <p>Nach Dunkelheit kommt Licht, nach Ende kommt Anfang. Ein klares Bild für innere Erneuerung, Neubeginn und das Entstehen von etwas Neuem aus dem Alten.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🩸</span><strong>Blut</strong></div>
-            <p>Bedeutung je nach Kontext: Verletzung, Lebensenergie, Leidenschaft oder Verlust. Ein bisschen Blut ist oft weniger beunruhigend als viel. Steht manchmal für emotionalen Schmerz, manchmal für Kraft.</p>
-          </div>
-        </div>
-        <hr class="section-divider">
-      </div>
-    </section>
-
-    <!-- ── Freiheit & Kontrolle ── -->
-    <section class="section section-white motif-group" id="freiheit" style="padding-top: 0;">
-      <div class="container">
-        <div class="motif-group-header">
-          <div class="motif-group-icon">🚀</div>
-          <div>
-            <h3>Freiheit &amp; Kontrolle</h3>
-            <span class="app-badge">📱 In der App</span>
-            <p>Diese Motive fühlen sich oft kraftvoll, weit oder magisch an — und gehören zu den schönsten Träumen.</p>
-          </div>
-        </div>
-        <div class="motif-grid">
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🦅</span><strong>Fliegen</strong><span class="motif-in-app"></span></div>
-            <p>Das klassische Freiheitsmotiv. Du hebst vom Boden ab — manchmal mühelos, manchmal mit Anstrengung. Steht für Leichtigkeit, das Überwinden von Grenzen und Perspektivwechsel. Wie du fliegst, sagt oft viel aus.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">☁️</span><strong>Schweben</strong><span class="motif-in-app"></span></div>
-            <p>Sanfter als Fliegen — du schwebst ohne aktive Steuerung. Steht für inneren Frieden, Loslassen oder das Ruhen im Prozess. Manchmal auch Dissoziation: leicht über Dinge hinweggleiten, ohne wirklich geerdet zu sein.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">⚡</span><strong>Superkräfte</strong><span class="motif-in-app"></span></div>
-            <p>Du kannst fliegen, telekinetisch bewegen, heilen oder bist unbesiegbar. Ein Wunsch nach Handlungsmacht und Stärke — häufig in Phasen, in denen du dich machtlos oder eingeschränkt fühlst.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🔮</span><strong>Kontrolle über Umgebung</strong><span class="motif-in-app"></span></div>
-            <p>Du kannst die Traumwelt gezielt formen, Dinge herbeirufen oder verändern. Oft ein Zeichen für luzides Träumen oder das Wachsen von Selbstwirksamkeit im Wachleben.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">👻</span><strong>Unsichtbar sein</strong><span class="motif-in-app"></span></div>
-            <p>Du bist für andere unsichtbar — diesmal nicht bedrohlich, sondern befreiend. Manchmal ein Wunsch nach Rückzug, manchmal Beobachter sein ohne Bewertung.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">⚡</span><strong>Teleportation</strong><span class="motif-in-app"></span></div>
-            <p>Du bewegst dich augenblicklich von Ort zu Ort. Kann für den Wunsch nach schnellen Lösungen stehen oder die Fähigkeit, Hindernisse zu überspringen.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🧱</span><strong>Durch Wände gehen</strong><span class="motif-in-app"></span></div>
-            <p>Du passierst Hindernisse, die anderen versperrt sind. Ein starkes Freiheitsbild — Grenzen, die für andere gelten, gelten für dich nicht. Oft verbunden mit einem Gefühl der Überlegenheit oder Befreiung.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🚀</span><strong>Im Weltraum sein</strong></div>
-            <p>Du schwebst zwischen Sternen oder siehst die Erde von oben. Verbunden mit Suche nach Bedeutung und dem Gefühl, klein und groß zugleich zu sein. Ein tiefer Wunsch nach Weite und Freiheit.</p>
-          </div>
-        </div>
-        <hr class="section-divider">
-      </div>
-    </section>
-
-    <!-- ── Natur & Elemente ── -->
-    <section class="section section-white motif-group" id="natur" style="padding-top: 0;">
-      <div class="container">
-        <div class="motif-group-header">
-          <div class="motif-group-icon">🌊</div>
-          <div>
-            <h3>Natur &amp; Elemente</h3>
-            <span class="app-badge">📱 In der App</span>
-            <p>Wasser, Feuer, Erde und Luft erscheinen in Träumen mit überraschender Häufigkeit — jedes Element trägt eine eigene emotionale Qualität.</p>
-          </div>
-        </div>
-        <div class="motif-grid">
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">💧</span><strong>Wasser</strong><span class="motif-in-app"></span></div>
-            <p>Eines der bedeutungsreichsten Traummotive. Steht für das Unbewusste, den Gefühlsfluss und emotionale Tiefen. Klares Wasser = Klarheit, trübes = Verwirrung, stürmisches = Überwältigung. Wie verhältst du dich zum Wasser?</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🌊</span><strong>Meer oder Ozean</strong><span class="motif-in-app"></span></div>
-            <p>Das Meer steht für das Unbewusste in seiner ganzen Tiefe — unendlich, manchmal ruhig, manchmal stürmisch. An der Küste zu stehen bedeutet oft, an einer Schwelle zu stehen.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🌊</span><strong>Flut</strong><span class="motif-in-app"></span></div>
-            <p>Das Wasser steigt oder eine Welle rollt heran. Klassisches Überwältigungsmotiv — eine Emotion oder Situation, auf die du dich nicht vorbereitet fühlst. Häufig in Phasen emotionaler Überforderung.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🔥</span><strong>Feuer</strong><span class="motif-in-app"></span></div>
-            <p>Kann Leidenschaft, Zerstörung, Transformation oder Wärme bedeuten. Ein kontrollierbares Feuer steht für innere Energie, ein unkontrollierbares für Wut oder Verlust.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🌧️</span><strong>Regen</strong><span class="motif-in-app"></span></div>
-            <p>Regen kann reinigend und befreiend wirken — oder schwer und traurig. Warmer Regen steht oft für emotionale Reinigung, kalter für Kummer oder innere Leere.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">❄️</span><strong>Schnee</strong><span class="motif-in-app"></span></div>
-            <p>Stille, Kälte, Reinheit — oder Erstarrung. Schnee kann für innere Ruhe stehen, aber auch für emotionale Distanz oder das Einfrieren von Gefühlen.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">⛈️</span><strong>Sturm</strong><span class="motif-in-app"></span></div>
-            <p>Innere Spannungen, aufgeladene Emotionen oder ein bevorstehender Konflikt. Ein Sturm, der sich auflöst, kann sehr befreiend wirken — wie die notwendige Entladung nach langer Spannung.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🌲</span><strong>Wald</strong><span class="motif-in-app"></span></div>
-            <p>Der Wald steht für das Unbewusste und Unkontrollierbare — aber auch für Schutz und Geborgenheit. Sich zu verlaufen ist ein häufiges Motiv; ein lichter Wald symbolisiert Klarheit.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">⛰️</span><strong>Berge</strong><span class="motif-in-app"></span></div>
-            <p>Ziele, Herausforderungen, Perspektive. Einen Berg erklimmen steht für Ehrgeiz oder Überwindung. Von einem Gipfel zu stehen für Klarheit und weiten Blick. Nicht vorankommen am Berg für Stillstand.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🌙</span><strong>Mond</strong><span class="motif-in-app"></span></div>
-            <p>Der Mond steht für das Unbewusste, Intuition, das Feminine und Zyklen. Ein leuchtender Vollmond kann Klarheit und Intensität bedeuten, ein verhüllter Mond Geheimnisse oder das Verborgene.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">☀️</span><strong>Himmel</strong><span class="motif-in-app"></span></div>
-            <p>Offener Himmel steht für Möglichkeiten, Freiheit und Transzendenz. Ein bedeckter oder bedrohlicher Himmel für Unterdrückung oder das Gefühl, dass etwas im Kommen ist.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🌑</span><strong>Dunkelheit</strong><span class="motif-in-app"></span></div>
-            <p>Tiefe Dunkelheit, in der du nichts siehst. Kann Unsicherheit, das Unbekannte oder das Unbewusste symbolisieren. Manchmal beklemmend, manchmal schützend wie ein Mantel.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">✨</span><strong>Licht</strong><span class="motif-in-app"></span></div>
-            <p>Plötzliches Licht, leuchtende Erscheinungen oder Strahlen. Steht für Erkenntnis, Hoffnung, Erleuchtung oder spirituelle Erfahrung. In Albträumen kann Licht rettend sein.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🌍</span><strong>Erdbeben / Erdrisse</strong></div>
-            <p>Der Boden bricht auf. Ein starkes Bild für das Gefühl, dass etwas Fundamentales erschüttert wird: Sicherheit, Beziehungen, Identität oder Werte.</p>
-          </div>
-        </div>
-        <hr class="section-divider">
-      </div>
-    </section>
-
-    <!-- ── Alltag & Bewegung ── -->
-    <section class="section section-white motif-group" id="alltag" style="padding-top: 0;">
-      <div class="container">
-        <div class="motif-group-header">
-          <div class="motif-group-icon">🏃</div>
-          <div>
-            <h3>Alltag &amp; Bewegung</h3>
-            <span class="app-badge">📱 In der App</span>
-            <p>Alltägliche Situationen, die sich im Traum seltsam verzerren — oft ein Spiegel für Druck, Leistungsangst oder das Gefühl, nicht voranzukommen.</p>
-          </div>
-        </div>
-        <div class="motif-grid">
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🐌</span><strong>Rennen, aber langsam</strong><span class="motif-in-app"></span></div>
-            <p>Du versuchst schnell zu rennen, aber dein Körper bewegt sich wie in Zeitlupe. Eines der häufigsten Stressmotive — das Gefühl, sich zu bemühen, aber nicht wirklich vorwärtszukommen.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🚗</span><strong>Fahrzeug außer Kontrolle</strong><span class="motif-in-app"></span></div>
-            <p>Das Auto, der Bus, der Zug fährt ohne dein Zutun oder du kannst nicht bremsen. Ein klassisches Kontrollverlust-Motiv für das Gefühl, das eigene Leben nicht mehr steuern zu können.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🚂</span><strong>Zug oder Flug verpassen</strong><span class="motif-in-app"></span></div>
-            <p>Du kommst zu spät, der Zug fährt gerade ab. Eng verwandt mit „Zu spät kommen" — die Angst, eine Gelegenheit zu verpassen oder nicht dort zu sein, wo du sein solltest.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">📝</span><strong>Schule oder Prüfung</strong><span class="motif-in-app"></span></div>
-            <p>Du sitzt in einer Prüfung, auf die du nicht vorbereitet bist — oder du hast alles vergessen. Bewertungsangst und das Gefühl, nicht zu genügen. Taucht häufig noch jahrzehntelang nach der Schulzeit auf.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">💼</span><strong>Arbeit oder Büro</strong><span class="motif-in-app"></span></div>
-            <p>Du bist auf der Arbeit — meistens in einer unangenehmen Situation. Verarbeitung von Arbeitsstress, Hierarchiefragen oder unerledigten Aufgaben.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">📱</span><strong>Telefon oder Nachricht</strong><span class="motif-in-app"></span></div>
-            <p>Du kannst nicht erreichbar sein, ein wichtiger Anruf kommt nicht durch oder du kannst die Nummer nicht wählen. Oft verbunden mit dem Gefühl, Verbindung zu verlieren oder nicht kommunizieren zu können.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">✈️</span><strong>Flughafen</strong><span class="motif-in-app"></span></div>
-            <p>Übergangsraum par excellence. Aufbruch, Warten, Abschied — oder das Verpassen des Flugs. Steht für Übergänge im Leben, das Stehen vor einer neuen Phase und manchmal die Angst vor dem Loslassen.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🔄</span><strong>Im Kreis laufen</strong><span class="motif-in-app"></span></div>
-            <p>Du läufst, aber kommst nirgends an — der Weg führt immer wieder zum selben Punkt zurück. Ein Bild für ein Problem, das sich dreht, oder eine Situation ohne klaren Ausweg.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🧱</span><strong>Nicht vorankommen</strong><span class="motif-in-app"></span></div>
-            <p>Du versuchst etwas zu tun, aber es geht einfach nicht voran — Hindernisse tauchen auf, oder die Umgebung verhindert es. Übertragung des Gefühls von Stagnation auf die Traumwelt.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🚦</span><strong>Verkehr und Stau</strong></div>
-            <p>Du stehst im Stau oder kommst durch den Verkehr nicht durch. Ähnlich wie „Nicht vorankommen" — Frustration über äußere Umstände, die deinen Fortschritt behindern.</p>
-          </div>
-        </div>
-        <hr class="section-divider">
-      </div>
-    </section>
-
-    <!-- ── Orte & Räume ── -->
-    <section class="section section-white motif-group" id="orte" style="padding-top: 0;">
-      <div class="container">
-        <div class="motif-group-header">
-          <div class="motif-group-icon">🏠</div>
-          <div>
-            <h3>Orte &amp; Räume</h3>
-            <span class="app-badge">📱 In der App</span>
-            <p>Wo du im Traum bist, ist oft genauso bedeutsam wie das Geschehen selbst.</p>
-          </div>
-        </div>
-        <div class="motif-grid">
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🏠</span><strong>Haus oder Wohnung</strong><span class="motif-in-app"></span></div>
-            <p>Das Haus steht im Traum fast immer für die Psyche selbst. Verschiedene Räume = verschiedene Aspekte der Persönlichkeit. In welchem Raum bist du? Was findest du dort?</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🚪</span><strong>Unbekanntes Zimmer</strong><span class="motif-in-app"></span></div>
-            <p>In einem bekannten Haus entdeckst du einen Raum, von dem du nicht wusstest, dass er existiert. Ein wunderschönes Symbol für neue innere Potenziale und noch unentdeckte Teile der Persönlichkeit.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">⬇️</span><strong>Keller</strong><span class="motif-in-app"></span></div>
-            <p>Der Keller steht klassisch für das Unbewusste, für Dinge, die „weggepackt" wurden — verdrängte Gefühle, alte Erinnerungen. Angst vor dem Keller spiegelt oft Angst vor dem, was dort liegt.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🪜</span><strong>Treppen</strong><span class="motif-in-app"></span></div>
-            <p>Treppen hinauf stehen für Aufstieg, Ambitionen, Wachstum. Treppen hinunter für Abstieg, das Hinabsteigen ins Unbewusste. Was passiert auf der Treppe im Traum?</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">📦</span><strong>Aufzug</strong><span class="motif-in-app"></span></div>
-            <p>Steckenbleiben im Aufzug, unkontrolliertes Hochfahren oder ein Absturz — Aufzüge im Traum stehen für Kontrolle über Auf- und Abstieg, für berufliche oder soziale Bewegung.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🌀</span><strong>Labyrinth</strong><span class="motif-in-app"></span></div>
-            <p>Gänge ohne Ausweg, die immer wieder zu demselben Punkt führen. Ein starkes Symbol für ein Problem ohne klare Lösung — oder eine Situation, in der sich der Ausweg verbirgt.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🚪</span><strong>Tür oder verschlossene Tür</strong><span class="motif-in-app"></span></div>
-            <p>Türen stehen für Übergänge und Möglichkeiten. Eine verschlossene Tür symbolisiert etwas Unerreichbares oder Unzugängliches. Was liegt hinter der Tür? Willst du sie öffnen?</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🏨</span><strong>Hotel</strong><span class="motif-in-app"></span></div>
-            <p>Ein vorübergehender Aufenthaltsort — du bist hier auf Zeit, nicht zu Hause. Steht oft für Übergangsphasen im Leben, das Gefühl der Vorläufigkeit oder noch nicht angekommen zu sein.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🌉</span><strong>Brücke</strong><span class="motif-in-app"></span></div>
-            <p>Eine Verbindung zwischen zwei Zuständen, Orten oder Phasen. Eine Brücke zu überqueren steht für den Übergang vom Alten ins Neue. Eine brechende Brücke für Angst vor diesem Übergang.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🌆</span><strong>Fremde Stadt</strong><span class="motif-in-app"></span></div>
-            <p>Du bist irgendwo, das du nicht kennst, aber als bedeutsam erlebst. Neue Orte im Traum können innere Möglichkeitsräume symbolisieren — noch unbekannte Lebensbereiche, die du anfängst zu erkunden.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🕌</span><strong>Sakraler Ort (Kirche, Tempel …)</strong></div>
-            <p>Ein Ort der Stille, der Spiritualität oder des Rückzugs. Steht oft für die Suche nach Bedeutung, für tiefe innere Ruhe oder für die Auseinandersetzung mit großen Fragen.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🏫</span><strong>Das Elternhaus</strong></div>
-            <p>Zurück im Haus der Kindheit — vertraut, aber oft verändert. Steht für frühe Prägungen, das innere Kind und die Auseinandersetzung mit der Vergangenheit. Neue Räume im bekannten Haus weisen auf bisher unentdeckte innere Anteile hin.</p>
-          </div>
-        </div>
-        <hr class="section-divider">
-      </div>
-    </section>
-
-    <!-- ── Tiere & Wesen ── -->
-    <section class="section section-white motif-group" id="tiere" style="padding-top: 0; padding-bottom: 48px;">
-      <div class="container">
-        <div class="motif-group-header">
-          <div class="motif-group-icon">🐍</div>
-          <div>
-            <h3>Tiere &amp; Wesen</h3>
-            <span class="app-badge">📱 In der App</span>
-            <p>Tiere repräsentieren Instinkte, Ängste, Stärken oder unbewusste Kräfte. Das Verhalten des Tieres — und wie du damit umgehst — ist oft bedeutsamer als das Tier selbst.</p>
-          </div>
-        </div>
-        <div class="motif-grid">
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🐕</span><strong>Hund</strong><span class="motif-in-app"></span></div>
-            <p>Loyalität, Treue, bedingungslose Zuneigung. Ein aggressiver Hund kann für einen bedrohten Schutzinstinkt stehen, ein verspielter für Lebensfreude und unkomplizierte Verbundenheit.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🐱</span><strong>Katze</strong><span class="motif-in-app"></span></div>
-            <p>Unabhängigkeit, Intuition, das Geheimnisvolle. Eine bedrohliche Katze kann für unkontrollierte Impulse stehen, eine verspielte für Leichtigkeit. Katzen gelten in vielen Kulturen als Verbindung zur Traumwelt.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🐍</span><strong>Schlange</strong><span class="motif-in-app"></span></div>
-            <p>Eines der vieldeutigsten Tiere im Traum: Heilung, Weisheit, Transformation (Häutung) — aber auch Verrat, Gefahr oder Verführung. Wie verhältst du dich zur Schlange im Traum?</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🕷️</span><strong>Spinne</strong><span class="motif-in-app"></span></div>
-            <p>Kreativität, das Weben von Strukturen und Netzwerken — aber auch das Gefühl, in einem Netz gefangen zu sein. Eine Spinne, die ihr Netz baut, steht für konstruktive Kraft; eine bedrohliche für Kontrolle oder Manipulation.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🐴</span><strong>Pferd</strong><span class="motif-in-app"></span></div>
-            <p>Kraft, Freiheit, Wildheit und Lebensenergie. Ein wildes Pferd steht für ungezähmte innere Kraft. Ein Pferd reiten für Kontrolle über diese Energie. Ein entfliehendes Pferd für etwas, das du nicht festhalten kannst.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🦅</span><strong>Vogel</strong><span class="motif-in-app"></span></div>
-            <p>Freiheit, Geist und Transzendenz. Ein Adler für Stärke und weiten Blick. Kleine Vögel für Leichtigkeit oder Verletzlichkeit. Ein verletzter Vogel für eingeschränkte Freiheit.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🐛</span><strong>Insekt</strong><span class="motif-in-app"></span></div>
-            <p>Ein Schwarm von Insekten steht oft für kleine Ärgernisse, die sich akkumulieren, oder innere Unruhe. Bienen können auch für Gemeinschaft und Schöpferkraft stehen.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🐟</span><strong>Fisch</strong><span class="motif-in-app"></span></div>
-            <p>Fische leben im Wasser — dem Unbewussten. Sie stehen für unterbewusste Inhalte, Gedanken und Gefühle, die tief unter der Oberfläche schwimmen. Einen Fisch fangen bedeutet oft, etwas Unbewusstes zu greifen.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🐺</span><strong>Wolf</strong><span class="motif-in-app"></span></div>
-            <p>Wildheit, Instinkt, Kraft und das Rudel. Ein Wolf kann Schutz oder Bedrohung bedeuten. In vielen Kulturen ein Krafttier für innere Stärke und verdrängte wilde Anteile, die nach Ausdruck suchen.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">👹</span><strong>Monster oder Wesen</strong><span class="motif-in-app"></span></div>
-            <p>Ein fremdes, bedrohliches Wesen ohne klare Form. Fast immer repräsentiert es einen unterdrückten inneren Anteil — Wut, Angst, Scham. Das Monster aufzusuchen statt zu fliehen, führt oft zur Auflösung.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🌑</span><strong>Dunkle Gestalt</strong><span class="motif-in-app"></span></div>
-            <p>Eine konturenlose, dunkle Figur — in der Jung'schen Psychologie der „Schatten". Unterdrückte Anteile der Persönlichkeit, die nach Integration suchen. Was würde passieren, wenn du die Gestalt ansprichst?</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🐻</span><strong>Bär</strong></div>
-            <p>Stärke, Schutz, Mütterlichkeit — aber auch Aggression und Bedrohung. Ein Bär, der dich angreift, kann für eine Kraft stehen, die du im Wachleben scheust. Ein schlafender Bär für ruhende Stärke.</p>
-          </div>
-          <div class="motif-card">
-            <div class="motif-card-top"><span class="motif-emoji">🐬</span><strong>Delfin oder Wal</strong></div>
-            <p>Intelligenz, Verspieltheit und tiefe Verbundenheit. Delfine stehen oft für Freude und sanfte Kraft. Wale für tiefes emotionales Erleben und das Eintauchen in das Unbewusste.</p>
+        <div class="motif-groups-intro">
+          <div class="chapter-accent">
+            <div class="chapter-accent-line"></div>
+            <span>Traummotive</span>
+          </div>
+          <h2 style="font-size: 2rem; margin: 10px 0 10px; color: var(--plum);">Was kam in deinem Traum vor?</h2>
+          <p style="font-size: 0.95rem; color: var(--plum-muted); max-width: 560px; margin: 0 0 20px;">In jume wählst du pro Traum mehrere Motive aus 9 Gruppen — und erkennst im Verlauf Muster, die über Zeit sichtbar werden.</p>
+          <div class="motif-legend">
+            <div class="dot"></div>
+            <span>Oranger Punkt = direkt in der jume-App auswählbar</span>
           </div>
         </div>
 
-        <!-- App CTA -->
-        <div class="app-link-banner" style="margin-top: 40px;">
-          <div class="app-link-banner-icon">📖</div>
-          <div class="app-link-banner-body">
-            <h3>Motive in deinen Träumen tracken</h3>
-            <p>In der jume-App wählst du nach dem Aufwachen Kategorien und Motive für deinen Traum — und entdeckst im Verlauf Muster, die über die Zeit sichtbar werden.</p>
+        <!-- ── Angst & Kontrollverlust ── -->
+        <div class="motif-group" id="angst">
+          <div class="motif-group-header">
+            <div class="motif-group-icon">😨</div>
+            <div class="motif-group-title">
+              <h3>Angst &amp; Kontrollverlust</h3>
+              <p>Besonders häufig in Phasen von Druck, Unsicherheit oder Überforderung.</p>
+            </div>
           </div>
-          <a class="btn btn-primary btn-sm" href="../../index.html#newsletter" style="flex-shrink:0;">App laden</a>
+          <div class="motif-grid">
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">⬇️</span><strong>Fallen</strong><span class="motif-in-app"></span></div>
+              <p>Plötzlicher Kontrollverlust — das Gefühl, keinen Halt mehr zu haben. Eines der universell häufigsten Traummotive. Das Aufwachen beim Fallen (Hypnic Jerk) ist ein normaler Reflex beim Einschlafen.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🏃</span><strong>Verfolgt werden</strong><span class="motif-in-app"></span></div>
+              <p>Etwas jagt dich, und du kannst nicht entkommen. Fast immer steht die verfolgende Figur für etwas, dem du im Wachleben ausweichst: einem Gespräch, einer Emotion, einer Entscheidung.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">😨</span><strong>Panik</strong><span class="motif-in-app"></span></div>
+              <p>Überwältigende Angst ohne klar erkennbare Ursache — das Gefühl, handlungsunfähig zu sein, während etwas Bedrohliches geschieht. Oft verbunden mit Herzrasen und abruptem Aufwachen.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🗺️</span><strong>Sich verlaufen</strong><span class="motif-in-app"></span></div>
+              <p>Du suchst einen Ort, findest ihn nicht oder weißt plötzlich nicht mehr, wo du bist. Orientierungslosigkeit im Leben, eine unklare Entscheidung oder das Gefühl, den eigenen Weg verloren zu haben.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🔒</span><strong>Eingesperrt sein</strong><span class="motif-in-app"></span></div>
+              <p>Du kommst nicht heraus oder wirst festgehalten. Kann auf das Gefühl hinweisen, in einer Situation, Beziehung oder Lebensphase keine Handlungsfreiheit zu haben.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🫚</span><strong>Gelähmt sein</strong><span class="motif-in-app"></span></div>
+              <p>Du willst dich bewegen oder fliehen, aber dein Körper gehorcht nicht. Eine klassische Form der Schlafparalyse, die sich in Träume übertragen kann. Steht für Ohnmacht und Handlungsunfähigkeit.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">😶</span><strong>Nicht sprechen können</strong><span class="motif-in-app"></span></div>
+              <p>Du versuchst zu rufen, aber kein Ton kommt heraus. Oft für das Gefühl, nicht gehört zu werden oder sich in einer Situation nicht ausdrücken zu können.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">⏰</span><strong>Zu spät kommen</strong><span class="motif-in-app"></span></div>
+              <p>Du verpasst einen Zug, ein Flugzeug, eine Prüfung — obwohl du alles versucht hast. Klassisches Leistungsangst-Motiv in Phasen mit viel Verantwortung oder der Sorge, nicht zu genügen.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">📉</span><strong>Versagen</strong><span class="motif-in-app"></span></div>
+              <p>Du scheiterst an etwas — einer Aufgabe, einer Prüfung, einer Erwartung. Häufig verbunden mit Bewertungsangst oder dem inneren Glaubenssatz, nicht gut genug zu sein.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">💨</span><strong>Fliehen</strong><span class="motif-in-app"></span></div>
+              <p>Du läufst weg — manchmal erfolgreich, manchmal nicht. Im Unterschied zu „Verfolgt werden" liegt der Fokus hier auf deiner eigenen Bewegung und dem Wunsch nach Entkommen.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🌀</span><strong>Kontrollverlust</strong><span class="motif-in-app"></span></div>
+              <p>Etwas gerät außer Kontrolle — ein Auto, eine Situation, Naturgewalten. Ein allgemeines Motiv für Lebensabschnitte, in denen du das Gefühl hast, dem Lauf der Dinge ausgeliefert zu sein.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🌊</span><strong>Von etwas Großem überwältigt werden</strong></div>
+              <p>Eine Welle, Dunkelheit, Menschenmenge — etwas Größeres als du rollt auf dich zu. Steht für das Gefühl, einer Situation oder Emotion nicht gewachsen zu sein.</p>
+            </div>
+          </div>
         </div>
+
+        <!-- ── Körper & Identität ── -->
+        <div class="motif-group" id="koerper">
+          <div class="motif-group-header">
+            <div class="motif-group-icon">🦷</div>
+            <div class="motif-group-title">
+              <h3>Körper &amp; Identität</h3>
+              <p>Diese Motive kreisen um Selbstbild, Gesundheit, Verletzlichkeit und die Frage: Wer bin ich?</p>
+            </div>
+          </div>
+          <div class="motif-grid">
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🦷</span><strong>Zähne fallen aus</strong><span class="motif-in-app"></span></div>
+              <p>Das wohl bekannteste Traummotiv weltweit. Verbunden mit Verlustangst, Unsicherheit über das eigene Erscheinungsbild und Kontrollverlust. Manchmal auch das Gefühl, sich nicht klar ausdrücken zu können. Körperliches Zähneknirschen kann Zahntäume ebenfalls auslösen.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">💇</span><strong>Haare verlieren</strong><span class="motif-in-app"></span></div>
+              <p>Haare stehen für Stärke, Vitalität und Selbstbild. Ihr Verlust im Traum kann mit Kontrollverlust, körperlicher Erschöpfung oder der Angst, an Ausstrahlung zu verlieren, verbunden sein.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🩹</span><strong>Verletzung oder Krankheit</strong><span class="motif-in-app"></span></div>
+              <p>Du bist verletzt oder ernsthaft krank — oder jemand anderes. Kann auf körperliche Erschöpfung, emotionalen Schmerz oder eine innere Verletzlichkeit hinweisen, die du im Wachleben noch nicht vollständig anerkannt hast.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🪞</span><strong>Spiegel oder anderes Aussehen</strong><span class="motif-in-app"></span></div>
+              <p>Du siehst dich anders als im Wachleben — jünger, älter, entstellt oder schöner. Berührt Themen rund um Identität, Selbstbild und die Frage, wie andere dich wahrnehmen.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">😳</span><strong>Nackt sein</strong><span class="motif-in-app"></span></div>
+              <p>Du bist nackt — und niemand sonst. Ein Motiv für Verletzlichkeit und das Gefühl, entblößt oder bewertet zu werden. Manchmal auch befreiend: das Ablegen aller Masken.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🔇</span><strong>Stimme verlieren</strong><span class="motif-in-app"></span></div>
+              <p>Du versuchst zu reden oder zu singen, aber deine Stimme versagt. Eng verwandt mit „Nicht sprechen können" — der Fokus liegt hier auf dem Verlust einer Fähigkeit, die sonst selbstverständlich ist.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🦋</span><strong>Körper verwandelt sich</strong><span class="motif-in-app"></span></div>
+              <p>Du wirst zu etwas oder jemandem anderem — ein Tier, eine andere Person, etwas Unbekanntes. Ein starkes Bild für innere Transformation, die bereits im Gange ist.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🤰</span><strong>Schwangerschaft</strong><span class="motif-in-app"></span></div>
+              <p>Selten eine wörtliche Vorahnung — häufiger ein Bild für etwas, das in dir entsteht: ein Projekt, eine neue Phase, ein Teil von dir, der noch nicht fertig entwickelt ist.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">👶</span><strong>Baby oder Kind</strong><span class="motif-in-app"></span></div>
+              <p>Oft ein Symbol für ein jüngeres Ich, für Verletzlichkeit, Unschuld oder etwas, das noch Fürsorge braucht. Bei Eltern kann es auch direkte Verarbeitung von Sorgen sein.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🎭</span><strong>Doppelgänger</strong></div>
+              <p>Du begegnest dir selbst. Ein besonders intensives Motiv für innere Spaltung, unterdrückte Anteile oder die Frage nach der eigenen Identität. Was macht dein Doppelgänger, das du im Wachleben nicht tust?</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🧓</span><strong>Altern oder sich verändern</strong></div>
+              <p>Du siehst dich plötzlich viel älter oder jünger — verbunden mit Zeitdruck, Vergänglichkeit oder dem Wunsch, eine bestimmte Lebensphase zurückzuholen oder loszulassen.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">👻</span><strong>Unsichtbar sein</strong></div>
+              <p>Niemand sieht oder hört dich. Ein Spiegel für das Gefühl im Wachleben, übersehen, ignoriert oder nicht ernst genommen zu werden.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Beziehungen & Menschen ── -->
+        <div class="motif-group" id="beziehungen">
+          <div class="motif-group-header">
+            <div class="motif-group-icon">💔</div>
+            <div class="motif-group-title">
+              <h3>Beziehungen &amp; Menschen</h3>
+              <p>Menschen in Träumen repräsentieren oft Teile von uns selbst — oder stehen für Themen, die mit ihnen verbunden sind.</p>
+            </div>
+          </div>
+          <div class="motif-grid">
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">💔</span><strong>Ex-Partner</strong><span class="motif-in-app"></span></div>
+              <p>Selten ein Zeichen, dass du sie vermisst. Ex-Partner stehen im Traum oft für ein Thema dieser Beziehung: Sicherheit, Freiheit, Vertrauen, Verlust. Der Traum dreht sich weniger um die Person als um das, wofür sie steht.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">😤</span><strong>Streit</strong><span class="motif-in-app"></span></div>
+              <p>Unausgesprochene Konflikte oder ungelöste Gefühle gegenüber dieser Person — oder einem Teil von dir, den sie repräsentiert — suchen im Traum Ausdruck.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🌫️</span><strong>Fremde Person</strong><span class="motif-in-app"></span></div>
+              <p>Du bist mit jemandem zusammen, den du nicht kennst — aber im Traum sehr vertraut mit. Solche Figuren repräsentieren oft Teile von dir selbst oder Qualitäten, die du in dir entwickelst.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">👧</span><strong>Kindheitsperson</strong><span class="motif-in-app"></span></div>
+              <p>Eine Person aus deiner Kindheit — oft eine, die prägend war. Solche Träume laden dazu ein, Kindheitsmuster, frühe Erfahrungen oder Beziehungsdynamiken zu betrachten, die noch wirksam sind.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">😢</span><strong>Jemanden verlieren</strong><span class="motif-in-app"></span></div>
+              <p>Jemand ist plötzlich weg — du findest ihn nicht mehr oder er verschwindet. Oft verbunden mit Verlustangst, Trauer oder dem Wunsch nach mehr Nähe in einer Beziehung.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🤝</span><strong>Wiedersehen</strong><span class="motif-in-app"></span></div>
+              <p>Du triffst jemanden wieder, den du lange nicht gesehen hast. Oft verbunden mit Sehnsucht, Verarbeitung oder dem Wunsch nach Verbindung mit dieser Person oder dem, was sie verkörpert.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">💛</span><strong>Nähe oder Liebe</strong><span class="motif-in-app"></span></div>
+              <p>Intensive Gefühle von Nähe, Verbundenheit oder Verliebtheit. Oft weniger über eine reale Person, sondern über ein tiefes Bedürfnis nach Verbindung — zu sich selbst oder zu anderen.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">👩</span><strong>Mutter</strong><span class="motif-in-app"></span></div>
+              <p>Häufig ein Symbol für Geborgenheit, Fürsorge und Heimat — aber auch für Abhängigkeit oder unverarbeitete Kindheitserfahrungen. Wie verhältst du dich zu ihr im Traum?</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">👨</span><strong>Vater</strong><span class="motif-in-app"></span></div>
+              <p>Der Vater steht oft für Autorität, Regeln, Schutz oder Strenge. Träume mit dem Vater kreisen häufig um Leistung, Erwartungen oder die Suche nach Anerkennung.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">👫</span><strong>Freunde</strong><span class="motif-in-app"></span></div>
+              <p>Enge Freunde im Traum können wirkliche Beziehungen spiegeln oder symbolisch für Qualitäten stehen, die du mit ihnen verbindest: Leichtigkeit, Loyalität, Humor, Sicherheit.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">👨‍👩‍👧</span><strong>Familie</strong><span class="motif-in-app"></span></div>
+              <p>Familiäre Dynamiken im Traum spiegeln oft tiefe Prägungen und frühe Beziehungsmuster wider. Welche Rolle nimmst du in der Familie des Traums ein?</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">💍</span><strong>Hochzeit</strong><span class="motif-in-app"></span></div>
+              <p>Ein Bild für Vereinigung, Verpflichtung und Übergang. Hochzeiten im Traum stehen häufig für innere Verbindung zweier Anteile in dir oder eine tiefgreifende Entscheidung.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🕊️</span><strong>Verstorbene Person</strong></div>
+              <p>Du begegnest jemandem, der verstorben ist — oft sehr lebendig und real. Häufig zur Trauerverarbeitung, aber auch als tiefe innere Begegnung erlebt. Viele berichten danach von Ruhe und Verbundenheit.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🎤</span><strong>Berühmte Person</strong></div>
+              <p>Träume von Berühmtheiten haben kaum etwas mit der Person selbst zu tun. Sie stehen meist für Qualitäten, die du bewunderst oder dir wünschst: Kreativität, Mut, Stärke, Sichtbarkeit.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Tod & Transformation ── -->
+        <div class="motif-group" id="tod">
+          <div class="motif-group-header">
+            <div class="motif-group-icon">💀</div>
+            <div class="motif-group-title">
+              <h3>Tod &amp; Transformation</h3>
+              <p>Tod im Traum ist fast nie wörtlich — er steht fast immer für Übergang, Abschluss und Wandel.</p>
+            </div>
+          </div>
+          <div class="motif-grid">
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">💀</span><strong>Tod</strong><span class="motif-in-app"></span></div>
+              <p>Meist kein Omen, sondern ein Symbol für das Ende einer Phase oder das Absterben eines alten Selbst. Fast immer ein Zeichen für Veränderung — nicht für Verlust.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">⚰️</span><strong>Beerdigung</strong><span class="motif-in-app"></span></div>
+              <p>Ein Bild für bewusstes Loslassen, Abschluss oder Trauerarbeit — nicht unbedingt über eine Person, sondern über eine Phase, eine Hoffnung oder eine Version von dir selbst.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">👋</span><strong>Abschied</strong><span class="motif-in-app"></span></div>
+              <p>Du verabschiedest dich von jemandem — endgültig oder temporär. Oft verbunden mit Trauer, dem Loslassen von Dingen, die waren, oder dem Ende einer Lebensphase.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">👻</span><strong>Geister</strong><span class="motif-in-app"></span></div>
+              <p>Etwas Vergangenes ist noch präsent — eine Person, eine Erinnerung, ein ungelöstes Thema. Geister im Traum wollen fast immer etwas mitteilen; sie sind selten bedrohlich, wenn man sie betrachtet.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🌑</span><strong>Schattenfigur</strong><span class="motif-in-app"></span></div>
+              <p>Eine dunkle, konturenlose Gestalt. In der Jung'schen Psychologie der „Schatten" — unterdrückte Anteile der Persönlichkeit, die nach Integration suchen.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🌍</span><strong>Weltuntergang</strong><span class="motif-in-app"></span></div>
+              <p>Die Welt geht unter — Apokalypse, Katastrophe, das Ende von allem. Oft Ausdruck des Gefühls, dass sich gerade fundamental etwas verändert. Häufig in Phasen großer Lebensumbrüche.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🌱</span><strong>Wiedergeburt</strong><span class="motif-in-app"></span></div>
+              <p>Nach Dunkelheit kommt Licht, nach Ende kommt Anfang. Ein klares Bild für innere Erneuerung, Neubeginn und das Entstehen von etwas Neuem aus dem Alten.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🩸</span><strong>Blut</strong></div>
+              <p>Bedeutung je nach Kontext: Verletzung, Lebensenergie, Leidenschaft oder Verlust. Wenig Blut ist oft weniger beunruhigend als viel. Steht manchmal für emotionalen Schmerz, manchmal für Kraft.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Freiheit & Kontrolle ── -->
+        <div class="motif-group" id="freiheit">
+          <div class="motif-group-header">
+            <div class="motif-group-icon">🚀</div>
+            <div class="motif-group-title">
+              <h3>Freiheit &amp; Kontrolle</h3>
+              <p>Diese Motive fühlen sich oft kraftvoll, weit oder magisch an — und gehören zu den schönsten Träumen.</p>
+            </div>
+          </div>
+          <div class="motif-grid">
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🦅</span><strong>Fliegen</strong><span class="motif-in-app"></span></div>
+              <p>Das klassische Freiheitsmotiv. Du hebst vom Boden ab — manchmal mühelos, manchmal mit Anstrengung. Steht für Leichtigkeit, das Überwinden von Grenzen und Perspektivwechsel.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">☁️</span><strong>Schweben</strong><span class="motif-in-app"></span></div>
+              <p>Sanfter als Fliegen — du schwebst ohne aktive Steuerung. Steht für inneren Frieden und Loslassen. Manchmal auch Dissoziation: leicht über Dinge hinweggleiten, ohne wirklich geerdet zu sein.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">⚡</span><strong>Superkräfte</strong><span class="motif-in-app"></span></div>
+              <p>Du kannst fliegen, Dinge bewegen, heilen oder bist unbesiegbar. Ein Wunsch nach Handlungsmacht — häufig in Phasen, in denen du dich machtlos oder eingeschränkt fühlst.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🔮</span><strong>Kontrolle über Umgebung</strong><span class="motif-in-app"></span></div>
+              <p>Du kannst die Traumwelt gezielt formen oder Dinge herbeirufen. Oft ein Zeichen für luzides Träumen oder das Wachsen von Selbstwirksamkeit im Wachleben.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🌑</span><strong>Unsichtbar sein</strong><span class="motif-in-app"></span></div>
+              <p>Du bist für andere unsichtbar — diesmal befreiend. Manchmal ein Wunsch nach Rückzug, manchmal das Beobachten ohne Bewertung.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">⚡</span><strong>Teleportation</strong><span class="motif-in-app"></span></div>
+              <p>Du bewegst dich augenblicklich von Ort zu Ort. Kann für den Wunsch nach schnellen Lösungen stehen oder die Fähigkeit, Hindernisse zu überspringen.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🧱</span><strong>Durch Wände gehen</strong><span class="motif-in-app"></span></div>
+              <p>Du passierst Hindernisse, die anderen versperrt sind. Ein starkes Freiheitsbild — Grenzen, die für andere gelten, gelten für dich nicht.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🚀</span><strong>Im Weltraum sein</strong></div>
+              <p>Du schwebst zwischen Sternen oder siehst die Erde von oben. Verbunden mit Suche nach Bedeutung und dem Gefühl, klein und groß zugleich zu sein.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Natur & Elemente ── -->
+        <div class="motif-group" id="natur">
+          <div class="motif-group-header">
+            <div class="motif-group-icon">🌊</div>
+            <div class="motif-group-title">
+              <h3>Natur &amp; Elemente</h3>
+              <p>Wasser, Feuer, Erde und Luft erscheinen in Träumen mit überraschender Häufigkeit — jedes Element trägt eine eigene emotionale Qualität.</p>
+            </div>
+          </div>
+          <div class="motif-grid">
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">💧</span><strong>Wasser</strong><span class="motif-in-app"></span></div>
+              <p>Eines der bedeutungsreichsten Traummotive. Steht für das Unbewusste und den Gefühlsfluss. Klares Wasser = Klarheit, trübes = Verwirrung, stürmisches = Überwältigung.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🌊</span><strong>Meer oder Ozean</strong><span class="motif-in-app"></span></div>
+              <p>Das Meer steht für das Unbewusste in seiner ganzen Tiefe — unendlich, manchmal ruhig, manchmal stürmisch. An der Küste zu stehen bedeutet oft, an einer Schwelle zu stehen.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🌊</span><strong>Flut</strong><span class="motif-in-app"></span></div>
+              <p>Das Wasser steigt oder eine Welle rollt heran. Klassisches Überwältigungsmotiv — eine Emotion oder Situation, auf die du dich nicht vorbereitet fühlst.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🔥</span><strong>Feuer</strong><span class="motif-in-app"></span></div>
+              <p>Kann Leidenschaft, Zerstörung, Transformation oder Wärme bedeuten. Ein kontrollierbares Feuer steht für innere Energie, ein unkontrollierbares für Wut oder Verlust.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🌧️</span><strong>Regen</strong><span class="motif-in-app"></span></div>
+              <p>Regen kann reinigend und befreiend wirken — oder schwer und traurig. Warmer Regen steht oft für emotionale Reinigung, kalter für Kummer oder innere Leere.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">❄️</span><strong>Schnee</strong><span class="motif-in-app"></span></div>
+              <p>Stille, Kälte, Reinheit — oder Erstarrung. Schnee kann für innere Ruhe stehen, aber auch für emotionale Distanz oder das Einfrieren von Gefühlen.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">⛈️</span><strong>Sturm</strong><span class="motif-in-app"></span></div>
+              <p>Innere Spannungen, aufgeladene Emotionen oder ein bevorstehender Konflikt. Ein Sturm, der sich auflöst, kann sehr befreiend wirken.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🌲</span><strong>Wald</strong><span class="motif-in-app"></span></div>
+              <p>Der Wald steht für das Unbewusste und Unkontrollierbare — aber auch für Schutz und Geborgenheit. Ein lichter Wald symbolisiert Klarheit, ein dunkler das Unbekannte.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">⛰️</span><strong>Berge</strong><span class="motif-in-app"></span></div>
+              <p>Ziele, Herausforderungen, Perspektive. Einen Berg erklimmen steht für Ehrgeiz oder Überwindung. Vom Gipfel stehen für Klarheit und weiten Blick.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🌙</span><strong>Mond</strong><span class="motif-in-app"></span></div>
+              <p>Der Mond steht für das Unbewusste, Intuition, das Feminine und Zyklen. Ein leuchtender Vollmond kann Klarheit und Intensität bedeuten, ein verhüllter das Verborgene.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">☀️</span><strong>Himmel</strong><span class="motif-in-app"></span></div>
+              <p>Offener Himmel steht für Möglichkeiten, Freiheit und Transzendenz. Ein bedeckter oder bedrohlicher Himmel für Unterdrückung oder das Gefühl, dass etwas im Kommen ist.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🌑</span><strong>Dunkelheit</strong><span class="motif-in-app"></span></div>
+              <p>Tiefe Dunkelheit, in der du nichts siehst. Kann Unsicherheit, das Unbekannte oder das Unbewusste symbolisieren. Manchmal beklemmend, manchmal schützend wie ein Mantel.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">✨</span><strong>Licht</strong><span class="motif-in-app"></span></div>
+              <p>Plötzliches Licht, leuchtende Erscheinungen oder Strahlen. Steht für Erkenntnis, Hoffnung oder spirituelle Erfahrung. In Albträumen kann Licht rettend sein.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🌍</span><strong>Erdbeben</strong></div>
+              <p>Der Boden bricht auf. Ein starkes Bild für das Gefühl, dass etwas Fundamentales erschüttert wird: Sicherheit, Beziehungen, Identität oder Werte.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Alltag & Bewegung ── -->
+        <div class="motif-group" id="alltag">
+          <div class="motif-group-header">
+            <div class="motif-group-icon">🏃</div>
+            <div class="motif-group-title">
+              <h3>Alltag &amp; Bewegung</h3>
+              <p>Alltägliche Situationen, die sich im Traum seltsam verzerren — oft ein Spiegel für Druck oder das Gefühl, nicht voranzukommen.</p>
+            </div>
+          </div>
+          <div class="motif-grid">
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🐌</span><strong>Rennen, aber langsam</strong><span class="motif-in-app"></span></div>
+              <p>Du versuchst schnell zu rennen, aber dein Körper bewegt sich wie in Zeitlupe. Eines der häufigsten Stressmotive — das Gefühl, sich zu bemühen, aber nicht wirklich vorwärtszukommen.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🚗</span><strong>Fahrzeug außer Kontrolle</strong><span class="motif-in-app"></span></div>
+              <p>Das Auto, der Bus, der Zug fährt ohne dein Zutun oder du kannst nicht bremsen. Ein klassisches Kontrollverlust-Motiv für das Gefühl, das eigene Leben nicht mehr steuern zu können.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🚂</span><strong>Zug oder Flug verpassen</strong><span class="motif-in-app"></span></div>
+              <p>Du kommst zu spät, der Zug fährt gerade ab. Die Angst, eine Gelegenheit zu verpassen oder nicht dort zu sein, wo du sein solltest.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">📝</span><strong>Schule oder Prüfung</strong><span class="motif-in-app"></span></div>
+              <p>Du sitzt in einer Prüfung, auf die du nicht vorbereitet bist. Bewertungsangst und das Gefühl, nicht zu genügen. Taucht häufig noch jahrzehntelang nach der Schulzeit auf.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">💼</span><strong>Arbeit oder Büro</strong><span class="motif-in-app"></span></div>
+              <p>Du bist auf der Arbeit — meistens in einer unangenehmen Situation. Verarbeitung von Arbeitsstress, Hierarchiefragen oder unerledigten Aufgaben.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">📱</span><strong>Telefon oder Nachricht</strong><span class="motif-in-app"></span></div>
+              <p>Du kannst nicht erreichbar sein, ein wichtiger Anruf kommt nicht durch oder du kannst die Nummer nicht wählen. Oft verbunden mit dem Gefühl, Verbindung zu verlieren.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">✈️</span><strong>Flughafen</strong><span class="motif-in-app"></span></div>
+              <p>Übergangsraum par excellence. Aufbruch, Warten, Abschied — oder das Verpassen des Flugs. Steht für Übergänge im Leben und manchmal die Angst vor dem Loslassen.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🔄</span><strong>Im Kreis laufen</strong><span class="motif-in-app"></span></div>
+              <p>Du läufst, aber kommst nirgends an — der Weg führt immer wieder zum selben Punkt zurück. Ein Bild für ein Problem, das sich dreht, oder eine Situation ohne klaren Ausweg.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🧱</span><strong>Nicht vorankommen</strong><span class="motif-in-app"></span></div>
+              <p>Du versuchst etwas zu tun, aber es geht einfach nicht voran — Hindernisse tauchen auf. Übertragung des Gefühls von Stagnation auf die Traumwelt.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🚦</span><strong>Verkehr und Stau</strong></div>
+              <p>Du stehst im Stau oder kommst durch den Verkehr nicht durch. Ähnlich wie „Nicht vorankommen" — Frustration über äußere Umstände, die deinen Fortschritt behindern.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Orte & Räume ── -->
+        <div class="motif-group" id="orte">
+          <div class="motif-group-header">
+            <div class="motif-group-icon">🏠</div>
+            <div class="motif-group-title">
+              <h3>Orte &amp; Räume</h3>
+              <p>Wo du im Traum bist, ist oft genauso bedeutsam wie das Geschehen selbst.</p>
+            </div>
+          </div>
+          <div class="motif-grid">
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🏠</span><strong>Haus oder Wohnung</strong><span class="motif-in-app"></span></div>
+              <p>Das Haus steht im Traum fast immer für die Psyche selbst. Verschiedene Räume = verschiedene Aspekte der Persönlichkeit. In welchem Raum bist du? Was findest du dort?</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🚪</span><strong>Unbekanntes Zimmer</strong><span class="motif-in-app"></span></div>
+              <p>In einem bekannten Haus entdeckst du einen Raum, den du nicht kanntest. Ein wunderschönes Symbol für neue innere Potenziale und noch unentdeckte Teile der Persönlichkeit.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">⬇️</span><strong>Keller</strong><span class="motif-in-app"></span></div>
+              <p>Der Keller steht klassisch für das Unbewusste — verdrängte Gefühle, alte Erinnerungen. Angst vor dem Keller spiegelt oft Angst vor dem, was dort liegt.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🪜</span><strong>Treppen</strong><span class="motif-in-app"></span></div>
+              <p>Treppen hinauf stehen für Aufstieg und Wachstum. Treppen hinunter für das Hinabsteigen ins Unbewusste. Was passiert auf der Treppe im Traum?</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">📦</span><strong>Aufzug</strong><span class="motif-in-app"></span></div>
+              <p>Steckenbleiben im Aufzug, unkontrolliertes Hochfahren oder ein Absturz — Aufzüge stehen für Kontrolle über Auf- und Abstieg und soziale oder berufliche Bewegung.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🌀</span><strong>Labyrinth</strong><span class="motif-in-app"></span></div>
+              <p>Gänge ohne Ausweg, die immer wieder zum selben Punkt führen. Ein starkes Symbol für ein Problem ohne klare Lösung oder eine Situation, in der der Ausweg sich verbirgt.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🚪</span><strong>Tür oder verschlossene Tür</strong><span class="motif-in-app"></span></div>
+              <p>Türen stehen für Übergänge und Möglichkeiten. Eine verschlossene Tür symbolisiert etwas Unerreichbares. Was liegt hinter der Tür? Willst du sie öffnen?</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🏨</span><strong>Hotel</strong><span class="motif-in-app"></span></div>
+              <p>Ein vorübergehender Aufenthaltsort — du bist hier auf Zeit, nicht zu Hause. Steht für Übergangsphasen, das Gefühl der Vorläufigkeit oder noch nicht angekommen zu sein.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🌉</span><strong>Brücke</strong><span class="motif-in-app"></span></div>
+              <p>Eine Verbindung zwischen zwei Zuständen, Orten oder Phasen. Eine Brücke zu überqueren steht für den Übergang vom Alten ins Neue. Eine brechende Brücke für Angst vor diesem Übergang.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🌆</span><strong>Fremde Stadt</strong><span class="motif-in-app"></span></div>
+              <p>Du bist irgendwo, das du nicht kennst, aber als bedeutsam erlebst. Neue Orte im Traum können innere Möglichkeitsräume symbolisieren — noch unbekannte Lebensbereiche.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🕌</span><strong>Sakraler Ort</strong></div>
+              <p>Kirche, Tempel, heiliger Ort — ein Raum der Stille und Spiritualität. Steht für die Suche nach Bedeutung, tiefe innere Ruhe oder die Auseinandersetzung mit großen Fragen.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🏫</span><strong>Das Elternhaus</strong></div>
+              <p>Zurück im Haus der Kindheit — vertraut, aber oft verändert. Steht für frühe Prägungen, das innere Kind und die Auseinandersetzung mit der Vergangenheit.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Tiere & Wesen ── -->
+        <div class="motif-group" id="tiere" style="padding-bottom: 16px;">
+          <div class="motif-group-header">
+            <div class="motif-group-icon">🐍</div>
+            <div class="motif-group-title">
+              <h3>Tiere &amp; Wesen</h3>
+              <p>Tiere repräsentieren Instinkte, Ängste, Stärken oder unbewusste Kräfte. Das Verhalten des Tieres — und wie du damit umgehst — ist oft bedeutsamer als das Tier selbst.</p>
+            </div>
+          </div>
+          <div class="motif-grid">
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🐕</span><strong>Hund</strong><span class="motif-in-app"></span></div>
+              <p>Loyalität, Treue, bedingungslose Zuneigung. Ein aggressiver Hund kann für einen bedrohten Schutzinstinkt stehen, ein verspielter für Lebensfreude und unkomplizierte Verbundenheit.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🐱</span><strong>Katze</strong><span class="motif-in-app"></span></div>
+              <p>Unabhängigkeit, Intuition, das Geheimnisvolle. Eine bedrohliche Katze kann für unkontrollierte Impulse stehen, eine verspielte für Leichtigkeit. Katzen gelten in vielen Kulturen als Verbindung zur Traumwelt.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🐍</span><strong>Schlange</strong><span class="motif-in-app"></span></div>
+              <p>Eines der vieldeutigsten Tiere im Traum: Heilung, Weisheit, Transformation (Häutung) — aber auch Verrat, Gefahr oder Verführung. Wie verhältst du dich zur Schlange im Traum?</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🕷️</span><strong>Spinne</strong><span class="motif-in-app"></span></div>
+              <p>Kreativität, das Weben von Strukturen und Netzwerken — aber auch das Gefühl, in einem Netz gefangen zu sein. Eine Spinne, die ihr Netz baut, steht für konstruktive Kraft.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🐴</span><strong>Pferd</strong><span class="motif-in-app"></span></div>
+              <p>Kraft, Freiheit, Wildheit und Lebensenergie. Ein wildes Pferd steht für ungezähmte innere Kraft. Ein Pferd reiten für Kontrolle über diese Energie. Ein entfliehendes Pferd für etwas, das du nicht festhalten kannst.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🐺</span><strong>Wolf</strong><span class="motif-in-app"></span></div>
+              <p>Wildheit, Instinkt, Kraft und das Rudel. Ein Wolf kann Schutz oder Bedrohung bedeuten. In vielen Kulturen ein Krafttier für innere Stärke und verdrängte wilde Anteile.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🦅</span><strong>Vogel</strong><span class="motif-in-app"></span></div>
+              <p>Freiheit, Geist und Transzendenz. Ein Adler für Stärke und weiten Blick. Kleine Vögel für Leichtigkeit oder Verletzlichkeit. Ein verletzter Vogel für eingeschränkte Freiheit.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🐟</span><strong>Fisch</strong><span class="motif-in-app"></span></div>
+              <p>Fische leben im Wasser — dem Unbewussten. Sie stehen für unterbewusste Inhalte und Gedanken, die tief unter der Oberfläche schwimmen. Einen Fisch fangen bedeutet oft, etwas Unbewusstes zu greifen.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🐛</span><strong>Insekt</strong><span class="motif-in-app"></span></div>
+              <p>Ein Schwarm von Insekten steht oft für kleine Ärgernisse, die sich akkumulieren, oder innere Unruhe. Bienen können auch für Gemeinschaft und Schöpferkraft stehen.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">👹</span><strong>Monster oder Wesen</strong><span class="motif-in-app"></span></div>
+              <p>Ein fremdes, bedrohliches Wesen ohne klare Form. Fast immer repräsentiert es einen unterdrückten inneren Anteil — Wut, Angst, Scham. Das Monster aufzusuchen statt zu fliehen, führt oft zur Auflösung.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🌑</span><strong>Dunkle Gestalt</strong><span class="motif-in-app"></span></div>
+              <p>Eine konturenlose, dunkle Figur — in der Jung'schen Psychologie der „Schatten". Unterdrückte Anteile der Persönlichkeit, die nach Integration suchen.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🦁</span><strong>Löwe</strong></div>
+              <p>Stärke, Mut, Würde und Führungsstärke. Der Löwe steht für innere Souveränität. Ein angreifender Löwe kann für eine Kraft stehen, die du im Wachleben fürchtest oder verdrängst.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🐯</span><strong>Tiger</strong></div>
+              <p>Rohe Kraft, Leidenschaft, Instinkt. Ein Tiger kann die wilde, ungebändigte Seite der eigenen Energie repräsentieren — oder eine Bedrohung von außen, die gefährlich nah kommt.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🦊</span><strong>Fuchs</strong></div>
+              <p>List, Anpassungsfähigkeit und Klugheit. Der Fuchs steht für intelligentes Navigieren in schwierigen Situationen — manchmal auch für Täuschung oder das Gefühl, hinters Licht geführt zu werden.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🐘</span><strong>Elefant</strong></div>
+              <p>Gedächtnis, Weisheit, familiäre Bindungen und Beständigkeit. Ein Elefant im Traum kann auf etwas hinweisen, das du nicht loslassen kannst — oder auf tiefe innere Stärke, die du noch nicht vollständig anerkennst.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🦉</span><strong>Eule</strong></div>
+              <p>Weisheit, das Verborgene sehen und Intuition. Die Eule sieht in der Dunkelheit — ein starkes Symbol für das Wissen, das nur im Unbewussten oder in der Stille zugänglich ist.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🦋</span><strong>Schmetterling</strong></div>
+              <p>Transformation, Wandel, Leichtigkeit und Vergänglichkeit. Der Schmetterling durchläuft eine vollständige Verwandlung — ein klares Bild für innere Prozesse, die sich gerade abgeschlossen haben oder beginnen.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🐸</span><strong>Frosch</strong></div>
+              <p>Transformation, Reinigung und Neuanfang. Frösche leben zwischen Wasser und Land — ein Symbol für Übergangszustände und die Fähigkeit, sich an völlig neue Lebensbedingungen anzupassen.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🐊</span><strong>Krokodil oder Alligator</strong></div>
+              <p>Uralte Instinkte, Gefahr aus der Tiefe. Das Krokodil taucht aus dem Wasser auf — ein Bild für das Unbewusste, das unvermittelt an die Oberfläche drängt. Steht für rohe Urkräfte und verborgene Bedrohungen.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🦈</span><strong>Hai</strong></div>
+              <p>Raubtierinstinkt, Bedrohung aus der Tiefe, das Überleben. Haie im Traum stehen oft für eine Gefahr, die unsichtbar bleibt, bis sie sehr nah ist — manchmal auch für intensive Konkurrenz oder feindliche Umgebungen.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🐦‍⬛</span><strong>Rabe oder Krähe</strong></div>
+              <p>Intelligenz, Botschaft und das Verborgene. Raben gelten in vielen Kulturen als Boten zwischen den Welten. Im Traum können sie auf etwas hinweisen, das du noch nicht bewusst erkannt hast.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🐻</span><strong>Bär</strong></div>
+              <p>Stärke, Schutz, Mütterlichkeit — aber auch Aggression und Bedrohung. Ein Bär, der dich angreift, kann für eine Kraft stehen, die du im Wachleben scheust. Ein schlafender Bär für ruhende Stärke.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🦌</span><strong>Hirsch oder Reh</strong></div>
+              <p>Anmut, Sanftheit und das Wilde zugleich. Der Hirsch vereint edle Stärke mit Verletzlichkeit. Rehe stehen oft für das innere Kind oder für etwas Unberührtes, das geschützt werden will.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🐬</span><strong>Delfin oder Wal</strong></div>
+              <p>Intelligenz, Verspieltheit und tiefe Verbundenheit. Delfine stehen für Freude und sanfte Kraft. Wale für tiefes emotionales Erleben und das Eintauchen in das Unbewusste.</p>
+            </div>
+            <div class="motif-card">
+              <div class="motif-card-top"><span class="motif-emoji">🐉</span><strong>Drache</strong></div>
+              <p>Mythische Kraft, inneres Feuer, Weisheit oder Bedrohung — je nach Kontext. In östlicher Tradition ein Schutzwesen mit kosmischer Energie. Im westlichen Traum oft eine zu bezwingende innere Kraft oder ein aufgestautes Feuer.</p>
+            </div>
+          </div>
+
+          <!-- App CTA -->
+          <div class="app-link-banner" style="margin-top: 48px;">
+            <div class="app-link-banner-icon">📖</div>
+            <div class="app-link-banner-body">
+              <h3>Motive in deinen Träumen tracken</h3>
+              <p>In der jume-App wählst du nach dem Aufwachen Kategorien und Motive — und entdeckst im Verlauf Muster, die über Zeit sichtbar werden.</p>
+            </div>
+            <a class="btn btn-primary btn-sm" href="/#newsletter" style="flex-shrink:0;">App laden</a>
+          </div>
+        </div>
+
       </div>
     </section>
 
