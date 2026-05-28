@@ -1,2 +1,9 @@
 # Magic link redirect — keep query params
 /auth/magic  /auth/magic.html  200
+
+# Clean URL support for Netlify (ensures .html extension is optional)
+/mond                                          /mond/index.html                                          200
+/mond/vollmond-im-skorpion-1-mai-2026          /mond/vollmond-im-skorpion-1-mai-2026/index.html          200
+/mond/vollmond-im-schuetzen-31-mai-2026        /mond/vollmond-im-schuetzen-31-mai-2026/index.html        200
+/mond/vollmondnaechte-traumtagebuch            /mond/vollmondnaechte-traumtagebuch/index.html            200
+/wissen/glossar                                /wissen/glossar/index.html                                200
