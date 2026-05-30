@@ -38,7 +38,7 @@
             Calvinstraße 12<br />
             44143 Dortmund<br />
             Deutschland<br />
-            E-Mail: <a href="mailto:hello@jume.app">hello@jume.app</a>
+            E-Mail: <a href="mailto:info@jume.app">info@jume.app</a>
           </p>
 
           <h2>2. Übersicht der verarbeiteten Daten</h2>
@@ -84,7 +84,7 @@
           </p>
           <p>
             Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (deine Einwilligung).
-            Abmeldung jederzeit über den Abmeldelink in jedem Newsletter oder per E-Mail an <a href="mailto:hello@jume.app">hello@jume.app</a>.
+            Abmeldung jederzeit über den Abmeldelink in jedem Newsletter oder per E-Mail an <a href="mailto:info@jume.app">info@jume.app</a>.
           </p>
           <p>
             Brevo-Datenschutz: <a href="https://www.brevo.com/de/legal/privacypolicy/" target="_blank" rel="noopener">brevo.com/de/legal/privacypolicy</a>
@@ -119,7 +119,7 @@
             <li><strong>Widerruf</strong> (Art. 7 Abs. 3) — Einwilligungen jederzeit für die Zukunft widerrufen</li>
           </ul>
           <p>
-            Kontakt zur Ausübung deiner Rechte: <a href="mailto:hello@jume.app">hello@jume.app</a>
+            Kontakt zur Ausübung deiner Rechte: <a href="mailto:info@jume.app">info@jume.app</a>
           </p>
 
           <h2>9. Beschwerderecht</h2>
@@ -129,8 +129,136 @@
 
           <h2>10. Datenschutz in der jume App</h2>
           <p>
-            Für die Verarbeitung personenbezogener Daten innerhalb der mobilen App (iOS / Android) gelten die Datenschutzhinweise, die du in den App-Store-Einträgen sowie innerhalb der App einsehen kannst.
+            Die folgenden Abschnitte beschreiben, welche personenbezogenen Daten in der jume App (iOS / Android) verarbeitet werden, wo sie gespeichert sind und wie lange.
           </p>
+
+          <h3>10.1 Konto-Daten</h3>
+          <p>
+            Wenn du ein Konto erstellst, werden folgende Daten auf unseren Servern gespeichert:
+          </p>
+          <ul>
+            <li><strong>E-Mail-Adresse</strong> (Pflichtangabe für Registrierung / Login)</li>
+            <li>Optionaler <strong>Anzeigename</strong>, Geburtsdatum und Zeitzone (nur falls angegeben)</li>
+            <li>Gehashter Passwort-Hash (nur bei E-Mail-/Passwort-Konto)</li>
+            <li>Zeitstempel der Datenschutz-Zustimmung und die akzeptierte Version</li>
+            <li>Abonnement-Status (FREE / PREMIUM / UNLIMITED)</li>
+          </ul>
+          <p>
+            Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung) und Art. 6 Abs. 1 lit. c DSGVO (gesetzliche Pflichten).
+          </p>
+          <p>
+            Serverstandort: Deutschland (Hetzner Cloud, Frankfurt am Main).
+          </p>
+
+          <h3>10.2 Lokale Datenspeicherung (kein automatischer Upload)</h3>
+          <p>
+            Alle Traumeinträge, Statistiken und persönlichen Einstellungen werden standardmäßig <strong>ausschließlich lokal</strong> auf deinem Gerät in einer verschlüsselten Datenbank (Hive) gespeichert. Es findet <strong>kein automatischer Upload</strong> deiner Trauminhalte statt — auch nicht nach dem Kauf eines Premium-Abonnements.
+          </p>
+
+          <h3>10.3 Cloud-Synchronisierung (Premium, opt-in)</h3>
+          <p>
+            Die Cloud-Sync-Funktion ist ausschließlich für Premium-Nutzer verfügbar und erfordert deine <strong>ausdrückliche Einwilligung</strong> in der App (<em>Einstellungen → Privatsphäre → Cloud-Sync aktivieren</em>).
+          </p>
+          <p>
+            Wenn du Cloud-Sync aktivierst, werden folgende Daten deiner Traumeinträge auf unseren Servern (Deutschland, Hetzner Cloud) gespeichert:
+          </p>
+          <ul>
+            <li>Titel und Text des Traums</li>
+            <li>Datum und Uhrzeit des Eintrags</li>
+            <li>Kategorie, Tags, Emotionen und Motive</li>
+            <li>Schlafqualität und Schlafort</li>
+            <li>Albtraum- / Luzide-Traum-Kennzeichnung</li>
+            <li>KI-Deutungstext und Deutungsverlauf (sofern vorhanden)</li>
+            <li>Reflexionsnotizen</li>
+          </ul>
+          <p>
+            Die Daten sind intern nur über eine pseudonyme <strong>Profil-ID</strong> gespeichert (keine E-Mail-Adresse in der Dreams-Tabelle). Eine Verknüpfung zur Person erfordert einen Datenbankjoin über mehrere Tabellen.
+          </p>
+          <p>
+            Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (deine Einwilligung). Du kannst deine Einwilligung jederzeit in der App widerrufen (<em>Einstellungen → Privatsphäre → Cloud-Sync deaktivieren</em>).
+          </p>
+          <p>
+            <strong>Löschfristen:</strong> Gelöschte Träume werden sofort inhaltlich geleert (Titel, Text und alle persönlichen Felder werden auf leer gesetzt). Ein technischer Lösch-Marker wird für bis zu 90 Tage aufbewahrt, damit andere Geräte die Löschung synchronisieren können, und danach automatisch vollständig gelöscht.
+          </p>
+
+          <h3>10.4 KI-Traumdeutung (OpenAI)</h3>
+          <p>
+            Wenn du die KI-Traumdeutung in der App nutzt, wird der <strong>Text deines Traumeintrags</strong> (Titel, Traumtext sowie ausgewählte Metadaten wie Kategorie, Emotionen und Motive) zur Verarbeitung an <strong>OpenAI</strong> (OpenAI, LLC, 3180 18th St, San Francisco, CA 94110, USA) übermittelt.
+          </p>
+          <p>
+            Die Übertragung erfolgt über unsere Backend-Server als Zwischenstelle — dein Name oder deine E-Mail-Adresse wird <strong>nicht</strong> an OpenAI weitergegeben.
+            Gemäß unserer API-Vereinbarung mit OpenAI werden die übermittelten Daten <strong>nicht</strong> zum Training von KI-Modellen verwendet.
+          </p>
+          <p>
+            Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (deine Einwilligung durch aktive Nutzung der Deutungsfunktion). OpenAI ist nach dem EU-US Data Privacy Framework zertifiziert.
+            Weitere Informationen: <a href="https://openai.com/privacy" target="_blank" rel="noopener">openai.com/privacy</a>.
+          </p>
+
+          <h3>10.5 Community Insights (anonyme Statistiken)</h3>
+          <p>
+            Die Community-Insights-Funktion zeigt anonymisierte Traumstatistiken der jume-Gemeinschaft. Dabei werden <strong>ausschließlich Metadaten</strong> ohne direkten Personenbezug ausgewertet:
+          </p>
+          <ul>
+            <li>Mondphase zum Zeitpunkt des Eintrags</li>
+            <li>Albtraum- / Luzide-Traum-Kennzeichnung (Ja/Nein)</li>
+            <li>Traumkategorie</li>
+            <li>Ausgewählte Motive (Stichwortliste)</li>
+            <li>Wochennummer und Jahr</li>
+          </ul>
+          <p>
+            Es werden <strong>kein Traumtext, kein Titel, keine E-Mail-Adresse und keine direkt identifizierenden Merkmale</strong> für Community Insights übertragen.
+            Die Beiträge zu den Statistiken erfolgen pseudonymisiert und werden nicht mit deinem Konto verknüpft.
+          </p>
+          <p>
+            Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (deine Einwilligung durch Aktivierung der Funktion).
+          </p>
+
+          <h3>10.6 Deine Löschrechte in der App (Art. 17 DSGVO)</h3>
+          <p>Du kannst in der App jederzeit:</p>
+          <ul>
+            <li><strong>Einzelne Träume löschen</strong> — Inhalte werden sofort gelöscht; ein Sync-Marker bleibt max. 90 Tage bestehen.</li>
+            <li><strong>Alle Cloud-Daten löschen</strong> (<em>Einstellungen → Privatsphäre → Cloud-Daten löschen</em>) — alle syncierten Traumdaten werden sofort serverseitig gelöscht; lokale Daten auf deinem Gerät bleiben unberührt.</li>
+            <li><strong>Konto löschen</strong> (<em>Einstellungen → Infos → Account löschen</em>) — dein Konto wird sofort anonymisiert (E-Mail-Adresse durch einen Platzhalter ersetzt), alle aktiven Sitzungen werden beendet. Der Datenbankdatensatz wird nach einer Übergangsfrist von 30 Tagen vollständig gelöscht.</li>
+          </ul>
+          <p>
+            Du kannst außerdem jederzeit per E-Mail an <a href="mailto:info@jume.app">info@jume.app</a> die Löschung deiner Daten verlangen.
+          </p>
+
+          <h3>10.7 Speicherfristen (Zusammenfassung)</h3>
+          <table style="width:100%;border-collapse:collapse;margin-top:8px;">
+            <thead>
+              <tr style="background:var(--color-surface-elevated,#f5f5f5);">
+                <th style="text-align:left;padding:8px 12px;border-bottom:1px solid #ddd;">Datenkategorie</th>
+                <th style="text-align:left;padding:8px 12px;border-bottom:1px solid #ddd;">Aufbewahrungsdauer</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="padding:8px 12px;border-bottom:1px solid #eee;">Konto-Daten</td>
+                <td style="padding:8px 12px;border-bottom:1px solid #eee;">Bis zur Kontolöschung, danach 30 Tage (anonymisiert)</td>
+              </tr>
+              <tr>
+                <td style="padding:8px 12px;border-bottom:1px solid #eee;">Cloud-Sync Traumdaten</td>
+                <td style="padding:8px 12px;border-bottom:1px solid #eee;">Bis zur Löschung durch dich</td>
+              </tr>
+              <tr>
+                <td style="padding:8px 12px;border-bottom:1px solid #eee;">Gelöschte Träume (Sync-Marker)</td>
+                <td style="padding:8px 12px;border-bottom:1px solid #eee;">Max. 90 Tage nach Löschung</td>
+              </tr>
+              <tr>
+                <td style="padding:8px 12px;border-bottom:1px solid #eee;">Session-Tokens</td>
+                <td style="padding:8px 12px;border-bottom:1px solid #eee;">30 Tage Gültigkeit, dann automatisch ungültig</td>
+              </tr>
+              <tr>
+                <td style="padding:8px 12px;border-bottom:1px solid #eee;">Community-Insights-Daten</td>
+                <td style="padding:8px 12px;border-bottom:1px solid #eee;">Aggregiert, keine individuelle Zuordnung nach Beitrag</td>
+              </tr>
+              <tr>
+                <td style="padding:8px 12px;">Lokale App-Daten (Hive)</td>
+                <td style="padding:8px 12px;">Ausschließlich auf deinem Gerät, bis du die App löschst</td>
+              </tr>
+            </tbody>
+          </table>
 
           <h2>11. Änderungen dieser Erklärung</h2>
           <p>
