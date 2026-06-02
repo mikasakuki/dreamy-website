@@ -12,17 +12,33 @@
   <!-- Mondimpulse Hub -->
   <url>
     <loc>https://jume.app/mond/</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-06-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Vollmond im Schützen (aktuell) -->
+  <!-- Vollmond im Steinbock (demnächst) -->
   <url>
-    <loc>https://jume.app/mond/vollmond-im-schuetzen-31-mai-2026/</loc>
-    <lastmod>2026-05-28</lastmod>
+    <loc>https://jume.app/mond/vollmond-im-steinbock-29-juni-2026/</loc>
+    <lastmod>2026-06-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
+  </url>
+
+  <!-- Neumond im Zwillinge (demnächst) -->
+  <url>
+    <loc>https://jume.app/mond/neumond-im-zwillinge-15-juni-2026/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Vollmond im Schützen -->
+  <url>
+    <loc>https://jume.app/mond/vollmond-im-schuetzen-31-mai-2026/</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.75</priority>
   </url>
 
   <!-- Vollmond im Skorpion -->
