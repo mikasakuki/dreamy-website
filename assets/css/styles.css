@@ -124,11 +124,11 @@ em { font-style: italic; }
 .btn:active { transform: translateY(0); }
 
 .btn-primary {
-  background: linear-gradient(135deg, #C97B8A 0%, #A85D6E 100%);
-  color: var(--white);
-  box-shadow: 0 4px 16px rgba(168, 93, 110, 0.32);
+  background: var(--plum);
+  color: #fff !important;
+  box-shadow: 0 4px 16px rgba(83, 66, 79, 0.28);
 }
-.btn-primary:hover { opacity: 0.92; box-shadow: 0 6px 22px rgba(168, 93, 110, 0.42); }
+.btn-primary:hover { opacity: 0.9; box-shadow: 0 6px 22px rgba(83, 66, 79, 0.32); }
 
 .btn-secondary {
   background: transparent;
