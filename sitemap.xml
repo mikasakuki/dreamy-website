@@ -57,6 +57,14 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Traumdeutung Überblick -->
+  <url>
+    <loc>https://jume.app/wissen/traumdeutung/</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
   <!-- Traum-Glossar -->
   <url>
     <loc>https://jume.app/wissen/glossar/</loc>
