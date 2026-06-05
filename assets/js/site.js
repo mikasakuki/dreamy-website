@@ -5,7 +5,7 @@
   const links = [
     { key: "start",   href: "/",                label: "Start" },
     { key: "mond",    href: "/mond/",            label: "Mondimpulse" },
-    { key: "glossar", href: "/wissen/glossar/",  label: "Glossar" },
+    { key: "wissen",  href: "/wissen/",          label: "Traumwissen" },
   ];
 
   // Logo: tries image first, falls back to styled text
