@@ -60,6 +60,9 @@
           <p>
             Alle Traumeinträge, Statistiken und persönlichen Einstellungen werden standardmäßig <strong>ausschließlich lokal</strong> auf deinem Gerät in einer verschlüsselten Datenbank (Hive) gespeichert. Es findet <strong>kein automatischer Upload</strong> deiner Trauminhalte statt — auch nicht nach dem Kauf eines Premium-Abonnements.
           </p>
+          <p>
+            Das gilt auch für deine <strong>Wellbeing-Einträge</strong> (Morgen-Check-in): Stimmung, Stresslevel, Energielevel, Schlafqualität, Traumton und Morgenreflexionen werden zunächst ausschließlich lokal gespeichert. Diese Daten können je nach Inhalt als Gesundheitsdaten im Sinne von Art. 9 DSGVO eingestuft werden. Sie verlassen dein Gerät nur dann, wenn du Cloud-Sync aktivierst (siehe Abschnitt 4).
+          </p>
 
           <h2>4. Cloud-Synchronisierung (Premium &amp; Unlimited, opt-in)</h2>
           <p>
@@ -76,9 +79,13 @@
             <li>Albtraum- / Luzide-Traum-Kennzeichnung</li>
             <li>KI-Deutungstext und Deutungsverlauf (sofern vorhanden)</li>
             <li>Reflexionsnotizen</li>
+            <li><strong>Wellbeing-Einträge (Check-in):</strong> Stimmung (1–5), Stresslevel (1–5), Energielevel (1–5), Schlafqualität (1–4), Traumton sowie Morgenreflexionen (freier Text)</li>
           </ul>
           <p>
             Die Daten sind intern nur über eine pseudonyme <strong>Profil-ID</strong> gespeichert — keine E-Mail-Adresse in der Dreams-Tabelle.
+          </p>
+          <p>
+            <strong>Hinweis zu Wellbeing-Daten:</strong> Da Stimmungs- und Gesundheitsangaben als besondere Kategorien personenbezogener Daten (Gesundheitsdaten) nach Art. 9 DSGVO eingestuft werden können, erfolgt die Übermittlung nur auf Basis deiner ausdrücklichen Einwilligung gemäß Art. 6 Abs. 1 lit. a und Art. 9 Abs. 2 lit. a DSGVO — durch deine aktive Nutzung der Check-in-Funktion in Kombination mit aktiviertem Cloud-Sync.
           </p>
           <p>
             Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (deine Einwilligung). Du kannst deine Einwilligung jederzeit widerrufen (<em>Einstellungen → Privatsphäre → Cloud-Sync deaktivieren</em>).
@@ -87,7 +94,9 @@
             <strong>Löschfristen:</strong> Gelöschte Träume werden sofort inhaltlich geleert. Ein technischer Lösch-Marker bleibt max. 30 Tage für die Geräte-Synchronisierung bestehen und wird danach vollständig gelöscht.
           </p>
 
-          <h2>5. KI-Traumdeutung (OpenAI)</h2>
+          <h2>5. KI-Traumdeutung und KI-Einordnung (OpenAI)</h2>
+
+          <h3>Manuelle KI-Traumdeutung</h3>
           <p>
             Wenn du die KI-Traumdeutung nutzt, wird der <strong>Text deines Traumeintrags</strong> (Titel, Traumtext sowie Metadaten wie Kategorie, Emotionen und Motive) zur Verarbeitung an <strong>OpenAI Ireland Limited</strong> (1st Floor, The Liffey Trust Centre, 117–126 Sheriff Street Upper, Dublin 1, Irland; sowie OpenAI OpCo, LLC, USA) übermittelt.
           </p>
@@ -99,16 +108,36 @@
             Mehr: <a href="https://openai.com/privacy" target="_blank" rel="noopener">openai.com/privacy</a>.
           </p>
 
+          <h3>Automatische KI-Einordnung</h3>
+          <p>
+            Die App bietet eine optionale Funktion zur automatischen KI-Einordnung von Träumen. Wenn du diese Funktion aktiviert hast (<em>Einstellungen → Datenschutz → KI-Einordnung</em>), wird der Traumtext beim Speichern automatisch über unsere Backend-Server an <strong>OpenAI, LLC</strong> (USA) übermittelt. OpenAI erkennt dabei automatisch einen passenden Titel, eine Kategorie sowie relevante Motive und Emotionen für deinen Eintrag.
+          </p>
+          <p>
+            Auch hier wird dein Name oder deine E-Mail-Adresse nicht weitergegeben, und die Daten werden nicht zum Training von KI-Modellen genutzt.
+          </p>
+          <p>
+            <strong>Drittlandübermittlung USA:</strong> OpenAI, LLC ist nach dem EU-US Data Privacy Framework zertifiziert, das eine angemessene Schutzgrundlage für die Datenübermittlung in die USA bietet.
+          </p>
+          <p>
+            Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (deine Einwilligung). Die Funktion ist standardmäßig deaktiviert und kann jederzeit unter <em>Einstellungen → Datenschutz → KI-Einordnung</em> widerrufen werden.
+          </p>
+
           <h2>6. Community Insights (anonyme Statistiken)</h2>
           <p>
             Die Community-Insights-Funktion zeigt anonymisierte Traumstatistiken. Es werden <strong>ausschließlich Metadaten</strong> ohne direkten Personenbezug ausgewertet:
           </p>
           <ul>
             <li>Mondphase, Albtraum- / Luzide-Traum-Kennzeichnung (Ja/Nein)</li>
-            <li>Traumkategorie, ausgewählte Motive, Wochennummer und Jahr</li>
+            <li>Traumkategorie, ausgewählte Motive, Emotionen, Wochennummer und Jahr</li>
           </ul>
           <p>
-            Kein Traumtext, kein Titel, keine E-Mail-Adresse werden übertragen. Die Beiträge sind pseudonymisiert und werden nicht mit deinem Konto verknüpft.
+            Kein Traumtext, kein Titel, keine E-Mail-Adresse werden übertragen.
+          </p>
+          <p>
+            <strong>Anonyme Geräte-ID:</strong> Mit jedem Beitrag wird eine persistent gespeicherte, anonyme Geräte-ID (zufällig generierte UUID) übertragen. Diese dient ausschließlich dazu, vorherige Beiträge desselben Geräts zu ersetzen und Duplikate zu vermeiden. Die ID ist <strong>nicht</strong> mit deinem Nutzerkonto verknüpft und lässt keine Rückschlüsse auf deine Person zu.
+          </p>
+          <p>
+            <strong>Löschung:</strong> Wenn du die Community-Insights-Funktion deaktivierst, werden deine bisher beigetragenen Daten auf dem Server nicht automatisch gelöscht. Du kannst die Löschung jederzeit per E-Mail an <a href="mailto:datenschutz@jume.app">datenschutz@jume.app</a> beantragen.
           </p>
           <p>Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (deine Einwilligung durch Aktivierung).</p>
 
@@ -122,6 +151,9 @@
           </ul>
           <p>
             <strong>Lokale Speicherung:</strong> Deine Geburtsdaten werden zunächst ausschließlich lokal gespeichert. Mit Konto werden sie zusätzlich auf unseren Servern (Deutschland, Hetzner Cloud) gespeichert.
+          </p>
+          <p>
+            <strong>Geburtsort-Eingabe:</strong> Den Geburtsort gibst du manuell in der App ein. Die App nutzt <strong>keinen GPS-Standortzugriff</strong>. Die daraus ermittelten geografischen Koordinaten werden lokal auf deinem Gerät gespeichert und bei aktiviertem Cloud-Sync auf den jume-Server übertragen.
           </p>
           <p>
             <strong>Geburtsort-Suche (Mapbox):</strong> Deine Texteingabe (Ortsname) wird zur Geocodierung an <strong>MapBox Inc.</strong> (Washington, DC, USA) übermittelt. Keine weiteren personenbezogenen Daten werden übertragen. Mehr: <a href="https://www.mapbox.com/legal/privacy" target="_blank" rel="noopener">mapbox.com/legal/privacy</a>.
@@ -167,8 +199,14 @@
             Mit deiner Einwilligung kann die App dir Push-Benachrichtigungen senden. Dafür wird ein gerätegebundenes Push-Token auf unseren Servern gespeichert. Versand über:
           </p>
           <ul>
-            <li><strong>Apple Push Notification Service (APNs)</strong> — Apple Inc., USA</li>
-            <li><strong>Firebase Cloud Messaging (FCM)</strong> — Google LLC, USA</li>
+            <li>
+              <strong>Apple Push Notification Service (APNs)</strong> — Apple Inc., USA.<br />
+              Rechtsgrundlage für die Drittlandübermittlung in die USA: Standard-Vertragsklauseln (SCCs) der EU-Kommission sowie Teilnahme am EU-US Data Privacy Framework.
+            </li>
+            <li>
+              <strong>Firebase Cloud Messaging (FCM)</strong> — Google LLC, USA.<br />
+              Rechtsgrundlage für die Drittlandübermittlung in die USA: Standard-Vertragsklauseln (SCCs) der EU-Kommission sowie EU-US Data Privacy Framework.
+            </li>
           </ul>
           <p>
             Dein Trauminhalt wird dabei nicht übertragen. Deaktivierung jederzeit unter <em>Einstellungen → Mitteilungen → jume</em> oder in der App.
@@ -199,12 +237,14 @@
               <tr><td style="padding:8px 12px;border-bottom:1px solid #eee;">Konto-Daten</td><td style="padding:8px 12px;border-bottom:1px solid #eee;">Bis zur Kontolöschung, danach 30 Tage anonymisiert</td></tr>
               <tr><td style="padding:8px 12px;border-bottom:1px solid #eee;">Traumdaten (Cloud-Sync)</td><td style="padding:8px 12px;border-bottom:1px solid #eee;">Bis zur Löschung durch dich oder Kontolöschung</td></tr>
               <tr><td style="padding:8px 12px;border-bottom:1px solid #eee;">Gelöschte Träume (Sync-Marker)</td><td style="padding:8px 12px;border-bottom:1px solid #eee;">Max. 30 Tage nach Löschung</td></tr>
+              <tr><td style="padding:8px 12px;border-bottom:1px solid #eee;">Wellbeing-Einträge (Check-in)</td><td style="padding:8px 12px;border-bottom:1px solid #eee;">Lokal unbegrenzt, bei Cloud-Sync bis Kontolöschung</td></tr>
               <tr><td style="padding:8px 12px;border-bottom:1px solid #eee;">Geburtsdaten / Astrologie</td><td style="padding:8px 12px;border-bottom:1px solid #eee;">Bis zur Löschung durch dich oder Kontolöschung</td></tr>
               <tr><td style="padding:8px 12px;border-bottom:1px solid #eee;">Session-Tokens</td><td style="padding:8px 12px;border-bottom:1px solid #eee;">30 Tage, dann automatisch ungültig</td></tr>
               <tr><td style="padding:8px 12px;border-bottom:1px solid #eee;">Magic-Link-Tokens</td><td style="padding:8px 12px;border-bottom:1px solid #eee;">24 Stunden oder bis zur Nutzung</td></tr>
               <tr><td style="padding:8px 12px;border-bottom:1px solid #eee;">Kauf-/Transaktionsdaten</td><td style="padding:8px 12px;border-bottom:1px solid #eee;">Mind. 10 Jahre (§ 147 AO)</td></tr>
               <tr><td style="padding:8px 12px;border-bottom:1px solid #eee;">Push-Tokens</td><td style="padding:8px 12px;border-bottom:1px solid #eee;">Bis zur Deaktivierung oder Kontolöschung</td></tr>
               <tr><td style="padding:8px 12px;border-bottom:1px solid #eee;">Community-Insights-Daten</td><td style="padding:8px 12px;border-bottom:1px solid #eee;">Aggregiert, keine individuelle Zuordnung</td></tr>
+              <tr><td style="padding:8px 12px;border-bottom:1px solid #eee;">Anonyme Geräte-ID (Community)</td><td style="padding:8px 12px;border-bottom:1px solid #eee;">Bis Opt-out, danach auf Anfrage löschbar</td></tr>
               <tr><td style="padding:8px 12px;">Lokale App-Daten (Hive)</td><td style="padding:8px 12px;">Auf deinem Gerät, bis zur App-Deinstallation</td></tr>
             </tbody>
           </table>
@@ -217,7 +257,10 @@
             <li>Widerspruch (Art. 21), Widerruf einer Einwilligung (Art. 7 Abs. 3)</li>
             <li>Beschwerde bei einer Aufsichtsbehörde (Art. 77)</li>
           </ul>
-          <p>Kontakt: <a href="mailto:info@jume.app">info@jume.app</a></p>
+          <p>
+            <strong>Self-Service-Datenexport:</strong> Wenn du eingeloggt bist, kannst du in der App unter <em>Einstellungen → Meine Daten → Daten exportieren</em> jederzeit einen DSGVO-konformen Export deiner Daten anfordern. Der Export enthält alle auf dem jume-Server gespeicherten Daten — also Träume, Wellbeing-Einträge und Profildaten. Rein lokal gespeicherte Daten (Träume ohne Cloud-Sync) befinden sich ausschließlich auf deinem Gerät und können nicht über diese Funktion exportiert werden.
+          </p>
+          <p>Kontakt: <a href="mailto:datenschutz@jume.app">datenschutz@jume.app</a></p>
 
           <h2>14. Zuständige Aufsichtsbehörde</h2>
           <p>
