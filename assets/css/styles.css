@@ -695,6 +695,9 @@ em { font-style: italic; }
   flex-direction: row !important;
   align-items: flex-start !important;
   gap: 10px !important;
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: unset !important;
 }
 
 .brevo-wrap .entry__choice input[type="checkbox"] {
