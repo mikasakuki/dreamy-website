@@ -692,6 +692,29 @@ em { font-style: italic; }
   border: 1.5px solid var(--rose-soft) !important;
   border-radius: 6px !important;
   background: var(--white) !important;
+  cursor: pointer !important;
+  pointer-events: auto !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+/* Echte Checkbox über den custom Span legen damit Klick funktioniert */
+.brevo-wrap .input_replaced {
+  position: absolute !important;
+  opacity: 0 !important;
+  width: 20px !important;
+  height: 20px !important;
+  cursor: pointer !important;
+  z-index: 3 !important;
+  margin: 0 !important;
+}
+
+.brevo-wrap .entry__choice label {
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 10px !important;
+  position: relative !important;
 }
 
 .brevo-wrap .sib-form__declaration {
