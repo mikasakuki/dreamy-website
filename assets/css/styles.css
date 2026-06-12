@@ -688,6 +688,23 @@ em { font-style: italic; }
 }
 .brevo-wrap .sib-form-block__button:hover { opacity: 0.9; }
 
+/* Checkbox-Zeile: Haken links, Text rechts daneben */
+.brevo-wrap .entry__choice,
+.brevo-wrap .form__label-row .entry__choice {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-start !important;
+  gap: 10px !important;
+}
+
+.brevo-wrap .entry__choice input[type="checkbox"] {
+  flex-shrink: 0 !important;
+  width: 16px !important;
+  height: 16px !important;
+  margin: 2px 0 0 0 !important;
+  align-self: flex-start !important;
+}
+
 .brevo-wrap .checkbox_tick_positive {
   border: 1.5px solid var(--rose-soft) !important;
   border-radius: 6px !important;
