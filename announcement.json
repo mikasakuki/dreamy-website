@@ -1,7 +1,7 @@
 {
-  "active": true,
+  "active": false,
   "id": "neumond-launch-01",
   "emoji": "🌙",
-  "message": "Neu: Mondimpulse jetzt auch für Neumond — schau mal rein!",
-  "url": "https://jume.app/mond/"
+  "message": "",
+  "url": ""
 }
