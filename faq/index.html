@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ – Häufige Fragen zur jume App</title>
+  <meta name="description" content="Antworten auf häufige Fragen zur jume App: Aufnahme, Traumdeutung, Mondkalender, Abo und mehr." />
+  <meta name="author" content="jume" />
+  <meta name="theme-color" content="#F2DFE1" />
+  <link rel="canonical" href="https://jume.app/faq/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:url" content="https://jume.app/faq/" />
+  <meta property="og:title" content="FAQ – Häufige Fragen zur jume App" />
+  <meta property="og:description" content="Antworten auf häufige Fragen zur jume App: Aufnahme, Traumdeutung, Mondkalender, Abo und mehr." />
+  <meta property="og:site_name" content="jume" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Wie nehme ich einen Traum auf?", "acceptedAnswer": { "@type": "Answer", "text": "Tippe auf „Traum aufnehmen" auf dem Startbildschirm. Sprich deinen Traum ein — jume hört zu und stoppt automatisch, wenn du fertig bist." } },
+      { "@type": "Question", "name": "Werden meine Träume gespeichert oder weitergegeben?", "acceptedAnswer": { "@type": "Answer", "text": "Nein. Für die KI-Deutung wird dein Traumtext kurz an OpenAI geschickt — ausschließlich für die Analyse, ohne dauerhafte Speicherung bei OpenAI. Deine Einträge liegen nur auf deinem Gerät und optional in deinem verschlüsselten Cloud-Backup." } },
+      { "@type": "Question", "name": "Woher kommen die Mondphasen-Daten?", "acceptedAnswer": { "@type": "Answer", "text": "jume berechnet Mondphasen astronomisch auf Basis deines Standorts und Datums — nach denselben Formeln, die auch professionelle Ephemeridenrechner nutzen." } },
+      { "@type": "Question", "name": "Was bekomme ich mit Premium?", "acceptedAnswer": { "@type": "Answer", "text": "Cloud-Sync, erweiterte Statistiken, Filter, Atemübungen, Aufwachroutinen, Natal Chart und mehr Deutungsmodi." } }
+    ]
+  }
+  </script>
+
+  <!-- Cookie Consent (runs early, before deferred scripts) -->
+  <script src="/assets/js/cookie-consent.js"></script>
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+  <script defer src="../assets/js/site.js"></script>
+
+  <style>
+    .faq-hero {
+      padding: 64px 0 40px;
+      text-align: center;
+    }
+    .faq-hero .tag-pill {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--plum-muted);
+      background: rgba(255,255,255,0.6);
+      border: 1px solid var(--border-warm);
+      border-radius: 50px;
+      padding: 5px 14px;
+      margin-bottom: 18px;
+    }
+    .faq-hero h1 {
+      font-size: 2.4rem;
+      color: var(--plum);
+      margin: 0 0 14px;
+    }
+    .faq-hero p {
+      color: var(--plum-muted);
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .faq-section {
+      padding: 0 0 40px;
+    }
+    .faq-section-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    .faq-section-header .emoji { font-size: 1.25rem; }
+    .faq-section-header h2 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--plum);
+      margin: 0;
+    }
+
+    .faq-card {
+      background: rgba(255,255,255,0.62);
+      border: 1px solid var(--border-warm);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    .faq-item {
+      border-bottom: 1px solid var(--border-warm);
+    }
+    .faq-item:last-child { border-bottom: none; }
+
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 16px 20px;
+      cursor: pointer;
+      user-select: none;
+      font-weight: 600;
+      font-size: 0.93rem;
+      color: var(--plum);
+      list-style: none;
+    }
+    .faq-question::-webkit-details-marker { display: none; }
+    .faq-question::after {
+      content: '﹢';
+      font-size: 1.1rem;
+      color: var(--plum-muted);
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    details[open] > .faq-question::after {
+      content: '−';
+    }
+
+    .faq-answer {
+      padding: 0 20px 16px;
+      font-size: 0.88rem;
+      color: var(--plum-muted);
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body data-depth="../" data-active="">
+  <div id="site-header"></div>
+
+  <main>
+    <div class="container">
+      <div class="faq-hero">
+        <div class="tag-pill">FAQ</div>
+        <h1>Häufige Fragen</h1>
+        <p>Alles rund um die jume App — von der ersten Aufnahme bis zum Mondkalender.</p>
+      </div>
+
+      <!-- Aufnahme & Tagebuch -->
+      <section class="faq-section">
+        <div class="faq-section-header">
+          <span class="emoji">🎙️</span>
+          <h2>Aufnahme & Tagebuch</h2>
+        </div>
+        <div class="faq-card">
+          <div class="faq-item">
+            <details>
+              <summary class="faq-question">Wie nehme ich einen Traum auf?</summary>
+              <p class="faq-answer">Tippe auf „Traum aufnehmen" auf dem Startbildschirm. Sprich deinen Traum einfach ein — jume hört zu und stoppt automatisch, wenn du fertig bist. Danach wird der Text transkribiert und gedeutet.</p>
+            </details>
+          </div>
+          <div class="faq-item">
+            <details>
+              <summary class="faq-question">Wann ist der beste Zeitpunkt zur Aufnahme?</summary>
+              <p class="faq-answer">Direkt nach dem Aufwachen, bevor du das Handy checkst oder aufstehst. Träume verblassen in den ersten Minuten am schnellsten. Auch ein kurzes Stichwort reicht schon.</p>
+            </details>
+          </div>
+          <div class="faq-item">
+            <details>
+              <summary class="faq-question">Kann ich Träume auch manuell eingeben?</summary>
+              <p class="faq-answer">Ja — auf dem Startbildschirm gibt es auch die Option, einen Traum per Text einzugeben. Ideal wenn du leise sein musst oder lieber tippst.</p>
+            </details>
+          </div>
+          <div class="faq-item">
+            <details>
+              <summary class="faq-question">Wie funktioniert die automatische Transkription?</summary>
+              <p class="faq-answer">jume wandelt deine Sprache in Text um — auf iOS über die eingebaute Spracherkennung. Auf Android kannst du ein deutsches Offline-Sprachpaket installieren (Einstellungen → Sprache & Eingabe → Offline-Sprachen → Deutsch) für schnellere Ergebnisse ohne Internet.</p>
+            </details>
+          </div>
+          <div class="faq-item">
+            <details>
+              <summary class="faq-question">Kann ich einen Traumeintrag nachträglich bearbeiten?</summary>
+              <p class="faq-answer">Ja. Öffne den Traum im Journal und tippe auf das Bearbeiten-Symbol. Text, Stimmung, Motive und alle anderen Felder lassen sich jederzeit ändern.</p>
+            </details>
+          </div>
+          <div class="faq-item">
+            <details>
+              <summary class="faq-question">Wie lösche ich einen Traumeintrag?</summary>
+              <p class="faq-answer">Im Journal den Eintrag öffnen → Bearbeiten → ganz unten „Eintrag löschen". Diese Aktion kann nicht rückgängig gemacht werden.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- Traumdeutung & KI -->
+      <section class="faq-section">
+        <div class="faq-section-header">
+          <span class="emoji">✨</span>
+          <h2>Traumdeutung & KI</h2>
+        </div>
+        <div class="faq-card">
+          <div class="faq-item">
+            <details>
+              <summary class="faq-question">Wie deutet jume meine Träume?</summary>
+              <p class="faq-answer">jume nutzt KI (OpenAI), um die Symbole, Stimmung und Motive deines Traums sanft einzuordnen. Du kannst zwischen verschiedenen Deutungsstilen wählen — z. B. psychologisch, archetypisch oder mondbasiert.</p>
+            </details>
+          </div>
+          <div class="faq-item">
+            <details>
+              <summary class="faq-question">Werden meine Träume gespeichert oder weitergegeben?</summary>
+              <p class="faq-answer">Nein. Für die KI-Deutung wird dein Traumtext kurz an OpenAI geschickt — ausschließlich für die Analyse, ohne dauerhafte Speicherung bei OpenAI. Deine Einträge selbst liegen nur auf deinem Gerät und optional in deinem verschlüsselten Cloud-Backup.</p>
+            </details>
+          </div>
+          <div class="faq-item">
+            <details>
+              <summary class="faq-question">Was ist der Unterschied zwischen den Deutungsmodi?</summary>
+              <p class="faq-answer">Jeder Modus beleuchtet deinen Traum aus einem anderen Winkel: „Klassisch" ist tiefenpsychologisch orientiert, „Archetypisch" arbeitet mit Jungschen Symbolen, „Mondbasiert" verbindet den Traum mit der aktuellen Mondenergie. Premium- und Unlimited-Nutzer haben Zugang zu mehr Modi.</p>
+            </details>
+          </div>
+          <div class="faq-item">
+            <details>
+              <summary class="faq-question">Kann ich die KI-Deutung ablehnen?</summary>
+              <p class="faq-answer">Ja. Du kannst einen Traum aufnehmen und speichern, ohne eine KI-Deutung anzufordern. Die Einwilligung kannst du in den Einstellungen unter „KI-Einordnung" jederzeit anpassen.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mondkalender & Astrologie -->
+      <section class="faq-section">
+        <div class="faq-section-header">
+          <span class="emoji">🌙</span>
+          <h2>Mondkalender & Astrologie</h2>
+        </div>
+        <div class="faq-card">
+          <div class="faq-item">
+            <details>
+              <summary class="faq-question">Woher kommen die Mondphasen-Daten?</summary>
+              <p class="faq-answer">jume berechnet Mondphasen astronomisch auf Basis deines Standorts und Datums — nach denselben Formeln, die professionelle Ephemeridenrechner nutzen. Die Beleuchtungsangabe (z. B. „72 % beleuchtet") gibt den genauen Anteil der sichtbaren Mondscheibe an.</p>
+            </details>
+          </div>
+          <div class="faq-item">
+            <details>
+              <summary class="faq-question">Was bedeuten Vollmond und Neumond für meine Träume?</summary>
+              <p class="faq-answer">Vollmond steht traditionell für intensive, lebhafte Träume und emotionale Verdichtung. Neumond für Neuanfänge und ruhigere, oft diffusere Traumbilder. Die Mondimpulse in jume kombinieren diese Energien mit den astrologischen Qualitäten des jeweiligen Sternzeichens.</p>
+            </details>
+          </div>
+          <div class="faq-item">
+            <details>
+              <summary class="faq-question">Was ist ein Mondimpuls?</summary>
+              <p class="faq-answer">Zu jedem Vollmond und Neumond gibt es einen kurzen Text, der erklärt, welche Energie gerade wirkt und was das für deine Träume bedeuten kann. Du findest sie im Mondbereich der App und auf <a href="/mond/" style="color:inherit;text-decoration:underline;">jume.app/mond</a>.</p>
+            </details>
+          </div>
+          <div class="faq-item">
+            <details>
+              <summary class="faq-question">Was ist mein Natal Chart und wie wird es berechnet?</summary>
+              <p class="faq-answer">Dein Natal Chart (Geburtshoroskop) zeigt die Positionen der Planeten zum Zeitpunkt deiner Geburt. jume berechnet es anhand deines Geburtsdatums, der Uhrzeit und des Geburtsortes — alle drei Angaben sind für ein genaues Ergebnis nötig, besonders für den Aszendenten.</p>
+            </details>
+          </div>
+          <div class="faq-item">
+            <details>
+              <summary class="faq-question">Wie genau sind die astrologischen Berechnungen?</summary>
+              <p class="faq-answer">jume verwendet astronomisch präzise Planetenpositionen (Schweizer Ephemeris). Die Deutungen sind als Reflexionsangebot zu verstehen — nicht als Vorhersage.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tag- & Nachtmodus -->
+      <section class="faq-section">
+        <div class="faq-section-header">
+          <span class="emoji">☀️</span>
+          <h2>Tag- & Nachtmodus</h2>
+        </div>
+        <div class="faq-card">
+          <div class="faq-item">
+            <details>
+              <summary class="faq-question">Was ist der Unterschied zwischen Tag- und Nachtmodus?</summary>
+              <p class="faq-answer">Der Tagmodus zeigt jume in einem hellen, sanften Blau-Rosa — ideal für morgens. Der Nachtmodus wechselt zu einem tiefen Dunkelblau für die Abendstunden. Beides kann manuell oder per Zeitplan eingestellt werden.</p>
+            </details>
+          </div>
+          <div class="faq-item">
+            <details>
+              <summary class="faq-question">Wie stelle ich den automatischen Wechsel ein?</summary>
+              <p class="faq-answer">Einstellungen → Darstellung → Zeitplan. Dort legst du fest, ab wann der Tag- und ab wann der Nachtmodus aktiv sein soll.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- Statistiken & Muster -->
+      <section class="faq-section">
+        <div class="faq-section-header">
+          <span class="emoji">📊</span>
+          <h2>Statistiken & Muster</h2>
+        </div>
+        <div class="faq-card">
+          <div class="faq-item">
+            <details>
+              <summary class="faq-question">Was zeigen mir die Statistiken?</summary>
+              <p class="faq-answer">jume wertet deine Traumeinträge aus: häufigste Motive, Stimmungsverläufe, Traumlänge über Zeit, Streaks und mehr. Premium-Nutzer sehen detailliertere Auswertungen und Filter.</p>
+            </details>
+          </div>
+          <div class="faq-item">
+            <details>
+              <summary class="faq-question">Was ist die KI-Musteranalyse?</summary>
+              <p class="faq-answer">Mit Unlimited analysiert jume deine gesammelten Einträge und sucht nach wiederkehrenden Themen, emotionalen Mustern und symbolischen Verbindungen — mit einer persönlichen Zusammenfassung.</p>
+            </details>
+          </div>
+          <div class="faq-item">
+            <details>
+              <summary class="faq-question">Ab wie vielen Einträgen sind die Statistiken sinnvoll?</summary>
+              <p class="faq-answer">Ab etwa 7–10 Einträgen erkennst du erste Muster. Je mehr Einträge, desto aussagekräftiger werden Häufigkeiten und Trends.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- Cloud, Sync & Konto -->
+      <section class="faq-section">
+        <div class="faq-section-header">
+          <span class="emoji">☁️</span>
+          <h2>Cloud, Sync & Konto</h2>
+        </div>
+        <div class="faq-card">
+          <div class="faq-item">
+            <details>
+              <summary class="faq-question">Was ist Cloud-Sync und brauche ich das?</summary>
+              <p class="faq-answer">Cloud-Sync ist für Premium- und Unlimited-Nutzer verfügbar. Es sichert deine Träume verschlüsselt auf dem Server — so sind sie bei einem Gerätewechsel oder App-Neuinstallation wiederherstellbar.</p>
+            </details>
+          </div>
+          <div class="faq-item">
+            <details>
+              <summary class="faq-question">Sind meine Daten sicher in der Cloud?</summary>
+              <p class="faq-answer">Ja. Deine Traumdaten werden verschlüsselt übertragen und gespeichert. Nur du hast Zugriff. Für die Deutung werden Texte kurz an OpenAI weitergegeben — ohne dauerhafte Speicherung dort.</p>
+            </details>
+          </div>
+          <div class="faq-item">
+            <details>
+              <summary class="faq-question">Was passiert, wenn ich mein Konto lösche?</summary>
+              <p class="faq-answer">Alle Daten auf dem Server werden dauerhaft und unwiderruflich gelöscht (Art. 17 DSGVO). Lokale Einträge auf deinem Gerät bleiben erhalten, bis du die App deinstallierst.</p>
+            </details>
+          </div>
+          <div class="faq-item">
+            <details>
+              <summary class="faq-question">Kann ich jume ohne Konto nutzen?</summary>
+              <p class="faq-answer">Ja. Alle Einträge werden lokal auf deinem Gerät gespeichert — kein Konto nötig. Für Cloud-Sync und Premium-Features brauchst du ein Konto.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- Abonnement & Premium -->
+      <section class="faq-section">
+        <div class="faq-section-header">
+          <span class="emoji">⭐</span>
+          <h2>Abonnement & Premium</h2>
+        </div>
+        <div class="faq-card">
+          <div class="faq-item">
+            <details>
+              <summary class="faq-question">Gibt es eine kostenlose Version?</summary>
+              <p class="faq-answer">Ja. Traumtagebuch, Mondkalender, Basisstatistiken, Community-Einblicke und grundlegende Werkzeuge sind dauerhaft kostenlos.</p>
+            </details>
+          </div>
+          <div class="faq-item">
+            <details>
+              <summary class="faq-question">Was bekomme ich mit Premium?</summary>
+              <p class="faq-answer">Cloud-Sync, erweiterte Statistiken, detaillierte Filter, Atemübungen, Aufwachroutinen, Natal Chart und mehr Deutungsmodi.</p>
+            </details>
+          </div>
+          <div class="faq-item">
+            <details>
+              <summary class="faq-question">Was bekomme ich mit Unlimited?</summary>
+              <p class="faq-answer">Alles aus Premium, plus: luzide Traumwerkzeuge, KI-Musteranalyse und unbegrenzte Natal Charts.</p>
+            </details>
+          </div>
+          <div class="faq-item">
+            <details>
+              <summary class="faq-question">Kann ich ein Abo jederzeit kündigen?</summary>
+              <p class="faq-answer">Ja, jederzeit über den App Store (iOS) oder Google Play Store (Android). Das Abo bleibt bis zum Ende der bezahlten Periode aktiv.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+</body>
+</html>
