@@ -698,6 +698,8 @@ em { font-style: italic; }
   white-space: normal !important;
   overflow: visible !important;
   text-overflow: unset !important;
+  padding-left: 0 !important;
+  text-indent: 0 !important;
 }
 
 .brevo-wrap .entry__choice input[type="checkbox"] {
