@@ -6,6 +6,7 @@
     { key: "start",   href: "/",                label: "Start" },
     { key: "mond",    href: "/mond/",            label: "Mondimpulse" },
     { key: "wissen",  href: "/wissen/",          label: "Traumwissen" },
+    { key: "app",     href: "/app/",             label: "App" },
   ];
 
   // Logo: tries image first, falls back to styled text
