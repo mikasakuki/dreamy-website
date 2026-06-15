@@ -38,9 +38,29 @@
           <div class="header-cta">
             <a class="btn btn-primary btn-sm" href="/#newsletter">Newsletter</a>
           </div>
+          <button class="nav-toggle" aria-label="Menü öffnen" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+        <div class="mobile-nav" aria-hidden="true">
+          ${links
+            .map(link => `<a href="${link.href}"${active === link.key ? ' class="active"' : ""}>${link.label}</a>`)
+            .join("")}
+          <a class="btn btn-primary" href="/#newsletter" style="margin-top:8px;">Newsletter</a>
         </div>
       </header>
     `;
+
+    // Toggle mobile menu
+    const toggle = headerTarget.querySelector(".nav-toggle");
+    const mobileNav = headerTarget.querySelector(".mobile-nav");
+    toggle.addEventListener("click", () => {
+      const open = toggle.getAttribute("aria-expanded") === "true";
+      toggle.setAttribute("aria-expanded", String(!open));
+      toggle.classList.toggle("open", !open);
+      mobileNav.classList.toggle("open", !open);
+      mobileNav.setAttribute("aria-hidden", String(open));
+    });
   }
 
   if (footerTarget) {
