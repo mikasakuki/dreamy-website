@@ -52,11 +52,13 @@
         })
         .then(function (data) {
           var el = document.getElementById('dse-content');
-          if (el && data && data.content) {
-            el.innerHTML = data.content;
-          } else {
-            throw new Error('Kein Inhalt');
-          }
+          if (!el || !data || !data.content) throw new Error('Kein Inhalt');
+          // The backend content wraps everything in sections — extract only
+          // the inner legal-content div so we don't double-render the hero.
+          var tmp = document.createElement('div');
+          tmp.innerHTML = data.content;
+          var inner = tmp.querySelector('.legal-content');
+          el.innerHTML = inner ? inner.innerHTML : data.content;
         })
         .catch(function () {
           var el = document.getElementById('dse-content');
