@@ -33,8 +33,8 @@ from pathlib import Path
 SCRIPT_DIR   = Path(__file__).parent
 HTML_FILE    = SCRIPT_DIR / "datenschutz-app.html"
 DEFAULT_URL  = "https://api.jume.app"
-LEGAL_TYPE   = "datenschutz"
-LEGAL_TITLE  = "Datenschutzerklärung"
+LEGAL_TYPE   = "datenschutz-app"
+LEGAL_TITLE  = "Datenschutzerklärung – jume App"
 
 
 # ── HTML-Extraktion ───────────────────────────────────────────────────────────
@@ -104,14 +104,12 @@ def extract_legal_content(html: str) -> str:
 # ── Webhook-Aufruf ────────────────────────────────────────────────────────────
 
 def push_to_backend(api_url: str, token: str, content: str) -> None:
-    endpoint = api_url.rstrip("/") + "/api/legal/webhook"
+    endpoint = api_url.rstrip("/") + "/api/legal/custom/push"
     payload = json.dumps({
-        "rechtstext_type":     LEGAL_TYPE,
-        "rechtstext_title":    LEGAL_TITLE,
-        "rechtstext_text":     content,
-        "rechtstext_language": "de",
-        "rechtstext_country":  "DE",
-        "token":               token,
+        "token":   token,
+        "type":    LEGAL_TYPE,
+        "title":   LEGAL_TITLE,
+        "content": content,
     }).encode("utf-8")
 
     req = urllib.request.Request(

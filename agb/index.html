@@ -9,25 +9,63 @@
   <title>AGB – Allgemeine Geschäftsbedingungen – jume</title>
   <meta name="robots" content="noindex" />
   <link rel="canonical" href="https://jume.app/agb/" />
-  <script src="/assets/js/cookie-consent.js"></script>
   <link rel="stylesheet" href="../assets/css/styles.css" />
   <script defer src="../assets/js/site.js"></script>
   <style>
-    .agb-wrap { padding: 48px 0 80px; max-width: 720px; margin: 0 auto; }
-    .agb-wrap h1 { font-size: 1.6rem; color: var(--plum); margin-bottom: 8px; }
-    .agb-frame { width: 100%; border: 1px solid var(--border-warm); border-radius: 16px; min-height: 80vh; }
+    .legal-loading { text-align: center; padding: 48px 0; opacity: 0.5; }
+    .legal-error   { text-align: center; padding: 48px 0; color: var(--error, #c0392b); }
   </style>
 </head>
 <body data-depth="../" data-active="app">
   <div id="site-header"></div>
+
   <main>
-    <div class="container">
-      <div class="agb-wrap">
-        <h1>Allgemeine Geschäftsbedingungen</h1>
-        <iframe class="agb-frame" src="https://api.jume.app/api/legal/agb/page" title="AGB jume" frameborder="0"></iframe>
+    <section class="page-hero" style="padding-bottom: 48px;">
+      <div class="container">
+        <span class="section-kicker">Rechtliches</span>
+        <h1 style="margin-bottom: 0;">Allgemeine Geschäftsbedingungen</h1>
+        <p style="margin-top: 12px; opacity: 0.7;">Nutzungsbedingungen für die <strong>jume App</strong> (iOS / Android).</p>
       </div>
-    </div>
+    </section>
+
+    <section class="section section-white">
+      <div class="container">
+        <div id="agb-content" class="legal-content">
+          <p class="legal-loading">Wird geladen …</p>
+        </div>
+      </div>
+    </section>
   </main>
+
   <div id="site-footer"></div>
+
+  <script>
+    (function () {
+      fetch('https://api.jume.app/api/legal/agb', {
+        headers: { 'Accept': 'application/json' },
+      })
+        .then(function (res) {
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          return res.json();
+        })
+        .then(function (data) {
+          var el = document.getElementById('agb-content');
+          if (el && data && data.content) {
+            el.innerHTML = data.content;
+          } else {
+            throw new Error('Kein Inhalt');
+          }
+        })
+        .catch(function () {
+          var el = document.getElementById('agb-content');
+          if (el) {
+            el.innerHTML =
+              '<p class="legal-error">Die AGB konnten gerade nicht geladen werden.<br>' +
+              'Bitte versuche es später erneut oder kontaktiere uns unter ' +
+              '<a href="mailto:info@jume.app">info@jume.app</a>.</p>';
+          }
+        });
+    })();
+  </script>
 </body>
 </html>
