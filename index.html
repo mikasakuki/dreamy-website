@@ -202,7 +202,7 @@
                 <span class="tag tag-highlight">Vollmond</span>
                 <span class="tag">Wassermann</span>
               </div>
-              <p class="article-meta">29. Juli 2026 · Demnächst</p>
+              <p class="article-meta" data-moon-date="2026-07-29">29. Juli 2026</p>
               <h3>Vollmond im Wassermann</h3>
               <p>Sonne im Löwe, Mond im Wassermann – das Ich trifft auf das Wir. Was dieser Vollmond über Zugehörigkeit, Freiheit und das Anderssein sagen kann.</p>
               <span class="article-card-link">Mehr lesen →</span>
@@ -215,7 +215,7 @@
                 <span class="tag tag-highlight">Neumond</span>
                 <span class="tag">Krebs</span>
               </div>
-              <p class="article-meta">14. Juli 2026 · Demnächst</p>
+              <p class="article-meta" data-moon-date="2026-07-14">14. Juli 2026</p>
               <h3>Neumond im Krebs</h3>
               <p>Der Mond kehrt nach Hause zurück. Sonne und Mond vereint im Zeichen der Fürsorge und Erinnerung – eine der emotional tiefsten Nächte des Jahres.</p>
               <span class="article-card-link">Mehr lesen →</span>
@@ -337,6 +337,22 @@
     </section>
 
   </main>
+
+  <script>
+  (function () {
+    var today = new Date(); today.setHours(0,0,0,0);
+    document.querySelectorAll('[data-moon-date]').forEach(function (el) {
+      var d = new Date(el.dataset.moonDate); d.setHours(0,0,0,0);
+      var diff = Math.round((d - today) / 86400000);
+      var label = '';
+      if (diff > 0)         label = 'Demnächst';
+      else if (diff === 0)  label = 'Heute';
+      else if (diff === -1) label = 'Gestern';
+      else if (diff >= -14) label = 'Aktuell';
+      if (label) el.innerHTML += ' · <strong>' + label + '</strong>';
+    });
+  })();
+  </script>
 
   <div id="site-footer"></div>
 </body>
