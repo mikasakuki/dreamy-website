@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>jume laden – App Store & Google Play</title>
+  <meta name="description" content="Lade jume – dein Traumtagebuch mit Mondimpulsen und sanfter Begleitung. Kostenlos für iPhone und Android." />
+  <meta name="theme-color" content="#0A0E22" />
+  <link rel="canonical" href="https://jume.app/download" />
+  <link rel="shortcut icon" href="/assets/images/favicon-32x32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://jume.app/download" />
+  <meta property="og:title" content="jume laden – App Store & Google Play" />
+  <meta property="og:description" content="Halte deine Träume fest, bevor sie verblassen. Kostenlos für iPhone und Android." />
+  <meta property="og:site_name" content="jume" />
+  <style>
+    :root{
+      --night:#0A0E22; --night-2:#161B3D; --peach:#F6C9A8; --gold:#F4D9A0;
+      --cream:#ECE7DB; --muted:#AAB0D6;
+      --serif:"Playfair Display","Didot",Georgia,"Times New Roman",serif;
+      --sans:"Poppins","Helvetica Neue",system-ui,-apple-system,sans-serif;
+    }
+    *{box-sizing:border-box;margin:0;padding:0;}
+    html,body{height:100%;}
+    body{
+      font-family:var(--sans);color:var(--cream);
+      background:
+        radial-gradient(900px 500px at 50% -8%, #12183a 0%, #0a0e22 55%, #06091a 100%);
+      display:flex;align-items:center;justify-content:center;padding:40px 20px;
+    }
+    .card{width:100%;max-width:440px;text-align:center;}
+    .moon{
+      width:74px;height:74px;border-radius:50%;margin:0 auto 22px;
+      background:radial-gradient(circle at 38% 34%, #fff 0%, #f7efd9 30%, #efd9ad 62%, #d9b98a 100%);
+      box-shadow:0 0 40px 8px rgba(246,201,168,.4), 0 0 110px 30px rgba(244,217,160,.16);
+    }
+    .wordmark{font-family:var(--serif);font-size:44px;letter-spacing:.02em;color:var(--cream);}
+    h1{font-family:var(--serif);font-weight:500;font-size:22px;margin:14px 0 8px;color:var(--cream);}
+    .sub{color:var(--muted);font-size:15px;line-height:1.6;max-width:32ch;margin:0 auto 30px;}
+    .stores{display:flex;flex-direction:column;gap:14px;align-items:center;}
+    .badge{
+      display:inline-flex;align-items:center;gap:12px;width:100%;max-width:280px;
+      padding:13px 22px;border-radius:14px;background:#000;color:#fff;
+      text-decoration:none;border:1px solid rgba(255,255,255,.18);
+      transition:transform .15s ease, box-shadow .15s ease;
+    }
+    .badge:hover{transform:translateY(-2px);box-shadow:0 12px 30px -12px rgba(0,0,0,.7);}
+    .badge:focus-visible{outline:2px solid var(--gold);outline-offset:3px;}
+    .badge svg{flex:0 0 auto;}
+    .badge .lines{display:flex;flex-direction:column;text-align:left;line-height:1.15;}
+    .badge .small{font-size:10px;letter-spacing:.04em;opacity:.85;text-transform:uppercase;}
+    .badge .big{font-size:18px;font-weight:600;font-family:var(--sans);}
+    .redirect{margin-top:22px;font-size:13px;color:var(--muted);min-height:1.2em;}
+    .foot{margin-top:34px;font-size:12px;}
+    .foot a{color:var(--gold);text-decoration:none;}
+    .foot a:hover{text-decoration:underline;}
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="moon" aria-hidden="true"></div>
+    <div class="wordmark">jume</div>
+    <h1>Halte deine Träume fest,<br>bevor sie verblassen.</h1>
+    <p class="sub">Traumtagebuch, Mondimpulse und sanfte Begleitung für deine Nächte. Kostenlos.</p>
+
+    <div class="stores">
+      <a class="badge" id="apple" href="https://apps.apple.com/app/id6776764788">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M16.365 1.43c0 1.14-.417 2.2-1.11 2.98-.83.94-2.18 1.66-3.29 1.57-.14-1.1.42-2.28 1.06-3.01.72-.83 1.98-1.46 3.34-1.54zM20.9 17.02c-.55 1.27-.82 1.84-1.53 2.96-.99 1.57-2.39 3.52-4.12 3.53-1.54.02-1.94-1.01-4.03-1-2.09.01-2.53 1.02-4.07 1-1.73-.02-3.05-1.78-4.04-3.35-2.77-4.38-3.06-9.51-1.35-12.24 1.21-1.93 3.13-3.06 4.93-3.06 1.84 0 2.99 1.01 4.51 1.01 1.47 0 2.37-1.01 4.5-1.01 1.61 0 3.32.88 4.54 2.4-3.99 2.19-3.34 7.89.18 9.71z"/></svg>
+        <span class="lines"><span class="small">Laden im</span><span class="big">App Store</span></span>
+      </a>
+      <a class="badge" id="play" href="https://play.google.com/store/apps/details?id=com.juliacialkowski.dreamy">
+        <svg width="24" height="26" viewBox="0 0 512 512" aria-hidden="true"><path fill="#00E676" d="M47 24 289 266 47 508c-9-5-15-15-15-27V51c0-12 6-22 15-27z"/><path fill="#FFD600" d="M383 208 47 24c8-5 18-4 27 1l248 143z"/><path fill="#FF3D00" d="M383 324 322 344 74 487c-9 5-19 6-27 1l336-184z"/><path fill="#2196F3" d="M383 208 322 168l61 40 96 55c17 10 17 34 0 44l-96 55-61-40 61-40z"/></svg>
+        <span class="lines"><span class="small">Jetzt bei</span><span class="big">Google Play</span></span>
+      </a>
+    </div>
+
+    <p class="redirect" id="redirect"></p>
+
+    <p class="foot"><a href="/">← zurück zu jume.app</a></p>
+  </main>
+
+  <script>
+    (function(){
+      var ua = navigator.userAgent || navigator.vendor || '';
+      var apple = 'https://apps.apple.com/app/id6776764788';
+      var play  = 'https://play.google.com/store/apps/details?id=com.juliacialkowski.dreamy';
+      var msg = document.getElementById('redirect');
+      var isIOS = /iPhone|iPad|iPod/i.test(ua) && !window.MSStream;
+      var isAndroid = /Android/i.test(ua);
+      if (isIOS) { msg.textContent = 'Wir bringen dich zum App Store …'; setTimeout(function(){ location.replace(apple); }, 400); }
+      else if (isAndroid) { msg.textContent = 'Wir bringen dich zu Google Play …'; setTimeout(function(){ location.replace(play); }, 400); }
+    })();
+  </script>
+</body>
+</html>
