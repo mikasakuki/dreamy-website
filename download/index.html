@@ -56,6 +56,14 @@
     .dl-badge .lines{display:flex;flex-direction:column;text-align:left;line-height:1.14;}
     .dl-badge .small{font-size:10px;letter-spacing:.05em;text-transform:uppercase;opacity:.82;}
     .dl-badge .big{font-size:17px;font-weight:800;}
+    .dl-inapp{display:none;margin:0 0 22px;padding:16px 18px;border-radius:16px;
+      background:linear-gradient(180deg,#FFE9DE,#FFF4EF);
+      border:1px solid var(--peach-mid,#F7BFAE);color:var(--plum,#53424F);
+      text-align:left;font-size:.95rem;line-height:1.5;
+      box-shadow:0 4px 18px rgba(83,66,79,.10);}
+    .dl-inapp.show{display:block;}
+    .dl-inapp .t{display:flex;align-items:center;gap:8px;font-weight:800;font-size:1rem;margin-bottom:6px;}
+    .dl-inapp b{font-weight:800;}
     .dl-redirect{margin:20px 0 0;font-size:.85rem;color:var(--plum-muted,#7A6A75);min-height:1.1em;}
     .dl-back{display:inline-block;margin-top:26px;font-size:.85rem;color:var(--peach-mid,#F7BFAE);font-weight:700;text-decoration:none;}
     .dl-back:hover{text-decoration:underline;}
@@ -63,6 +71,11 @@
 </head>
 <body>
   <main class="dl-card">
+    <div class="dl-inapp" id="inapp">
+      <div class="t">📲 Kurz noch ein Schritt ↗</div>
+      Du bist gerade im <b>Instagram-Browser</b> – der lässt App-Downloads leider oft nicht zu.<br>
+      Tippe <b>oben rechts auf •••</b> und wähle <b>„Im externen Browser öffnen"</b> (bzw. „In Safari öffnen"). Danach klappt der Download sicher. 💛
+    </div>
     <img class="dl-logo" src="/assets/images/apple-touch-icon.png" alt="jume App-Icon" />
     <h1>Halte deine Träume fest, bevor sie verblassen.</h1>
     <p class="dl-sub">Traumtagebuch, Mondimpulse und sanfte Begleitung für deine Nächte. Kostenlos.</p>
@@ -96,10 +109,10 @@
       // App-Store-Button bleibt der normale https-Link (funktioniert in Safari).
       if (inApp) {
         // In-App-Browser (Instagram/Facebook) reichen App-Store-Links haeufig
-        // NICHT an den App Store weiter -> das ist eine Einschraenkung dieser
-        // Browser, kein Fehler der Seite. Sicherer Weg: in Safari oeffnen.
-        msg.innerHTML = 'Tipp: Tippe oben rechts auf <b>•••</b> und waehle ' +
-                        '<b>&bdquo;In Safari &ouml;ffnen&ldquo;</b> &ndash; dann klappen die Store-Buttons sicher.';
+        // NICHT an den App Store weiter -> deutlichen Hinweis-Kasten zeigen,
+        // KEINE Auto-Weiterleitung (bricht dort ohnehin).
+        var banner = document.getElementById('inapp');
+        if (banner) banner.classList.add('show');
         return;
       }
       if (isIOS) { msg.textContent = 'Wir bringen dich zum App Store …'; setTimeout(function(){ location.replace(appleWeb); }, 500); }
