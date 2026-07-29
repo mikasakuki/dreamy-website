@@ -85,13 +85,28 @@
   <script>
     (function(){
       var ua = navigator.userAgent || navigator.vendor || '';
-      var apple = 'https://apps.apple.com/app/id6776764788';
+      var appleWeb = 'https://apps.apple.com/app/id6776764788';
+      var appleApp = 'itms-apps://apps.apple.com/app/id6776764788';
       var play  = 'https://play.google.com/store/apps/details?id=com.juliacialkowski.dreamy';
       var msg = document.getElementById('redirect');
       var isIOS = /iPhone|iPad|iPod/i.test(ua) && !window.MSStream;
       var isAndroid = /Android/i.test(ua);
-      if (isIOS) { msg.textContent = 'Wir bringen dich zum App Store …'; setTimeout(function(){ location.replace(apple); }, 400); }
-      else if (isAndroid) { msg.textContent = 'Wir bringen dich zu Google Play …'; setTimeout(function(){ location.replace(play); }, 400); }
+      var inApp = /Instagram|FBAN|FBAV|FB_IAB|Line\/|Twitter|TikTok|Snapchat|Pinterest/i.test(ua);
+
+      // Auf iOS den App-Store-Button aufs itms-apps-Schema setzen -> oeffnet den
+      // App Store zuverlaessiger, auch in In-App-Browsern (Instagram/Facebook),
+      // wo apps.apple.com-Universal-Links oft nicht durchgereicht werden.
+      var appleEl = document.getElementById('apple');
+      if (isIOS && appleEl) appleEl.setAttribute('href', appleApp);
+
+      if (inApp) {
+        // In-App-Browser leiten Store-Links oft nicht durch -> Hinweis statt Auto-Redirect.
+        msg.innerHTML = 'Reagiert ein Button nicht? Tippe oben im Menu (•••) auf ' +
+                        '<b>&bdquo;In Safari &ouml;ffnen&ldquo;</b> bzw. &bdquo;Im Browser &ouml;ffnen&ldquo;.';
+        return;
+      }
+      if (isIOS) { msg.textContent = 'Wir bringen dich zum App Store …'; setTimeout(function(){ location.href = appleApp; }, 500); }
+      else if (isAndroid) { msg.textContent = 'Wir bringen dich zu Google Play …'; setTimeout(function(){ location.replace(play); }, 500); }
     })();
   </script>
 </body>
