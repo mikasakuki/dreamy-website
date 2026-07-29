@@ -93,19 +93,16 @@
       var isAndroid = /Android/i.test(ua);
       var inApp = /Instagram|FBAN|FBAV|FB_IAB|Line\/|Twitter|TikTok|Snapchat|Pinterest/i.test(ua);
 
-      // Auf iOS den App-Store-Button aufs itms-apps-Schema setzen -> oeffnet den
-      // App Store zuverlaessiger, auch in In-App-Browsern (Instagram/Facebook),
-      // wo apps.apple.com-Universal-Links oft nicht durchgereicht werden.
-      var appleEl = document.getElementById('apple');
-      if (isIOS && appleEl) appleEl.setAttribute('href', appleApp);
-
+      // App-Store-Button bleibt der normale https-Link (funktioniert in Safari).
       if (inApp) {
-        // In-App-Browser leiten Store-Links oft nicht durch -> Hinweis statt Auto-Redirect.
-        msg.innerHTML = 'Reagiert ein Button nicht? Tippe oben im Menu (•••) auf ' +
-                        '<b>&bdquo;In Safari &ouml;ffnen&ldquo;</b> bzw. &bdquo;Im Browser &ouml;ffnen&ldquo;.';
+        // In-App-Browser (Instagram/Facebook) reichen App-Store-Links haeufig
+        // NICHT an den App Store weiter -> das ist eine Einschraenkung dieser
+        // Browser, kein Fehler der Seite. Sicherer Weg: in Safari oeffnen.
+        msg.innerHTML = 'Tipp: Tippe oben rechts auf <b>•••</b> und waehle ' +
+                        '<b>&bdquo;In Safari &ouml;ffnen&ldquo;</b> &ndash; dann klappen die Store-Buttons sicher.';
         return;
       }
-      if (isIOS) { msg.textContent = 'Wir bringen dich zum App Store …'; setTimeout(function(){ location.href = appleApp; }, 500); }
+      if (isIOS) { msg.textContent = 'Wir bringen dich zum App Store …'; setTimeout(function(){ location.replace(appleWeb); }, 500); }
       else if (isAndroid) { msg.textContent = 'Wir bringen dich zu Google Play …'; setTimeout(function(){ location.replace(play); }, 500); }
     })();
   </script>
