@@ -14,6 +14,8 @@
     "/index.html": "/en/",
     "/mond/": "/en/mond/",
     "/wissen/": "/en/wissen/",
+    "/wissen/traumdeutung/": "/en/wissen/traumdeutung/",
+    "/wissen/glossar/": "/en/wissen/glossar/",
     "/app/": "/en/app/",
     "/download": "/en/download",
     "/download/": "/en/download/",
