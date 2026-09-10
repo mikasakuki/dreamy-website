@@ -12,6 +12,11 @@
   const PAGE_MAP = {
     "/": "/en/",
     "/index.html": "/en/",
+    "/mond/": "/en/mond/",
+    "/wissen/": "/en/wissen/",
+    "/app/": "/en/app/",
+    "/download": "/en/download",
+    "/download/": "/en/download/",
   };
   const EN_TO_DE = Object.fromEntries(
     Object.entries(PAGE_MAP).map(([de, en]) => [en, de])
@@ -69,7 +74,7 @@
   // EN-Unterseiten, die schon existieren. Solange false, zeigt die EN-Nav auf
   // die deutsche Seite (kein 404). Beim Bauen der EN-Seite hier auf true setzen
   // UND den Pfad in PAGE_MAP oben ergänzen.
-  const EN_READY = { start: true, mond: false, wissen: false, app: false };
+  const EN_READY = { start: true, mond: true, wissen: true, app: true };
   const NAV = [
     { key: "start",  de: "/",        en: "/en/",       label: t.start },
     { key: "mond",   de: "/mond/",   en: "/en/mond/",  label: t.mond },
