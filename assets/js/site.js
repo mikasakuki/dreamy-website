@@ -24,6 +24,12 @@
     "/app/": "/en/app/",
     "/download": "/en/download",
     "/download/": "/en/download/",
+    "/impressum.html": "/en/imprint/",
+    "/datenschutz.html": "/en/privacy/",
+    "/datenschutz-app.html": "/en/app-privacy/",
+    "/agb/": "/en/terms/",
+    "/konto-loeschen.html": "/en/delete-account/",
+    "/daten-loeschen.html": "/en/delete-data/",
   };
   const EN_TO_DE = Object.fromEntries(
     Object.entries(PAGE_MAP).map(([de, en]) => [en, de])
@@ -67,12 +73,14 @@
     ? { start: "Home", mond: "Moon", wissen: "Dream knowledge", app: "App",
         newsletter: "Newsletter", langLabel: "DE", langAria: "Auf Deutsch wechseln",
         imprint: "Imprint", privacy: "Privacy", cookie: "Cookie settings",
+        imprintHref: "/en/imprint/", privacyHref: "/en/privacy/",
         footerCopy: "Hold on to your dreams, understand the patterns.",
         menuOpen: "Open menu", homeAria: "jume home", footerNav: "Footer navigation",
         mainNav: "Main navigation" }
     : { start: "Start", mond: "Mondimpulse", wissen: "Traumwissen", app: "App",
         newsletter: "Newsletter", langLabel: "EN", langAria: "Switch to English",
         imprint: "Impressum", privacy: "Datenschutz", cookie: "Cookie-Einstellungen",
+        imprintHref: "/impressum.html", privacyHref: "/datenschutz.html",
         footerCopy: "Träume festhalten, Muster verstehen.",
         menuOpen: "Menü öffnen", homeAria: "jume Startseite", footerNav: "Footer-Navigation",
         mainNav: "Hauptnavigation" };
@@ -178,8 +186,8 @@
               ${links
                 .map(link => `<a href="${link.href}">${link.label}</a>`)
                 .join("")}
-              <a href="/impressum.html">${t.imprint}</a>
-              <a href="/datenschutz.html">${t.privacy}</a>
+              <a href="${t.imprintHref}">${t.imprint}</a>
+              <a href="${t.privacyHref}">${t.privacy}</a>
               <a href="https://www.instagram.com/jume.app/" target="_blank" rel="noopener">Instagram</a>
               <button onclick="if(window.jumeResetConsent)jumeResetConsent();else{try{localStorage.removeItem('jume_consent')}catch(e){}location.reload();}" style="background:none;border:none;cursor:pointer;font:inherit;font-size:inherit;color:inherit;padding:0;text-decoration:underline;text-underline-offset:2px;">${t.cookie}</button>
             </nav>

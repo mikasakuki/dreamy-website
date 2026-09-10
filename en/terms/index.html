@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of service – jume</title>
+  <meta name="robots" content="noindex" />
+  <link rel="canonical" href="https://jume.app/en/terms/" />
+  <link rel="alternate" hreflang="de" href="https://jume.app/agb/" />
+  <link rel="alternate" hreflang="en" href="https://jume.app/en/terms/" />
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <script defer src="/assets/js/site.js"></script>
+  <style>
+    .legal-loading { text-align: center; padding: 48px 0; opacity: 0.5; }
+    .legal-error   { text-align: center; padding: 48px 0; color: var(--error, #c0392b); }
+    .legal-note { background: var(--blush-soft, #FBEFF0); border: 1px solid var(--border-warm, rgba(83,66,79,.15));
+      border-radius: 14px; padding: 14px 18px; font-size: 0.9rem; color: var(--plum-muted, #7A6A75);
+      line-height: 1.6; margin-bottom: 28px; }
+  </style>
+</head>
+<body data-depth="/" data-active="app" data-lang="en">
+  <div id="site-header"></div>
+
+  <main>
+    <section class="page-hero" style="padding-bottom: 48px;">
+      <div class="container">
+        <span class="section-kicker">Legal</span>
+        <h1 style="margin-bottom: 0;">Terms of service</h1>
+        <p style="margin-top: 12px; opacity: 0.7;">Terms of use for the <strong>jume app</strong> (iOS / Android).</p>
+      </div>
+    </section>
+
+    <section class="section section-white">
+      <div class="container">
+        <p class="legal-note">
+          A fully translated English version of these terms is in preparation with our legal provider.
+          The text below is our current, legally binding version (in German). You can also read it here:
+          <a href="/agb/">German terms of service →</a>
+        </p>
+        <div id="agb-content" class="legal-content">
+          <p class="legal-loading">Loading …</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script>
+    (function () {
+      fetch('https://api.jume.app/api/legal/agb', { headers: { 'Accept': 'application/json' } })
+        .then(function (res) { if (!res.ok) throw new Error('HTTP ' + res.status); return res.json(); })
+        .then(function (data) {
+          var el = document.getElementById('agb-content');
+          if (el && data && data.content) { el.innerHTML = data.content; }
+          else { throw new Error('No content'); }
+        })
+        .catch(function () {
+          var el = document.getElementById('agb-content');
+          if (el) {
+            el.innerHTML =
+              '<p class="legal-error">The terms could not be loaded right now.<br>' +
+              'Please try again later or contact us at ' +
+              '<a href="mailto:info@jume.app">info@jume.app</a>.</p>';
+          }
+        });
+    })();
+  </script>
+</body>
+</html>
