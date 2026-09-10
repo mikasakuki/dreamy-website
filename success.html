@@ -23,18 +23,34 @@
 
         <div style="font-size: 48px; margin-bottom: 24px;">🌕</div>
 
-        <span class="section-kicker">Willkommen</span>
+        <span class="section-kicker" id="su-kicker">Willkommen</span>
 
-        <h1 style="font-size: 2rem; margin: 12px 0 16px;">Du bist dabei 🎉</h1>
+        <h1 style="font-size: 2rem; margin: 12px 0 16px;" id="su-title">Du bist dabei 🎉</h1>
 
-        <p style="font-size: 1.05rem; line-height: 1.65; color: var(--color-text-muted, #7a6a75); margin-bottom: 32px;">
+        <p style="font-size: 1.05rem; line-height: 1.65; color: var(--color-text-muted, #7a6a75); margin-bottom: 32px;" id="su-body">
           Schön, dass du dabei bist. Du erhältst gelegentlich Neuigkeiten zu jume, neue Mondimpulse und kleine Einblicke in das, was wächst.<br />Ruhig, selten und ohne Lärm.
         </p>
 
-        <a href="/" class="btn btn-primary">Zur Startseite</a>
+        <a href="/" class="btn btn-primary" id="su-back">Zur Startseite</a>
 
       </div>
     </section>
+
+    <script>
+      (function () {
+        var pref = null; try { pref = localStorage.getItem('jume_lang'); } catch (e) {}
+        var nav = (navigator.language || '').toLowerCase();
+        var en = false;
+        if (pref === 'en') en = true;
+        else if (!pref && nav && nav.indexOf('de') !== 0) en = true;
+        if (!en) return;
+        document.documentElement.lang = 'en';
+        document.getElementById('su-kicker').textContent = 'Welcome';
+        document.getElementById('su-title').textContent = "You're in 🎉";
+        document.getElementById('su-body').innerHTML = "So glad you're here. You'll occasionally get news about jume, new moon impulses and small glimpses of what's growing.<br />Calm, rare and without noise.";
+        var back = document.getElementById('su-back'); back.textContent = 'To the homepage'; back.href = '/en/';
+      })();
+    </script>
   </main>
 
   <div id="site-footer"></div>

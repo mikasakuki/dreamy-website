@@ -23,23 +23,40 @@
 
         <div style="font-size: 48px; margin-bottom: 24px;">🌙</div>
 
-        <span class="section-kicker">Fast geschafft</span>
+        <span class="section-kicker" id="ce-kicker">Fast geschafft</span>
 
-        <h1 style="font-size: 2rem; margin: 12px 0 16px;">Schau in dein Postfach</h1>
+        <h1 style="font-size: 2rem; margin: 12px 0 16px;" id="ce-title">Schau in dein Postfach</h1>
 
-        <p style="font-size: 1.05rem; line-height: 1.65; color: var(--color-text-muted, #7a6a75); margin-bottom: 8px;">
+        <p style="font-size: 1.05rem; line-height: 1.65; color: var(--color-text-muted, #7a6a75); margin-bottom: 8px;" id="ce-body">
           Wir haben dir gerade einen Bestätigungs-Link geschickt.<br />
           Klick ihn an, um deine Newsletter-Anmeldung abzuschließen.
         </p>
 
-        <p style="font-size: 0.9rem; color: var(--color-text-muted, #7a6a75); margin-bottom: 32px;">
+        <p style="font-size: 0.9rem; color: var(--color-text-muted, #7a6a75); margin-bottom: 32px;" id="ce-spam">
           Nichts angekommen? Schau kurz im Spam- oder Werbung-Ordner nach.
         </p>
 
-        <a href="/" class="btn btn-primary">Zurück zur Startseite</a>
+        <a href="/" class="btn btn-primary" id="ce-back">Zurück zur Startseite</a>
 
       </div>
     </section>
+
+    <script>
+      (function () {
+        var pref = null; try { pref = localStorage.getItem('jume_lang'); } catch (e) {}
+        var nav = (navigator.language || '').toLowerCase();
+        var en = false;
+        if (pref === 'en') en = true;
+        else if (!pref && nav && nav.indexOf('de') !== 0) en = true;
+        if (!en) return;
+        document.documentElement.lang = 'en';
+        document.getElementById('ce-kicker').textContent = 'Almost there';
+        document.getElementById('ce-title').textContent = 'Check your inbox';
+        document.getElementById('ce-body').innerHTML = "We just sent you a confirmation link.<br />Click it to complete your newsletter sign-up.";
+        document.getElementById('ce-spam').textContent = "Didn't get anything? Take a quick look in your spam or promotions folder.";
+        var back = document.getElementById('ce-back'); back.textContent = 'Back to the homepage'; back.href = '/en/';
+      })();
+    </script>
   </main>
 
   <div id="site-footer"></div>
