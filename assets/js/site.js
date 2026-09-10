@@ -16,6 +16,7 @@
     "/wissen/": "/en/knowledge/",
     "/wissen/traumdeutung/": "/en/knowledge/dream-interpretation/",
     "/wissen/glossar/": "/en/knowledge/glossary/",
+    "/wissen/natal-chart/": "/en/knowledge/birth-chart/",
     "/app/": "/en/app/",
     "/download": "/en/download",
     "/download/": "/en/download/",
