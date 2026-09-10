@@ -12,10 +12,10 @@
   const PAGE_MAP = {
     "/": "/en/",
     "/index.html": "/en/",
-    "/mond/": "/en/mond/",
-    "/wissen/": "/en/wissen/",
-    "/wissen/traumdeutung/": "/en/wissen/traumdeutung/",
-    "/wissen/glossar/": "/en/wissen/glossar/",
+    "/mond/": "/en/moon/",
+    "/wissen/": "/en/knowledge/",
+    "/wissen/traumdeutung/": "/en/knowledge/dream-interpretation/",
+    "/wissen/glossar/": "/en/knowledge/glossary/",
     "/app/": "/en/app/",
     "/download": "/en/download",
     "/download/": "/en/download/",
@@ -79,8 +79,8 @@
   const EN_READY = { start: true, mond: true, wissen: true, app: true };
   const NAV = [
     { key: "start",  de: "/",        en: "/en/",       label: t.start },
-    { key: "mond",   de: "/mond/",   en: "/en/mond/",  label: t.mond },
-    { key: "wissen", de: "/wissen/", en: "/en/wissen/", label: t.wissen },
+    { key: "mond",   de: "/mond/",   en: "/en/moon/",  label: t.mond },
+    { key: "wissen", de: "/wissen/", en: "/en/knowledge/", label: t.wissen },
     { key: "app",    de: "/app/",    en: "/en/app/",   label: t.app },
   ];
   const links = NAV.map(function (n) {

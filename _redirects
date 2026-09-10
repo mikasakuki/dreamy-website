@@ -16,3 +16,9 @@
 /mond/vollmond-im-steinbock-30-juni-2026       /mond/vollmond-im-steinbock-30-juni-2026/index.html       200
 /wissen/glossar                                /wissen/glossar/index.html                                200
 /wissen/traumdeutung                           /wissen/traumdeutung/index.html                           200
+
+# EN-Slugs: alte (deutsche) EN-Pfade auf englische Slugs umgeleitet
+/en/mond/                        /en/moon/                              301
+/en/wissen/                      /en/knowledge/                         301
+/en/wissen/traumdeutung/         /en/knowledge/dream-interpretation/    301
+/en/wissen/glossar/              /en/knowledge/glossary/                301
