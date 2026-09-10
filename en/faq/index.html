@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ – frequently asked questions about the jume app</title>
+  <meta name="description" content="Answers to frequently asked questions about the jume app: recording, dream interpretation, moon calendar, subscription and more." />
+  <meta name="author" content="jume" />
+  <meta name="theme-color" content="#F2DFE1" />
+  <link rel="canonical" href="https://jume.app/en/faq/" />
+  <link rel="alternate" hreflang="de" href="https://jume.app/faq/" />
+  <link rel="alternate" hreflang="en" href="https://jume.app/en/faq/" />
+  <link rel="alternate" hreflang="x-default" href="https://jume.app/faq/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="de_DE" />
+  <meta property="og:url" content="https://jume.app/en/faq/" />
+  <meta property="og:title" content="FAQ – frequently asked questions about the jume app" />
+  <meta property="og:description" content="Answers to frequently asked questions about the jume app: recording, dream interpretation, moon calendar, subscription and more." />
+  <meta property="og:site_name" content="jume" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "How do I record a dream?", "acceptedAnswer": { "@type": "Answer", "text": "Tap \"Record a dream\" on the home screen. Speak your dream — jume listens and stops automatically when you're done." } },
+      { "@type": "Question", "name": "Are my dreams stored or shared?", "acceptedAnswer": { "@type": "Answer", "text": "No. For AI interpretation your dream text is sent briefly to OpenAI — solely for the analysis, with no permanent storage at OpenAI. Your entries live only on your device and, optionally, in your encrypted cloud backup." } },
+      { "@type": "Question", "name": "Where do the moon phase data come from?", "acceptedAnswer": { "@type": "Answer", "text": "jume calculates moon phases astronomically based on your location and date — using the same formulas professional ephemeris calculators use." } },
+      { "@type": "Question", "name": "What do I get with Premium?", "acceptedAnswer": { "@type": "Answer", "text": "Cloud sync, advanced statistics, filters, breathing exercises, wake-up routines, birth chart and more interpretation modes." } }
+    ]
+  }
+  </script>
+
+  <!-- Cookie Consent (runs early, before deferred scripts) -->
+  <script src="/assets/js/cookie-consent.js"></script>
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <script defer src="/assets/js/site.js"></script>
+
+  <style>
+    .faq-hero { padding: 64px 0 40px; text-align: center; }
+    .faq-hero .tag-pill { display: inline-block; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--plum-muted); background: rgba(255,255,255,0.6); border: 1px solid var(--border-warm); border-radius: 50px; padding: 5px 14px; margin-bottom: 18px; }
+    .faq-hero h1 { font-size: 2.4rem; color: var(--plum); margin: 0 0 14px; }
+    .faq-hero p { color: var(--plum-muted); max-width: 480px; margin: 0 auto; line-height: 1.7; }
+    .faq-section { padding: 0 0 40px; }
+    .faq-section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+    .faq-section-header .emoji { font-size: 1.25rem; }
+    .faq-section-header h2 { font-size: 1.05rem; font-weight: 800; color: var(--plum); margin: 0; }
+    .faq-card { background: rgba(255,255,255,0.62); border: 1px solid var(--border-warm); border-radius: 16px; overflow: hidden; }
+    .faq-item { border-bottom: 1px solid var(--border-warm); }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-question { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 16px 20px; cursor: pointer; user-select: none; font-weight: 600; font-size: 0.93rem; color: var(--plum); list-style: none; }
+    .faq-question::-webkit-details-marker { display: none; }
+    .faq-question::after { content: '﹢'; font-size: 1.1rem; color: var(--plum-muted); flex-shrink: 0; transition: transform 0.2s; }
+    details[open] > .faq-question::after { content: '−'; }
+    .faq-answer { padding: 0 20px 16px; font-size: 0.88rem; color: var(--plum-muted); line-height: 1.7; }
+  </style>
+</head>
+<body data-depth="/" data-active="app" data-lang="en">
+  <div id="site-header"></div>
+
+  <main>
+    <div class="container">
+      <div class="faq-hero">
+        <div class="tag-pill">FAQ</div>
+        <h1>Frequently asked questions</h1>
+        <p>Everything about the jume app — from your first recording to the moon calendar.</p>
+      </div>
+
+      <!-- Recording & journal -->
+      <section class="faq-section">
+        <div class="faq-section-header">
+          <span class="emoji">🎙️</span>
+          <h2>Recording &amp; journal</h2>
+        </div>
+        <div class="faq-card">
+          <div class="faq-item"><details>
+            <summary class="faq-question">How do I record a dream?</summary>
+            <p class="faq-answer">Tap "Record a dream" on the home screen. Simply speak your dream — jume listens and stops automatically when you're done. The text is then transcribed and interpreted.</p>
+          </details></div>
+          <div class="faq-item"><details>
+            <summary class="faq-question">When is the best time to record?</summary>
+            <p class="faq-answer">Right after waking, before you check your phone or get up. Dreams fade fastest in the first few minutes. Even a short keyword is enough.</p>
+          </details></div>
+          <div class="faq-item"><details>
+            <summary class="faq-question">Can I also enter dreams manually?</summary>
+            <p class="faq-answer">Yes — on the home screen there's also the option to enter a dream by text. Ideal when you need to be quiet or prefer typing.</p>
+          </details></div>
+          <div class="faq-item"><details>
+            <summary class="faq-question">How does automatic transcription work?</summary>
+            <p class="faq-answer">jume converts your speech to text directly on your device — your recordings never leave your phone for this. On iOS, jume uses the built-in Apple speech recognition. On Android, jume downloads a speech model once when you first open the recording screen (about 160 MB, Wi-Fi recommended). After that, transcription works fully offline and takes only a few seconds.</p>
+          </details></div>
+          <div class="faq-item"><details>
+            <summary class="faq-question">Is there a voice command to quickly start recording?</summary>
+            <p class="faq-answer">
+            <strong>iOS (Siri):</strong> Just say: "Hey Siri, record a dream in jume" — no setup needed, works right away.<br><br>
+            <strong>Android:</strong> As soon as you open jume by voice command, the dream recording starts automatically. If you don't want that, you can turn it off in the jume settings under "Privacy".<br><br>
+            <strong>How to set up the voice command (recommended — with Gemini):</strong><br>
+            1. Enable Gemini as your assistant (adjustable in the Google app) and set up "Hey Google" with voice training.<br>
+            2. Say: "Hey Google, open jume" — the recording starts immediately, you just start talking, and it stops on its own when you go quiet. Your dream is then transcribed and saved automatically.<br><br>
+            Want the voice command to only open the app, without recording? You can change that in the jume settings under "Privacy" → "Voice command starts recording".<br><br>
+            <strong>Note on the classic Google Assistant:</strong> Opening apps by voice there often doesn't work reliably (Google is gradually switching the Assistant to Gemini). If "Open jume" only starts a web search, switch to Gemini.<br><br>
+            <strong>Freshly installed and "Open jume" doesn't work yet?</strong> That's normal: after a new install, Google/Gemini needs some time to add a new app to voice control — this can take from a few hours to a full day and is due to Google's device indexing, not jume. Open jume once by hand, leave your phone on Wi-Fi and the charger for a bit, and try the voice command again later. From then on it works permanently.<br><br>
+            <strong>Android (quick access without voice):</strong> Long-press the app icon → tap "Record a dream" — this opens the recording screen directly and starts recording. You can also drag the entry to your home screen, so a single tap starts the recording.</p>
+          </details></div>
+          <div class="faq-item"><details>
+            <summary class="faq-question">Can I edit a dream entry afterwards?</summary>
+            <p class="faq-answer">Yes. Open the dream in the journal and tap the edit icon. Text, mood, motifs and all other fields can be changed at any time.</p>
+          </details></div>
+          <div class="faq-item"><details>
+            <summary class="faq-question">How do I delete a dream entry?</summary>
+            <p class="faq-answer">There are three ways: tap the trash icon in the detail view, swipe the entry left in the list view, or choose "Delete entry" at the very bottom in edit mode. This action cannot be undone.</p>
+          </details></div>
+        </div>
+      </section>
+
+      <!-- Dream interpretation & AI -->
+      <section class="faq-section">
+        <div class="faq-section-header">
+          <span class="emoji">✨</span>
+          <h2>Dream interpretation &amp; AI</h2>
+        </div>
+        <div class="faq-card">
+          <div class="faq-item"><details>
+            <summary class="faq-question">How does jume interpret my dreams?</summary>
+            <p class="faq-answer">jume uses AI (OpenAI) to gently interpret the symbols, mood and motifs of your dream. You can choose between different interpretation styles — e.g. psychological, archetypal or moon-based. More on this: <a href="/en/knowledge/dream-interpretation/" style="color:inherit;text-decoration:underline;">What do dreams mean?</a></p>
+          </details></div>
+          <div class="faq-item"><details>
+            <summary class="faq-question">What's the difference between the interpretation modes?</summary>
+            <p class="faq-answer">Each mode illuminates your dream from a different angle: "Classic" is oriented toward depth psychology, "Archetypal" works with Jungian symbols, "Moon-based" connects the dream with the current moon energy. Premium and Unlimited users have access to all modes. More on our <a href="/en/knowledge/dream-interpretation/" style="color:inherit;text-decoration:underline;">dream interpretation page</a>.</p>
+          </details></div>
+          <div class="faq-item"><details>
+            <summary class="faq-question">What's the difference between AI interpretation and AI classification?</summary>
+            <p class="faq-answer">These are two different things: the <strong>AI interpretation</strong> is a deeper interpretation of your dream — it's created only at your explicit request and counts against your monthly quota. The <strong>AI classification</strong> runs automatically on saving and sorts your dream into categories, motifs and emotions — but only if you've given one-time consent to this feature. You can withdraw consent at any time in the settings under "AI classification".</p>
+          </details></div>
+          <div class="faq-item"><details>
+            <summary class="faq-question">Are my dreams stored or shared?</summary>
+            <p class="faq-answer">Your dream texts are transmitted anonymized to OpenAI for AI interpretation and AI classification — solely for processing, with no permanent storage there. Only you have access to your entries.</p>
+          </details></div>
+        </div>
+      </section>
+
+      <!-- Moon calendar & astrology -->
+      <section class="faq-section">
+        <div class="faq-section-header">
+          <span class="emoji">🌙</span>
+          <h2>Moon calendar &amp; astrology</h2>
+        </div>
+        <div class="faq-card">
+          <div class="faq-item"><details>
+            <summary class="faq-question">Where do the moon phase data come from?</summary>
+            <p class="faq-answer">jume calculates moon phases astronomically based on your location and date — using the same formulas professional ephemeris calculators use. The illumination figure (e.g. "72% illuminated") indicates the exact fraction of the visible lunar disc.</p>
+          </details></div>
+          <div class="faq-item"><details>
+            <summary class="faq-question">What do full moon nights mean for my dreams?</summary>
+            <p class="faq-answer">The full moon traditionally stands for intense, vivid dreams and emotional intensity. How you can use these nights for your dream journal is explained in our article: <a href="/en/moon/full-moon-nights-and-your-dream-journal/" style="color:inherit;text-decoration:underline;">Full moon nights & the dream journal →</a></p>
+          </details></div>
+          <div class="faq-item"><details>
+            <summary class="faq-question">What do new moon nights mean for my dreams?</summary>
+            <p class="faq-answer">New moon nights are often quieter — dreams more diffuse, harder to grasp. That's not a bad sign but part of the lunar rhythm. What you can still capture: <a href="/en/moon/new-moon-nights-and-your-dream-journal/" style="color:inherit;text-decoration:underline;">New moon nights & the dream journal →</a></p>
+          </details></div>
+          <div class="faq-item"><details>
+            <summary class="faq-question">What is a moon impulse?</summary>
+            <p class="faq-answer">For every full moon and new moon there's a short text explaining which energy is at work and what it can mean for your dreams. You'll find them in the app's moon section and at <a href="/en/moon/" style="color:inherit;text-decoration:underline;">jume.app/en/moon</a>.</p>
+          </details></div>
+          <div class="faq-item"><details>
+            <summary class="faq-question">What is my birth chart and how is it calculated?</summary>
+            <p class="faq-answer">Your birth chart shows the positions of the planets at the moment of your birth. jume calculates it from your date, time and place of birth — all three are needed for an accurate result, especially for the ascendant. More on this: <a href="/en/knowledge/birth-chart/" style="color:inherit;text-decoration:underline;">Understanding the birth chart →</a></p>
+          </details></div>
+          <div class="faq-item"><details>
+            <summary class="faq-question">How accurate are the astrological calculations?</summary>
+            <p class="faq-answer">jume uses astronomically precise planetary positions (Swiss Ephemeris). The interpretations are meant as an invitation to reflect — not as a prediction.</p>
+          </details></div>
+        </div>
+      </section>
+
+      <!-- Day & night mode -->
+      <section class="faq-section">
+        <div class="faq-section-header">
+          <span class="emoji">☀️</span>
+          <h2>Day &amp; night mode</h2>
+        </div>
+        <div class="faq-card">
+          <div class="faq-item"><details>
+            <summary class="faq-question">What's the difference between day and night mode?</summary>
+            <p class="faq-answer">Day mode shows jume in a light, gentle blue-pink — ideal for the morning. Night mode switches to a deep dark blue for the evening hours. Both can be set manually or on a schedule.</p>
+          </details></div>
+          <div class="faq-item"><details>
+            <summary class="faq-question">How do I set the automatic switch?</summary>
+            <p class="faq-answer">Settings → Appearance → Schedule. There you set when day mode and when night mode should be active.</p>
+          </details></div>
+        </div>
+      </section>
+
+      <!-- Statistics & patterns -->
+      <section class="faq-section">
+        <div class="faq-section-header">
+          <span class="emoji">📊</span>
+          <h2>Statistics &amp; patterns</h2>
+        </div>
+        <div class="faq-card">
+          <div class="faq-item"><details>
+            <summary class="faq-question">What do the statistics show me?</summary>
+            <p class="faq-answer">jume analyzes your dream entries: most frequent motifs, mood trends, dream length over time, streaks and more. Premium users see more detailed analyses, connections and filters.</p>
+          </details></div>
+          <div class="faq-item"><details>
+            <summary class="faq-question">What is the AI analysis of the dream statistics?</summary>
+            <p class="faq-answer">With Unlimited, jume analyzes your collected entries with AI and looks at the bigger picture: recurring themes, emotional patterns, correlations between sleep quality, moon phase, mood and dream content — with a personal summary of your dream world.</p>
+          </details></div>
+          <div class="faq-item"><details>
+            <summary class="faq-question">From how many entries are the statistics meaningful?</summary>
+            <p class="faq-answer">From around 7–10 entries you'll spot first patterns. The more entries, the more meaningful the frequencies, trends and correlations become.</p>
+          </details></div>
+        </div>
+      </section>
+
+      <!-- Cloud, sync & account -->
+      <section class="faq-section">
+        <div class="faq-section-header">
+          <span class="emoji">☁️</span>
+          <h2>Cloud, sync &amp; account</h2>
+        </div>
+        <div class="faq-card">
+          <div class="faq-item"><details>
+            <summary class="faq-question">Do I need an account for jume?</summary>
+            <p class="faq-answer">Yes, a free account is required to use jume. It only takes a moment and secures your dream data from the start.</p>
+          </details></div>
+          <div class="faq-item"><details>
+            <summary class="faq-question">What is cloud sync and do I need it?</summary>
+            <p class="faq-answer">Cloud sync is available for Premium and Unlimited users. It backs up your dreams encrypted on the server — so they can be restored when you switch devices or reinstall the app.</p>
+          </details></div>
+          <div class="faq-item"><details>
+            <summary class="faq-question">Is my data safe in the cloud?</summary>
+            <p class="faq-answer">Yes. Your dream data is transmitted and stored encrypted. Only you have access to your entries.</p>
+          </details></div>
+          <div class="faq-item"><details>
+            <summary class="faq-question">What happens if I delete my account?</summary>
+            <p class="faq-answer">All data on the server is permanently and irreversibly deleted (Art. 17 GDPR). Local entries on your device remain until you uninstall the app.</p>
+          </details></div>
+        </div>
+      </section>
+
+      <!-- Subscription & Premium -->
+      <section class="faq-section">
+        <div class="faq-section-header">
+          <span class="emoji">⭐</span>
+          <h2>Subscription &amp; Premium</h2>
+        </div>
+        <div class="faq-card">
+          <div class="faq-item"><details>
+            <summary class="faq-question">Is there a free version?</summary>
+            <p class="faq-answer">Yes. The dream journal, moon calendar, basic statistics, community insights and core tools are free forever — including 3 AI dream interpretations per month.</p>
+          </details></div>
+          <div class="faq-item"><details>
+            <summary class="faq-question">What do I get with Premium?</summary>
+            <p class="faq-answer">Cloud sync, advanced statistics, detailed filters, breathing exercises, wake-up routines, birth chart and all interpretation modes — including 60 AI dream interpretations per month.</p>
+          </details></div>
+          <div class="faq-item"><details>
+            <summary class="faq-question">What do I get with Unlimited?</summary>
+            <p class="faq-answer">Everything from Premium, plus: lucid dreaming tools, AI analysis of the dream statistics and unlimited birth charts — with unlimited AI dream interpretations.</p>
+          </details></div>
+          <div class="faq-item"><details>
+            <summary class="faq-question">Can I cancel a subscription at any time?</summary>
+            <p class="faq-answer">Yes, at any time via the App Store (iOS) or Google Play Store (Android). The subscription stays active until the end of the paid period.</p>
+          </details></div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+</body>
+</html>

@@ -22,6 +22,7 @@
     "/mond/vollmondnaechte-traumtagebuch/": "/en/moon/full-moon-nights-and-your-dream-journal/",
     "/mond/neumondnaechte-traumtagebuch/": "/en/moon/new-moon-nights-and-your-dream-journal/",
     "/app/": "/en/app/",
+    "/faq/": "/en/faq/",
     "/download": "/en/download",
     "/download/": "/en/download/",
     "/impressum.html": "/en/imprint/",
