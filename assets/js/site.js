@@ -17,6 +17,8 @@
     "/wissen/traumdeutung/": "/en/knowledge/dream-interpretation/",
     "/wissen/glossar/": "/en/knowledge/glossary/",
     "/wissen/natal-chart/": "/en/knowledge/birth-chart/",
+    "/mond/vollmond-im-widder-26-september-2026/": "/en/moon/full-moon-in-aries-september-26-2026/",
+    "/mond/neumond-in-jungfrau-11-september-2026/": "/en/moon/new-moon-in-virgo-september-11-2026/",
     "/app/": "/en/app/",
     "/download": "/en/download",
     "/download/": "/en/download/",
