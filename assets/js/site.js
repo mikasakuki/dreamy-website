@@ -66,12 +66,23 @@
         mainNav: "Hauptnavigation" };
 
   const base = isEn ? "/en/" : "/";
-  const links = [
-    { key: "start",   href: base,               label: t.start },
-    { key: "mond",    href: base + "mond/",      label: t.mond },
-    { key: "wissen",  href: base + "wissen/",    label: t.wissen },
-    { key: "app",     href: base + "app/",       label: t.app },
+  // EN-Unterseiten, die schon existieren. Solange false, zeigt die EN-Nav auf
+  // die deutsche Seite (kein 404). Beim Bauen der EN-Seite hier auf true setzen
+  // UND den Pfad in PAGE_MAP oben ergänzen.
+  const EN_READY = { start: true, mond: false, wissen: false, app: false };
+  const NAV = [
+    { key: "start",  de: "/",        en: "/en/",       label: t.start },
+    { key: "mond",   de: "/mond/",   en: "/en/mond/",  label: t.mond },
+    { key: "wissen", de: "/wissen/", en: "/en/wissen/", label: t.wissen },
+    { key: "app",    de: "/app/",    en: "/en/app/",   label: t.app },
   ];
+  const links = NAV.map(function (n) {
+    return {
+      key: n.key,
+      label: n.label,
+      href: (isEn && EN_READY[n.key]) ? n.en : n.de,
+    };
+  });
 
   // Sprach-Umschalter: zeigt die ANDERE Sprache. Führt zum Gegenstück, sonst
   // (noch nicht übersetzt) auf die jeweilige Startseite. Merkt die Wahl.

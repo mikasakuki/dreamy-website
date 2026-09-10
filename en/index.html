@@ -105,7 +105,7 @@
               <a class="btn btn-primary" href="#newsletter">
                 Get updates
               </a>
-              <a class="btn btn-secondary" href="/en/mond/">
+              <a class="btn btn-secondary" href="/mond/">
                 Discover moon impulses
               </a>
             </div>
@@ -251,7 +251,7 @@
               <span class="article-card-link">Read more →</span>
             </div>
           </a>
-          <a class="article-card" href="/en/mond/">
+          <a class="article-card" href="/mond/">
             <div class="article-card-visual">🌙</div>
             <div class="article-card-body">
               <div class="article-card-tags">
@@ -272,7 +272,7 @@
             <h3>Experience these impulses in the app too</h3>
             <p>In the moon section of the jume app you'll find fresh impulses on moon phase and astrology every day — tuned to today.</p>
           </div>
-          <a class="btn btn-primary btn-sm" href="/en/download" style="flex-shrink:0;">Get the app</a>
+          <a class="btn btn-primary btn-sm" href="/download" style="flex-shrink:0;">Get the app</a>
         </div>
       </div>
     </section>
@@ -380,6 +380,23 @@
       else if (diff >= -14) label = 'Recent';
       if (label) el.innerHTML += ' · <strong>' + label + '</strong>';
     });
+  })();
+  </script>
+
+  <!-- Englische Formular-Validierungsmeldungen (sonst zeigt der Browser sie in
+       seiner eigenen Sprache, z.B. "Dieses Feld markieren"). -->
+  <script>
+  (function () {
+    function wire(id, msg) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      el.addEventListener('invalid', function () { el.setCustomValidity(msg); });
+      var clear = function () { el.setCustomValidity(''); };
+      el.addEventListener('input', clear);
+      el.addEventListener('change', clear);
+    }
+    wire('EMAIL', 'Please enter your email address.');
+    wire('OPT_IN', 'Please check this box to continue.');
   })();
   </script>
 
