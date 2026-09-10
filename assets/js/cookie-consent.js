@@ -47,22 +47,32 @@
   function showBanner() {
     if (document.getElementById('cookie-banner')) return;
 
+    var isEn = document.body.dataset.lang === 'en';
+    var T = isEn
+      ? { aria: 'Cookie settings', title: 'Cookies & external services',
+          body: 'We use Google Fonts (typography) and Brevo (newsletter). ' +
+                'This may transfer data to the providers’ server locations. ',
+          link: 'Privacy policy', reject: 'Essential only', accept: 'Accept all' }
+      : { aria: 'Cookie-Einstellungen', title: 'Cookies &amp; externe Dienste',
+          body: 'Wir verwenden Google Fonts (Schriftdarstellung) und Brevo (Newsletter). ' +
+                'Dabei können Daten an Serverstandorte der Anbieter übermittelt werden. ',
+          link: 'Datenschutzerklärung', reject: 'Nur notwendige', accept: 'Alle akzeptieren' };
+
     var el = document.createElement('div');
     el.id = 'cookie-banner';
     el.setAttribute('role', 'dialog');
-    el.setAttribute('aria-label', 'Cookie-Einstellungen');
+    el.setAttribute('aria-label', T.aria);
     el.innerHTML =
       '<div class="cb-inner">' +
         '<div class="cb-icon">🍪</div>' +
         '<div class="cb-text">' +
-          '<strong class="cb-title">Cookies &amp; externe Dienste</strong>' +
-          '<p class="cb-body">Wir verwenden Google Fonts (Schriftdarstellung) und Brevo (Newsletter). ' +
-          'Dabei können Daten an Serverstandorte der Anbieter übermittelt werden. ' +
-          '<a href="/datenschutz.html" class="cb-link">Datenschutzerklärung</a></p>' +
+          '<strong class="cb-title">' + T.title + '</strong>' +
+          '<p class="cb-body">' + T.body +
+          '<a href="/datenschutz.html" class="cb-link">' + T.link + '</a></p>' +
         '</div>' +
         '<div class="cb-actions">' +
-          '<button id="cb-reject" class="cb-btn cb-btn-secondary">Nur notwendige</button>' +
-          '<button id="cb-accept" class="cb-btn cb-btn-primary">Alle akzeptieren</button>' +
+          '<button id="cb-reject" class="cb-btn cb-btn-secondary">' + T.reject + '</button>' +
+          '<button id="cb-accept" class="cb-btn cb-btn-primary">' + T.accept + '</button>' +
         '</div>' +
       '</div>';
 
