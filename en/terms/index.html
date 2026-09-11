@@ -36,8 +36,9 @@
     <section class="section section-white">
       <div class="container">
         <p class="legal-note">
-          An English version of these terms is being prepared.
-          The text below is our current, legally binding version (in German). You can also read it here:
+          This English text is a convenience translation. The
+          <strong>legally binding version is the German original</strong> —
+          in case of any discrepancy, the German version prevails:
           <a href="/agb/">German terms of service →</a>
         </p>
         <div id="agb-content" class="legal-content">
@@ -51,7 +52,7 @@
 
   <script>
     (function () {
-      fetch('https://api.jume.app/api/legal/agb', { headers: { 'Accept': 'application/json' } })
+      fetch('https://api.jume.app/api/legal/agb?lang=en', { headers: { 'Accept': 'application/json' } })
         .then(function (res) { if (!res.ok) throw new Error('HTTP ' + res.status); return res.json(); })
         .then(function (data) {
           var el = document.getElementById('agb-content');

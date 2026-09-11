@@ -37,8 +37,10 @@
     <section class="section section-white">
       <div class="container">
         <p class="legal-note">
-          An English version of this privacy policy is being prepared.
-          The text below is our current, legally binding version (in German). You can also read it here:
+          This English text is a convenience translation and includes a
+          section on U.S. state privacy rights (California / CCPA). The
+          <strong>legally binding version is the German original</strong> —
+          in case of any discrepancy, the German version prevails:
           <a href="/datenschutz-app.html">German app privacy policy →</a>
         </p>
         <div id="dse-content" class="legal-content">
@@ -52,7 +54,7 @@
 
   <script>
     (function () {
-      fetch('https://api.jume.app/api/legal/datenschutz-app', { headers: { 'Accept': 'application/json' } })
+      fetch('https://api.jume.app/api/legal/datenschutz-app?lang=en', { headers: { 'Accept': 'application/json' } })
         .then(function (res) { if (!res.ok) throw new Error('HTTP ' + res.status); return res.json(); })
         .then(function (data) {
           var el = document.getElementById('dse-content');
