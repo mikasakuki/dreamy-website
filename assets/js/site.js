@@ -207,6 +207,50 @@
     `;
   }
 
+  // ── Interne Verlinkung: "Weitere Mondnächte" ────────────────────────────────
+  // Verlinkt jeden Mond-Artikel mit allen anderen + dem Hub. Reine On-Page-SEO
+  // (interne Links) + bessere Navigation. Läuft für DE (/mond/) und EN (/en/moon/).
+  (function relatedMoon() {
+    if (!footerTarget) return;
+    const MOON = [
+      { de: "/mond/vollmond-im-widder-26-september-2026/", en: "/en/moon/full-moon-in-aries-september-26-2026/", emoji: "🐏", deL: "Vollmond im Widder", enL: "Full moon in Aries" },
+      { de: "/mond/neumond-in-jungfrau-11-september-2026/", en: "/en/moon/new-moon-in-virgo-september-11-2026/", emoji: "♍", deL: "Neumond in Jungfrau", enL: "New moon in Virgo" },
+      { de: "/mond/vollmond-in-den-fischen-28-august-2026/", en: "/en/moon/full-moon-in-pisces-august-28-2026/", emoji: "🐟", deL: "Vollmond in den Fischen", enL: "Full moon in Pisces" },
+      { de: "/mond/neumond-im-loewe-12-august-2026/", en: "/en/moon/new-moon-in-leo-august-12-2026/", emoji: "🦁", deL: "Neumond im Löwen", enL: "New moon in Leo" },
+      { de: "/mond/vollmond-im-wassermann-29-juli-2026/", en: "/en/moon/full-moon-in-aquarius-july-29-2026/", emoji: "🏺", deL: "Vollmond im Wassermann", enL: "Full moon in Aquarius" },
+      { de: "/mond/neumond-im-krebs-14-juli-2026/", en: "/en/moon/new-moon-in-cancer-july-14-2026/", emoji: "🦀", deL: "Neumond im Krebs", enL: "New moon in Cancer" },
+      { de: "/mond/vollmond-im-steinbock-30-juni-2026/", en: "/en/moon/full-moon-in-capricorn-june-30-2026/", emoji: "🐐", deL: "Vollmond im Steinbock", enL: "Full moon in Capricorn" },
+      { de: "/mond/neumond-im-zwillinge-15-juni-2026/", en: "/en/moon/new-moon-in-gemini-june-15-2026/", emoji: "👯", deL: "Neumond in den Zwillingen", enL: "New moon in Gemini" },
+      { de: "/mond/vollmond-im-schuetzen-31-mai-2026/", en: "/en/moon/full-moon-in-sagittarius-may-31-2026/", emoji: "🏹", deL: "Vollmond im Schützen", enL: "Full moon in Sagittarius" },
+      { de: "/mond/vollmond-im-skorpion-1-mai-2026/", en: "/en/moon/full-moon-in-scorpio-may-1-2026/", emoji: "🦂", deL: "Vollmond im Skorpion", enL: "Full moon in Scorpio" },
+      { de: "/mond/vollmondnaechte-traumtagebuch/", en: "/en/moon/full-moon-nights-and-your-dream-journal/", emoji: "🌕", deL: "Vollmondnächte & Traumtagebuch", enL: "Full moon nights & your journal" },
+      { de: "/mond/neumondnaechte-traumtagebuch/", en: "/en/moon/new-moon-nights-and-your-dream-journal/", emoji: "🌑", deL: "Neumondnächte & Traumtagebuch", enL: "New moon nights & your journal" },
+    ];
+    const cur = path;
+    const onArticle = MOON.some((m) => (isEn ? m.en : m.de) === cur);
+    if (!onArticle) return;
+    const heading = isEn ? "More moon nights" : "Weitere Mondnächte";
+    const allLabel = isEn ? "All moon phases →" : "Alle Mondphasen →";
+    const hubHref = isEn ? "/en/moon/" : "/mond/";
+    const chips = MOON.filter((m) => (isEn ? m.en : m.de) !== cur)
+      .map((m) => {
+        const href = isEn ? m.en : m.de;
+        const label = isEn ? m.enL : m.deL;
+        return `<a href="${href}" style="display:inline-flex;align-items:center;gap:6px;padding:8px 13px;border:1px solid rgba(120,120,150,.22);border-radius:999px;text-decoration:none;font-size:14px;color:inherit;">${m.emoji} ${label}</a>`;
+      })
+      .join("");
+    const section = document.createElement("section");
+    section.setAttribute("aria-label", heading);
+    section.style.cssText = "padding:8px 0 40px;";
+    section.innerHTML =
+      `<div class="container">` +
+      `<h2 style="font-size:1.15rem;margin:0 0 14px;">${heading}</h2>` +
+      `<div style="display:flex;flex-wrap:wrap;gap:10px;">${chips}</div>` +
+      `<p style="margin-top:16px;"><a href="${hubHref}" style="font-weight:600;">${allLabel}</a></p>` +
+      `</div>`;
+    footerTarget.parentNode.insertBefore(section, footerTarget);
+  })();
+
   // Newsletter form: localStorage email preview
   const emailPreview = document.querySelector("[data-newsletter-email]");
   if (emailPreview) {
