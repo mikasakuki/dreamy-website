@@ -1,6 +1,11 @@
 # Auth
 /auth/magic  /auth/magic.html  200
 
+# Sprache automatisch: Besucher mit englischsprachigem Browser landen auf /en/.
+# Deutschsprachige (v.a. DACH) bleiben auf der deutschen Startseite (/).
+# Gilt nur fuer die Startseite; Unterseiten haben eigene DE/EN-Pfade.
+/  /en/  302  Language=en
+
 # Legacy redirects (old links, app deep-links) → 301
 /glossar.html        /wissen/glossar/   301
 /glossar             /wissen/glossar/   301
