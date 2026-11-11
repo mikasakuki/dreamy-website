@@ -198,6 +198,7 @@
               <a href="${t.imprintHref}">${t.imprint}</a>
               <a href="${t.privacyHref}">${t.privacy}</a>
               <a href="https://www.instagram.com/jume.app/" target="_blank" rel="noopener">Instagram</a>
+              <a href="https://www.youtube.com/@jumeapp" target="_blank" rel="noopener" class="footer-yt" aria-label="YouTube"><svg viewBox="0 0 28 20" width="22" height="16" aria-hidden="true" focusable="false"><path fill="#FF0000" d="M27.4 3.1A3.5 3.5 0 0 0 24.9.6C22.7 0 14 0 14 0S5.3 0 3.1.6A3.5 3.5 0 0 0 .6 3.1C0 5.3 0 10 0 10s0 4.7.6 6.9a3.5 3.5 0 0 0 2.5 2.5C5.3 20 14 20 14 20s8.7 0 10.9-.6a3.5 3.5 0 0 0 2.5-2.5C28 14.7 28 10 28 10s0-4.7-.6-6.9Z"/><path fill="#FFFFFF" d="m11.2 14.3 7.3-4.3-7.3-4.3v8.6Z"/></svg>YouTube</a>
               <button onclick="if(window.jumeResetConsent)jumeResetConsent();else{try{localStorage.removeItem('jume_consent')}catch(e){}location.reload();}" style="background:none;border:none;cursor:pointer;font:inherit;font-size:inherit;color:inherit;padding:0;text-decoration:underline;text-underline-offset:2px;">${t.cookie}</button>
             </nav>
             <p class="footer-copy">© ${new Date().getFullYear()} jume · ${t.footerCopy}</p>

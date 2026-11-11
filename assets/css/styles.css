@@ -252,6 +252,8 @@ em { font-style: italic; }
   transition: color 0.15s;
 }
 .footer-links a:hover { color: var(--plum); text-decoration: none; }
+.footer-yt { display: inline-flex; align-items: center; gap: 6px; }
+.footer-yt svg { flex-shrink: 0; }
 
 .footer-copy {
   font-size: 0.82rem;
